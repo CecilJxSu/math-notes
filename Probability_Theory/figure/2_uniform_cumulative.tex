@@ -1,0 +1,17 @@
+% 均匀分布
+\begin{tikzpicture}
+  \begin{axis}[clip=false,xmin=0,xmax=3,ymin=0,ymax=1.5,ticks=none,axis lines=middle,y=2cm,x=1.5cm,smooth,xlabel={$x$}, ylabel={$F(x)$}]
+
+    \addplot[draw=blue,domain=1:2,samples=2,thick] {x-1};
+    \addplot[draw=blue,domain=0:1,samples=2,thick] {0};
+    \addplot[draw=blue,domain=2:3,samples=2,thick] {1};
+
+    % y label
+    \draw (0,1) -- (0.05,1);
+    \node[left] at (0,1) {$1$};
+
+    \node[below] at (1,0) {$a$};
+    \node[below] at (2,0) {$b$};
+    \node[below left] at (0,0) {$O$};
+  \end{axis}
+\end{tikzpicture}

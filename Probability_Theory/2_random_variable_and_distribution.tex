@@ -1,0 +1,277 @@
+\subsection{随机变量}
+\paragraph{}
+有些试验的样本空间不是数字类型，因此可通过将样本空间映射到实数上，研究样本的概率分布情况。比如：硬币的$\{H,T\} \to \{0, 1\}$
+\paragraph{}
+\textbf{定义\;}设随机试验的样本空间为$S=\{e\}$。$X = X(e)$是定义在样本空间$S$上的实值单值函数，称$X=X(e)$为随机变量。
+
+\paragraph{}
+实值单值函数，比如：$y=f(x)$，实值即$x$的定义域是实数集合$R$；单值函数即$x$对应的$y$是唯一的。
+
+\subsection{离散型随机变量及其\textbf{分布律}}
+\subsubsection{离散型随机变量}
+\paragraph{}
+有些随机变量，它全部可能取到的值是有限个或可列无限多个，这种随机变量称为\textbf{离散型随机变量}。
+
+\paragraph{}
+设离散型随机变量$X$所有可能取的值为$x_k(k=1,2,\cdots)$，$X$取各个可能值的概率，即事件$\{X = x_k\}$的概率，为：
+\begin{equation}
+  \label{离散型随机变量的分布律}
+  P\{X = x_k\} = p_k, k = 1, 2, \cdots.
+\end{equation}
+由概率的定义，$p_k$满足如下两个条件：
+
+\label{离散型随机变量的条件}
+\begin{enumerate}
+  \item $p_k \geq 0, k = 1, 2, \cdots$
+  \item $\displaystyle \sum_{k=1}^\infty p_k = 1$
+\end{enumerate}
+我们称 \eqref{离散型随机变量的分布律} 式为离散型随机变量$X$的\textbf{分布律}，分布律也可以用表格的形式表示：
+
+\begin{figure}[H]
+\centering
+  \begin{tabular}{c|ccccc}
+    $X$ & $x_1$ & $x_2$ & $\cdots$ & $x_n$ & $\cdots$ \\
+    \hline
+    \\ [-1em]
+    $p_k$ & $p_1$ & $p_2$ & $\cdots$ & $p_n$ & $\cdots$ \\
+  \end{tabular}
+\end{figure}
+
+\subsubsection{（0-1）分布}
+\paragraph{}
+设随机变量$X$只可能取$0$与$1$两个值，它的分布律是：
+
+\begin{equation}
+  P\{X=k\}=p^k(1-p)^{1-k},k=0,1(0<p<1)
+\end{equation}
+
+则称$X$服从以$p$为参数的（0-1）分布或两点分布，以下以表格形式表示：
+
+\begin{figure}[H]
+\centering
+  \begin{tabular}{c|cc}
+    $X$ & $0$ & $1$ \\
+    \hline
+    \\ [-1em]
+    $p_k$ & $1-p$ & $p$ \\
+  \end{tabular}
+\end{figure}
+
+\subsubsection{伯努利试验、二项分布}
+\paragraph{}
+设试验$E$只有两个可能结果：$A$及$\overline{A}$，则称$E$为\textbf{伯努利（Bernoulli）试验}。设$P(A) = p(0<p<1)$，此时$P(\overline{A})=1-p$。将$E$独立重复地进行$n$次，则称这一串重复地独立试验为\textbf{$n$重伯努利试验}。
+
+\paragraph{}
+“重复”是指在每次试验中$P(A)=p$保持不变；“独立”是指各次试验的结果互不影响。若以$C_i$记第$i$次试验的结果，$C_i$为$A$或$\overline{A}, i = 1,2,\cdots,n$，“独立”是指：
+\begin{equation}
+  P(C_1C_2\cdots C_n) = P(C_1)P(C_2)\cdots P(C_n).
+\end{equation}
+
+\paragraph{}
+以$X$表示$n$重伯努利试验中事件$A$发生的次数，$X$是一个随机变量。$X$所有可能取的值为$0,1,2,\cdots,n$。由于各次试验是相互独立的，因此事件$A$在指定的$k(0 \leq k \leq n)$次试验中发生，在其它$n-k$次试验中$A$不发生，前$k$次试验中$A$发生而后$n-k$次试验中$A$不发生的概率为：
+
+\begin{equation}
+  % \bigcdot 额外配置的命令
+  \underbrace{p \bigcdot p \bigcdot \cdots \bigcdot p}_{k \text{个}} \bigcdot \underbrace{(1-p) \bigcdot (1-p) \bigcdot \cdots \bigcdot (1-p)}_{n-k \text{个}} = p^k(1-p)^{n-k}.
+\end{equation}
+
+这种指定的方式共有${{n}\choose{k}}$种，它们是两两互不相容的，故在$n$次试验中$A$发生$k$次的概率为${{n}\choose{k}}p^k(1-p)^{n-k}$，记$q = 1 - p$，即有：
+
+\begin{equation}
+  P\{X=k\} = {{n}\choose{k}}p^kq^{n-k}, k=0,1,2,\cdots,n.
+\end{equation}
+显然
+\begin{gather}
+  P\{X=k\} \geq 0, k = 0,1,2,\cdots,n; \\
+  \sum_{k=0}^nP\{X=k\} = \sum_{k=0}^n {{n}\choose{k}}p^kq^{n-k}=(p+q)^n = 1.
+\end{gather}
+即$P\{X=k\}$满足 \hyperref[离散型随机变量的条件]{\color{blue} \ref*{离散型随机变量的条件}} 的两个条件，注意到${{n}\choose{k}}p^kq^{n-k}$刚好是二项式$(p+q)^n$的展开式中出现$p^k$的那一项，我们称随机变量$X$服从参数为$n,p$的\textbf{二项分布}，并记为$X \thicksim b(n,p)$。
+
+\paragraph{}
+特别地，当$n=1$时，二项分布变成（0-1）分布。
+
+\subsubsection{泊松分布}
+\paragraph{}
+设随机变量$X$所有可能取的值为$0,1,2,\cdots$，而取各个值的概率为
+
+\begin{equation}
+  P\{X=k\} = \frac{\lambda^ke^{-\lambda}}{k!}, k = 0,1,2,\cdots,
+\end{equation}
+
+其中$\lambda > 0$是常数。则称$X$服从参数为$\lambda$的\textbf{泊松分布}，记为$X\thicksim \pi(\lambda)$
+
+\paragraph{}
+\textbf{泊松定理\;}设$\lambda>0$是一个常数，$n$是任意正整数，设$np_n=\lambda$，则对于任一固定的非负整数$k$，有
+
+\begin{equation}
+  \lim_{n \to \infty} {n \choose k}p_n^k(1-p)^{n-k}=\frac{\lambda^ke^{-\lambda}}{k!}.
+\end{equation}
+
+\subsection{随机变量的\textbf{分布函数}}
+\paragraph{}
+非离散型随机变量$X$，其取值不能一一列举出来，因此不能用分布律来描述它。实际中，研究误差落在某个区间，而不是具体某个样本，由于
+
+\begin{equation}
+  P\{x_1<X\leq x_2\} = P\{X\leq x_2\} - P\{X \leq x_1\},
+\end{equation}
+
+我们只需知道$P\{X\leq x_2\}$和$P\{X \leq x_1\}$，即可知道落在区间$(x_1,x_2]$的概率了。
+
+\paragraph{}
+\textbf{定义\;}设$X$是一个随机变量，$x$是任意实数，函数
+
+\begin{equation}
+  F(x) = P\{X \leq x\}, -\infty < x < \infty
+\end{equation}
+
+称为$X$的\textbf{分布函数}。
+
+\paragraph{}
+对于任意实数$x_1, x_2 (x_1 < x_2)$，有
+
+\begin{align}
+  \begin{split}
+    P\{x_1 < X \leq x_2\} =&\; P\{X \leq x_2\} - P\{X \leq x_1\} \\
+    =&\; F(x_2) - F(x_1)
+  \end{split}
+\end{align}
+
+\paragraph{}
+分布函数$F(x)$具有以下的基本性质：
+
+\begin{enumerate}
+  \item $F(x)$是一个不减函数，由$F(x_2) - F(x_1) = P\{x_1 < X \leq x_2\} \geq 0$可证明，也称为累计分布函数
+  \item $0 \leq F(x) \leq 1$，且
+  \begin{align}
+    \begin{split}
+      F(-\infty) =&\; \lim_{x \to -\infty}F(x) = 0, \\
+      F(\infty) =&\; \lim_{x \to \infty}F(x) = 1. \\
+    \end{split}
+  \end{align}
+  \item $F(x+0) = F(x)$，即$F(x)$是右连续的。
+\end{enumerate}
+
+\subsection{连续型随机变量及其概率密度}
+\paragraph{}
+如果对于随机变量$X$的分布函数$F(x)$，存在非负函数$f(x)$，使对于任意实数$x$有
+
+\begin{equation}
+  \label{连续型随机变量的分布函数}
+  F(x) = \int_{-\infty}^{x}f(t)dt,
+\end{equation}
+则称$X$为\textbf{连续型随机变量}，其中函数$f(x)$称为$X$的\textbf{概率密度函数}，简称\textbf{概率密度}。
+
+\paragraph{}
+概率密度$f(x)$具有以下性质：
+\begin{enumerate}
+  \item $f(x) \geq 0$
+  \item $\int_{-\infty}^{\infty}f(x)dx=1$
+  \item 对于任意实数$x_1, x_2(x_1 \leq x_2),$
+  \begin{equation}
+    P\{x_1 < X \leq x_2\} = F(x_2) - F(x_1) = \int_{x_1}^{x_2}f(x)dx
+  \end{equation}
+  \item 若$f(x)$在点$x$处连续，则有$F'(x) = f(x)$
+\end{enumerate}
+
+\begin{figure}[h]
+\centering
+  %------- 第1行 -------
+  \begin{subfigure}[t]{0.48\linewidth}
+    \centering
+      \input{figure/2_cdf_sum.tex}
+  \end{subfigure}
+  \begin{subfigure}[t]{0.48\linewidth}
+    \centering
+      \input{figure/2_cdf_section.tex}
+  \end{subfigure}
+  \caption{概率密度性质}
+  \label{概率密度性质}
+\end{figure}
+
+\paragraph{}
+由\textbf{性质4}在$f(x)$的连续点$x$处有
+
+\begin{align}
+  \label{f(x)连续性质}
+  \begin{split}
+    f(x) =&\; \lim_{\Delta x \to 0^+}\frac{F(x+\Delta x) - F(x)}{\Delta x} \\
+    =&\; \lim_{\Delta x \to 0^+}\frac{P\{x < X \leq x + \Delta x\}}{\Delta x}.
+  \end{split}
+\end{align}
+
+\paragraph{}
+由 \eqref{f(x)连续性质} 式知道，若不计高阶无穷小，有
+
+\begin{equation}
+  P\{x < X \leq x + \Delta x\} \approx f(x)\Delta x.
+\end{equation}
+
+这表示$X$落在小区间$(x, x+\Delta x]$上的概率近视地等于$f(x)\Delta x$.
+
+\paragraph{}
+对于连续型随机变量$X$来说，它取任一指定实数值$a$的概率均为$0$，即$P\{X=a\}=0$，因此可以不必区分该区间是开区间或闭区间：
+
+\begin{equation}
+  P\{a < X \leq b\} = P\{a \leq X \leq b\} = P\{a < X < b\}.
+\end{equation}
+
+\paragraph{}
+下面介绍三种重要的连续型随机变量。
+
+\subsubsection{均匀分布}
+\paragraph{}
+若连续型随机变量$X$具有概率密度
+
+\begin{equation}
+  f(x) = \left\{ \begin{array}{ll}
+    \frac{1}{b-a}, & a<x<b, \\
+    0, & \textbf{\small 其它},
+  \end{array}\right.
+\end{equation}
+
+则称$X$在区间$(a,b)$上服从\textbf{均匀分布}。记为$X \sim U(a,b)$
+
+\paragraph{}
+对于任一长度$l$的子区间$(c, c+l), a \leq c < c+l \leq b$，有
+
+\begin{equation}
+  P\{c < X \leq c+l\} = \int_c^{c+l}f(x)dx = \int_c^{c+l}\frac{1}{b-a}dx=\frac{l}{b-a}.
+\end{equation}
+
+\paragraph{}
+由 \eqref{连续型随机变量的分布函数} 式得$X$的分布函数为：
+
+\begin{equation}
+  F(x) = \left\{ \begin{array}{ll}
+    0, & x < a, \\
+    \frac{x-a}{b-a}, & a \leq x < b, \\
+    1, & x \geq b.
+  \end{array} \right.
+\end{equation}
+
+\paragraph{}
+$f(x)$及$F(x)$的图形分别为：
+
+\begin{figure}[h]
+\centering
+  %------- 第1行 -------
+  \begin{subfigure}[t]{0.48\linewidth}
+    \centering
+      \input{figure/2_uniform.tex}
+  \end{subfigure}
+  \begin{subfigure}[t]{0.48\linewidth}
+    \centering
+      \input{figure/2_uniform_cumulative.tex}
+  \end{subfigure}
+  \caption{均匀分布的概率密度及其分布函数}
+  \label{均匀分布的概率密度及其分布函数}
+\end{figure}
+
+\subsubsection{指数分布}
+\paragraph{}
+
+\subsubsection{正态分布}
+\paragraph{}
+
+\subsection{随机变量的函数的分布}
+\paragraph{}

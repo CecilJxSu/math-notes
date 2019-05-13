@@ -1,0 +1,56 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{pgfplots}
+% figure[H] float
+\usepackage{float}
+% subfigure
+\usepackage{subcaption}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{setspace}
+% 修改公式编号
+\usepackage{chngcntr}
+
+% 设置行间距 1.5 倍
+\renewcommand{\baselinestretch}{1.5}
+
+% 设置页大小和页边距，或者scale=0.8
+\geometry{a4paper,left=3.18cm,right=3.18cm,top=2.54cm,bottom=2.54cm}
+% 兼容
+\pgfplotsset{compat=1.16}
+% 中文默认没有斜体和粗体格式，开启伪斜体和指定黑体；
+\setCJKmainfont[AutoFakeSlant, BoldFont=SimHei]{SimSun}
+\usetikzlibrary{positioning}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+% 每个章节后，重置公式编号
+\counterwithin*{equation}{section}
+% area of hatch，面积阴影部分
+\usetikzlibrary{patterns}
+
+% make cdot thicker，比 cdot 更粗的圆点
+\makeatletter
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+% 修改 eqref 公式标签引用颜色
+\def\eqref#1{\textcolor{blue}{(\ref{#1})}}
+
+\begin{document}
+  \tableofcontents
+  \newpage
+
+  \section{概率论的基本概念}
+    \input{1_basic_concepts.tex}
+  \section{随机变量及其分布}
+    \input{2_random_variable_and_distribution.tex}
+\end{document}
