@@ -1,0 +1,83 @@
+\subsection{表示法}
+\begin{enumerate}
+  \item 列举法：$A = \{a_1, a_2, ..., a_n\}$
+  \item 描述法：$M = \{x | \text{x具有性质P} \}$
+\end{enumerate}
+
+\subsection{数集}
+\paragraph{}
+在字母右上角标 “*”，表示排除 0 元素的数集；
+\paragraph{}
+在字母右上角标 “+”，表示排除 0 元素与负数的数集。
+\paragraph{}
+例子：自然数集 N 和整数集 Z
+
+\begin{gather}
+N^* = \{1, 2, ..., n, ...\} \\
+Z^+ = \{1, 2, ..., n, ...\}
+\end{gather}
+
+\subsection{集合关系}
+\paragraph{}
+子集、真子集、相等、空集（是任何集合的子集）
+
+\subsection{集合运算}
+\paragraph{}
+并、交、差（\textbackslash）
+\paragraph{}
+差运算；如果 I 是全集（基本集），也相当于求 A 的补集（余集）：
+
+\begin{equation}
+I \backslash A = A^c = \{x | x \in I, x \notin A\}
+\end{equation}
+
+\paragraph{}
+$A^c$ 是补集
+
+\subsubsection{法则}
+\begin{enumerate}
+  \item 交换律：
+    \begin{enumerate}
+      \item $A \cup B = B \cup A$
+      \item $A \cap B = B \cap A$
+    \end{enumerate}
+  \item 结合律：
+    \begin{enumerate}
+      \item $(A \cup B) \cup C = A \cup (B \cup C)$
+      \item $(A \cap B) \cap C = A \cap (B \cap C)$
+    \end{enumerate}
+  \item 分配律：
+    \begin{enumerate}
+      \item $(A \cup B) \cap C = (A \cap C) \cup (B \cap C)$
+      \item $(A \cap B) \cup C = (A \cup C) \cap (B \cup C)$
+    \end{enumerate}
+  \item 对偶律：
+    \begin{enumerate}
+      \item ${(A \cup B)}^c = A^c \cap B^c$
+      \item ${(A \cap B)}^c = A^c \cup B^c$
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection{直积}
+\begin{equation}
+A \times B = \{(x, y) | x \in A, y \in B\}
+\end{equation}
+
+\subsection{区间和邻域}
+
+\subsubsection{区间}
+\paragraph{}
+(a, b)、[a, b]、[a, b)、(a, b]
+\subsubsection{邻域}
+
+\paragraph{}
+邻域：
+\begin{equation}
+U(a, \delta) = \{x | a - \delta < x < a + \delta\}
+\end{equation}
+
+\paragraph{}
+去心邻域：
+\begin{equation}
+\mathring{U}(a, \delta) = \{x | 0 < |x - a| < \delta\}
+\end{equation}

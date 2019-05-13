@@ -1,0 +1,26 @@
+% 导数的几何意义
+\begin{tikzpicture}
+  \begin{axis}[xmin=0, xmax=3,ymin=0,ymax=3, grid=none,
+    xtick=\empty,ytick=\empty, font=\large, axis lines=middle,
+    smooth, xlabel={$x$}, ylabel={$y$}]
+
+    % 曲线
+    \addplot[draw=red,domain=0.3:2.5] {(x - 1)^2 + 0.5};
+    \node [above] at (axis cs:2,2.5) {$y = f(x_0)$};
+    \draw[fill] (1.5,0.75) circle [radius=0.02];
+    % 切线
+    \addplot[draw=blue,domain=0.3:2.2] {x - 0.75};
+    \node [right] at (axis cs:2.2,1.45) {$T$};
+
+    % 辅助线和点
+    \addplot[dashed, draw=cyan, mark=none] coordinates {(1.5, 0) (1.5, 0.75)};
+    \node [above] at (axis cs:1.5,0.75) {$M$};
+
+    % 倾角
+    \draw (1,0) arc (0:45:0.25);
+    \node [right] at (axis cs:1,0.1) {$\alpha$};
+  \end{axis}
+  % 原点
+  \node [below left] at (0,0) {$O$};
+  \node [below] at (3.45,0) {$x_0$};
+\end{tikzpicture}

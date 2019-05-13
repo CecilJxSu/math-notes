@@ -1,0 +1,27 @@
+% 微分例子
+\begin{tikzpicture}
+  \draw (0,0) rectangle (5, 5);
+  \draw[pattern=north east lines] (0,4) rectangle (5, 5);
+  \draw[pattern=north west lines] (4,0) rectangle (5, 5);
+
+  \node at (2,2) {$A = x_0^2$};
+  \node[fill=white] at (2,4.5) {$x_0 \Delta x$};
+  \node[fill=white, rotate=-90] at (4.5,2) {$x_0 \Delta x$};
+  \node[fill=white] at (4.5,4.5) {\scriptsize $(\Delta x)^2$};
+
+  \draw (0, 5.1) -- (0, 5.7);
+  \draw (4, 5.1) -- (4, 5.7);
+  \draw (5, 5.1) -- (5, 5.7);
+  \draw [Latex-Latex] (0, 5.4) -- (4,5.4);
+  \node[fill=white] at (2,5.4) {$x_0$};
+  \draw [<->] (4, 5.4) -- (5, 5.4);
+  \node[fill=white] at (4.5,5.4) {$\Delta x$};
+
+  \draw (5.1, 5) -- (5.7, 5);
+  \draw (5.1, 4) -- (5.7, 4);
+  \draw (5.1, 0) -- (5.7, 0);
+  \draw [<->] (5.4, 5) -- (5.4, 4);
+  \node[fill=white,rotate=-90] at (5.4,4.5) {$\Delta x$};
+  \draw [Latex-Latex] (5.4, 4) -- (5.4, 0);
+  \node[fill=white,rotate=-90] at (5.4,2) {$x_0$};
+\end{tikzpicture}

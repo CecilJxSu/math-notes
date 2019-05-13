@@ -1,0 +1,104 @@
+\subsection{隐函数的导数}
+\paragraph{}
+\textbf{显函数：}等号左端是因变量的符号，而右端是含有自变量的式子，当自变量取定义域内任一值时，由这式子能确定对应的函数值。如：$y = \sin x$。
+
+\paragraph{}
+\textbf{隐函数：}如果变量 $x$ 和 $y$ 满足一个方程 $F(x,y) = 0$，在一定条件下，当 $x$ 取某区间内的任一值时，相应的总有满足这方程的\uwave{唯一的} $y$ 值存在，那么方程 $F(x,y) = 0$ 在该区间内确定了一个隐函数。如：$x + y^3 - 1 = 0$。
+
+\paragraph{}
+\textbf{隐函数的显化：}把一个隐函数化成显函数。如：$x + y^3 - 1 = 0 \; \to \; y = \sqrt[3]{1 - x}$。
+
+\paragraph{}
+\textbf{例子：}求椭圆 $\frac{x^2}{16} + \frac{y^2}{9} = 1$ 在点 $(2, \frac{3}{2}\sqrt{3})$ 处的切线方程。
+\paragraph{}
+\textbf{解~~}由导数的几何意义知道，所求切线的斜率为
+\begin{equation*}
+k = y'|_{x = 2}.
+\end{equation*}
+\paragraph{}
+椭圆方程的两边分别对 $x$ 求导（\textbf{y 相当于复合函数，按复合函数求导}），有
+\begin{equation*}
+\frac{x}{8} + \frac{2}{9}y \cdot \frac{dy}{dx} = 0.
+\end{equation*}
+\paragraph{}
+从而 $\frac{dy}{dx} = -\frac{9x}{16y}.$
+\paragraph{}
+当 $x = 2$ 时，$y = \frac{3}{2}\sqrt{3}$，代入上式得
+\begin{equation*}
+\frac{dy}{dx}|_{x = 2} = -\frac{\sqrt{3}}{4}.
+\end{equation*}
+\paragraph{}
+于是所求的切线方程为
+\begin{align*}
+y - \frac{3}{2}\sqrt{3} &= -\frac{\sqrt{3}}{4}(x - 2), \text{~~即}\\
+\sqrt{3}x + 4y - 8\sqrt{3} &= 0.
+\end{align*}
+
+\paragraph{}
+\textbf{对数求导法~~}在某些场合，先在 $y = f(x)$ 的两边取对数，然后再求出 $y$ 的导数，如：$y = x^{\sin x} (x > 0)$ 的导数，可以先对两边取对数，即 $\ln y = \ln x^{\sin x} = \sin x \cdot \ln x$，然后才对两边求导。
+
+\paragraph{}
+对于一般形式的幂指函数
+
+\begin{equation}
+y = u^v (u > 0)
+\end{equation}
+
+\paragraph{}
+如果 $u = (x), v = v(x)$ 都可导，则，可以表示为：$y = e^{v \ln u}.$
+
+\subsection{由参数方程所确定的函数的导数}
+\paragraph{}
+研究物体抛射运动轨迹，水平和垂直方向的分解：
+\begin{equation}
+\left\{
+  \begin{array}{l}
+    x = v_1 t, \\
+    y = v_2 t - \frac{1}{2}gt^2
+  \end{array}
+\right.
+\end{equation}
+
+\paragraph{}
+消去参数 $t$，有：
+
+\begin{equation}
+y = \frac{v_2}{v_1}x - \frac{g}{2v_1^2}x^2.
+\end{equation}
+
+一般的，若\uwave{参数方程}
+
+\begin{equation}
+\left\{
+\begin{array}{l}
+  x = \varphi(t), \\
+  y = \psi(t)
+\end{array}
+\right.
+\end{equation}
+
+\paragraph{}
+确定 $y$ 与 $x$ 间的函数关系，则称此函数关系所表达的函数为由上面的参数方程确定的函数。
+
+\paragraph{}
+如果函数 $x = \varphi(t)$ 具有单调连续反函数 $t = \varphi^{-1}(x)$，且此反函数能与函数 $y = \psi(t)$ 构成复合函数，那么由参数方程所确定的函数可以看成是由函数 $y = \psi(t), t = \varphi^{-1}(x)$ 复合而成的函数 $y = \psi[\varphi^{-1}(x)]$。假设函数 $x = \varphi(t), y = \psi(t)$ 都可导，根据复合函数和反函数的求导法则，有
+
+\begin{align}
+\frac{dy}{dx} = \frac{dy}{dt} \cdot \frac{dt}{dx} &= \frac{dy}{dt} \cdot \frac{1}{\frac{dx}{dt}} = \frac{\psi'(t)}{\varphi'(t)} \text{~~即} \\
+\frac{dy}{dx} &= \frac{\psi'(t)}{\varphi'(t)}. \\
+\text{也可写成~~} \frac{dy}{dx} &= \frac{\frac{dy}{dt}}{\frac{dx}{dt}}.
+\end{align}
+
+\paragraph{}
+如果 $x = \varphi(t), y = \psi(t)$ 二阶可导，则二阶导数公式为
+
+\begin{equation}
+\frac{d^2y}{dx^2} = \frac{\psi''(t)\varphi'(t) - \psi'(t)\varphi''(t)}{\varphi'^3(t)}
+\end{equation}
+
+\subsection{相关变化率}
+\paragraph{}
+设 $x = x(t)$ 及 $y = y(t)$ 都是可导函数，而变量 $x$ 与 $y$ 间存在某种关系，从而变化率 $\frac{dx}{dt}$ 与 $\frac{dy}{dt}$ 间也存在一定关系。这两个相互依赖的变化率称为\uwave{相关变化率}。
+
+\paragraph{}
+相关变化率问题研究这两个变化率之间的关系，以便从其中一个变化率求出另外一个变化率。

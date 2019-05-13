@@ -1,0 +1,59 @@
+\subsection{连续性}
+\subsubsection{增量}
+\paragraph{}
+设变量 $u$ 从它的一个初值 $u_1$ 变到终值 $u_2$，终值与初值的差 $u_2 - u_1$ 就叫做变量 $u$ 的增量，记作 $\Delta u$，即
+
+\begin{equation}
+\Delta u = u_2 - u_1
+\end{equation}
+
+\paragraph{}
+增量可以正，也可以负
+
+\paragraph{}
+$x$ 从 $x_0$ 变到 $x_0 + \Delta x$ 时，函数 $y$ 相应的从 $f(x_0)$ 变到 $f(x_0 + \Delta x)$，因此函数 $y$ 的增量为：
+
+\begin{equation}
+\Delta y = f(x_0 + \Delta x) - f(x_0)
+\end{equation}
+
+\subsubsection{连续性定义}
+\paragraph{}
+\textbf{定义：}设函数 $y = f(x)$ 在点 $x_0$ 的某一邻域内有定义，如果
+\begin{gather}
+\lim_{\Delta x \to 0}\Delta y = \lim_{\Delta x \to 0}[f(x_0 + \Delta x) - f(x_0)] = 0, \\
+\text{或} \lim_{x \to x_0} f(x) = f(x_0).
+\end{gather}
+
+\paragraph{}
+那么就称函数 $y = f(x)$ 在点 $x_0$ 连续。
+
+\paragraph{}
+\textbf{左连续：}如果 $\lim_{x \to x_0^-} f(x) = f(x_0^-)$ 存在且等于 $f(x_0)$，即
+
+\begin{equation}
+f(x_0^-) = f(x_0)
+\end{equation}
+
+\paragraph{}
+\textbf{右连续：}如果 $\lim_{x \to x_0^+}f(x) = f(x_0^+)$ 存在且等于 $f(x_0)$，即
+
+\begin{equation}
+f(x_0^+) = f(x_0)
+\end{equation}
+
+\paragraph{}
+在区间上每一点都连续的函数，叫做函数在该区间上连续。
+
+\subsection{间断点}
+\paragraph{}
+设函数 $f(x)$ 在点 $x_0$ 的某去心邻域内有定义。在此前提，如果函数 $f(x)$ 有下列三种情形之一：
+
+\begin{enumerate}
+  \item 在 $x = x_0$ 没有定义
+  \item 虽在 $x = x_0$ 有定义，但 $\lim_{x \to x_0}f(x)$ 不存在
+  \item 前 2 点都成立，但 $\lim_{x \to x_0}f(x) \neq f(x_0)$
+\end{enumerate}
+
+\paragraph{}
+则函数 $f(x)$ 在点 $x_0$ 为不连续，而点 $x_0$ 称为函数 $f(x)$ 的间断点。

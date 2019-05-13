@@ -1,0 +1,55 @@
+\subsection{数列}
+\paragraph{}
+如果按照某一法则，对每个$n \in N^+$，对应着一个确定的实数$x_n$，这些实数$x_n$按照下标$n$ 从小到大排序得到的一个序列，
+
+\begin{equation}
+x_1, x_2, x_3, ..., x_n, ...
+\end{equation}
+
+\paragraph{}
+就叫数列，简记为数列 $\{x_n\}$。
+
+\paragraph{}
+$x_n$ 为一般项。
+
+\subsection{数列极限}
+\paragraph{}
+设 $\{x_n\}$ 为一数列，如果存在常数 $a$，对于任意给定的正整数 $\varepsilon$（无论它多么小），总存在正整数 $N$ ，使得当 $n > N$ 时，不等式
+
+\begin{equation}
+|x_n - a| < \varepsilon,
+\end{equation}
+
+\paragraph{}
+都成立，那么就称常数 $a$ 是数列 $\{x_n\}$ 的极限，或者称数列 $\{x_n\}$ 收敛于 $a$，记为
+
+\begin{equation}
+\lim_{n \to \infty} x_n = a,
+\end{equation}
+
+\paragraph{}
+或
+
+\begin{equation}
+x_n \to a (n \to \infty).
+\end{equation}
+
+\paragraph{}
+如果不存在这样的常数 $a$，就说数列 $\{x_n\}$ 是发散的。
+
+\subsection{收敛数列的性质}
+\subsubsection{极限的唯一性}
+\paragraph{}
+如果数列 $\{x_n\}$ 收敛，那么它的极限值唯一。
+
+\subsubsection{收敛数列的有界性}
+\paragraph{}
+如果数列 $\{x_n\}$ 收敛，那么数列 $\{x_n\}$ 一定有界。
+
+\subsubsection{收敛数列的保号性}
+\paragraph{}
+如果 $\displaystyle{\lim_{n \to \infty}} x_n = a$，且 $a > 0$（或 $a < 0$），那么存在正整数 $N > 0$，当 $n > N$ 时，都有 $x_n > 0$（或 $x_n < 0$）。
+
+\subsubsection{收敛数列与其子数列间的关系}
+\paragraph{}
+如果数列 $\{x_n\}$ 收敛于 $a$，那么它的任一子数列也收敛，且极限也是 $a$。

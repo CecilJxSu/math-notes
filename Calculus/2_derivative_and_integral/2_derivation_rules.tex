@@ -1,0 +1,93 @@
+\subsection{函数的和、差、积、商的求导法则}
+\paragraph{}
+\textbf{定理1~~}如果函数 $u = u(x)$ 及  $v = v(x)$ 都在点 $x$ 具有导数，那么它们的和、差、积、商（除分母为零的点外）都在点 $x$ 具有导数，且
+
+\begin{align}
+\left[u(x) \pm  v(x)\right]' &= u'(x) \pm v'(x); \\
+\left[u(x)v(x)\right]' &= u'(x)v(x) + u(x)v'(x); \\
+\left[\frac{u(x)}{v(x)}\right]' &= \frac{u'(x)v(x) - u(x)v'(x)}{v^2(x)} \; (v(x) \neq 0).
+\end{align}
+
+\paragraph{}
+定理 1 中的法则（1）、（2）可推广到任意有限个可导函数的情形，即
+
+\begin{align}
+(u + v - w)' &= u' + v' - w'; \\
+(uvw)' &= u'vw + uv'w + uvw'; \\
+(Cu)' &= Cu' \text{~~(C 为常数)}.
+\end{align}
+
+\subsection{反函数的求导法则}
+\paragraph{}
+\textbf{定理2~~}如果函数 $x = f(y)$ 在区间 $I_y$ 内单调、可导且 $f'(y) \neq 0$，则它的反函数 $y = f^{-1}(x)$ 在区间 $I_x = \{x|x = f(x), y \in I_y\}$ 内也可导，且
+
+\begin{equation}
+[f^{-1}(x)]' = \frac{1}{f'(y)} \text{~~或~~} \frac{dy}{dx} = \frac{1}{\frac{dx}{dy}}.
+\end{equation}
+
+\subsection{复合函数的求导法则}
+\paragraph{}
+\textbf{定理3~~}如果 $u = g(x)$ 在点 $x$ 可导，而 $y = f(u)$ 在点 $u = g(x)$ 可导，则复合函数 $y = f[g(x)]$ 在点 $x$ 可导，且其导数为
+
+\begin{equation}
+\frac{dy}{dx} = f'(u) \cdot g'(x) \text{~~或~~} \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}.
+\end{equation}
+
+\subsection{基本求导法则与导数公式}
+\subsubsection{常数和基本初等函数的导数公式}
+
+\begin{equation}
+  \begin{aligned}[c]
+    (C)' &= 0; \\
+    (\sin x)' &= \cos x; \\
+    (\tan x)' &= \sec^2 x; \\
+    (\sec x)' &= \sec x \tan x; \\
+    (a^x)' &= a^x\ln a; \\
+    (\log_a x)' &= \frac{1}{x \ln a}; \\
+    (\arcsin x)' &= \frac{1}{\sqrt{1 - x^2}}; \\
+    (\arctan x)' &= \frac{1}{1 + x^2};
+  \end{aligned}
+  \qquad \qquad
+  \begin{aligned}[c]
+    (x^\mu)' &= \mu x^{\mu - 1}; \\
+    (\cos x)' &= -\sin x; \\
+    (\cot x)' &= - \csc^2 x; \\
+    (\csc x)' &= -\csc x \cot x; \\
+    (e^x)' &= e^x; \\
+    (\ln x)' &= \frac{1}{x}; \\
+    (\arccos x)' &= - \frac{1}{\sqrt{1 - x^2}}; \\
+    (\arccot x)' &= - \frac{1}{1 + x^2}.
+  \end{aligned}
+\end{equation}
+
+\subsubsection{函数的和、差、积、商的求导法则}
+\paragraph{}
+设 $u = u(x), v = v(x)$ 都可导，则
+
+\begin{equation}
+\begin{aligned}[c]
+  (u \pm v)' &= u' \pm v'; \\
+  (uv)' & = u'v + uv';
+\end{aligned}
+\qquad \qquad
+\begin{aligned}[c]
+  (Cu)' = Cu' \text{~~(C 是常数)}; \\
+  \left(\frac{u}{v}\right)' = \frac{u'v - uv'}{v^2}(v \neq 0)
+\end{aligned}
+\end{equation}
+
+\subsubsection{反函数的求导法则}
+\paragraph{}
+设 $x = f(y)$ 在区间 $I_y$ 内单调、可导且 $f'(y) \neq 0$，则它的反函数 $y = f^{-1}(x)$ 在区间 $I_x = f(I_y)$ 内也可导，且
+
+\begin{equation}
+[f^{-1}(x)]' = \frac{1}{f'(y)} \text{~~或~~} \frac{dy}{dx} = \frac{1}{\frac{dx}{dy}}.
+\end{equation}
+
+\subsubsection{复合函数的求导法则}
+\paragraph{}
+设 $y = f(u)$，而 $u = g(x)$ 且 $f(u)$ 及 $g(x)$ 都可导，则复合函数 $y = f[g(x)]$ 的导数为
+
+\begin{equation}
+\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} \text{~~或~~} y'(x) = f'(u) \cdot g'(x).
+\end{equation}

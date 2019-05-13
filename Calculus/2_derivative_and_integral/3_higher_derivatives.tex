@@ -1,0 +1,31 @@
+\subsection{高阶导数定义}
+\paragraph{}
+一般的，函数 $y = f(x)$ 的导数 $y' = f'(x)$ 仍然是 $x$ 的函数。我们把 $y' = f'(x)$ 的\textbf{导数}叫做函数 $y = f(x)$ 的\uwave{二阶导数}，记作 $y''$ 或 $\frac{d^2y}{dx^2}$，即
+
+\begin{equation}
+y'' = (y')' \text{~~或~~} \frac{d^2y}{dx^2} = \frac{d}{dx}(\frac{dy}{dx}).
+\end{equation}
+
+\paragraph{}
+一般的，$(n - 1)$ 阶导数的导数叫做 \uwave{$n$ 阶导数}，记作
+
+\begin{gather}
+y^{(n)} \text{~~或~~} \frac{d^ny}{dx^n}.
+\end{gather}
+
+\paragraph{}
+如果函数 $f(x)$ 在点 $x$ 处具有 $n$ 阶导数，那么 $f(x)$ 在点 $x$ 的某一邻域内必定具有一切低于 $n$ 阶的导数。
+
+\subsection{初等函数的 $n$ 阶导数}
+
+\begin{align}
+(e^x)^{(n)} &= e^x \\
+(\sin x)^{(n)} &= \sin(x + n \cdot \frac{\pi}{2}) \\
+(\cos x)^{(n)} &= \cos(x + n \cdot \frac{\pi}{2}) \\
+[\ln(1 + x)]^{(n)} &= (-1)^{n-1}\frac{(n-1)!}{(1+x)^n} \\
+(x^{\mu})^{(n)} &= \mu(\mu - 1)(\mu - 2) \cdots (\mu - n + 1)x^{\mu - n} \\
+(u \pm v)^{(n)} &= u^{(n)} \pm v^{(n)} \\
+(uv)^{(n)} &= u^{(n)}v + nu^{(n - 1)}v' + \frac{n(n-1)}{2!}u^{(n-2)}v'' + \cdots \\
+ & \quad + \frac{n(n-1) \cdots (n - k + 1)}{k!} u^{(n - k)}v^{(k)} + \cdots + uv^{(n)} \\
+ & = \sum_{k = 0}^{n} C_n^ku^{(n-k)}v^{(k)}. \textbf{~~(Leibniz 公式)}
+\end{align}

@@ -1,0 +1,64 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{pgfplots}
+% figure[H] float
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{setspace}
+% 修改公式编号
+\usepackage{chngcntr}
+
+% 设置行间距 1.5 倍
+\renewcommand{\baselinestretch}{1.5}
+
+% 设置页大小和页边距，或者scale=0.8
+\geometry{a4paper,left=3.18cm,right=3.18cm,top=2.54cm,bottom=2.54cm}
+% 兼容
+\pgfplotsset{compat=1.16}
+% 中文默认没有斜体和粗体格式，开启伪斜体和指定黑体；
+\setCJKmainfont[AutoFakeSlant, BoldFont=SimHei]{SimSun}
+\usetikzlibrary{positioning}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+% 每个章节后，重置公式编号
+\counterwithin*{equation}{section}
+
+\begin{document}
+  \tableofcontents
+  \newpage
+
+  \section{集合}
+    \input{1_set.tex}
+  \section{映射}
+    \input{2_map.tex}
+  \section{函数}
+    \input{3_function.tex}
+  \section{数列的极限}
+    \input{4_limit_of_progression.tex}
+  \section{函数的极限}
+    \input{5_limit_of_function.tex}
+  \section{无穷小与无穷大}
+    \input{6_infinite_and_infinitesimal.tex}
+  \section{极限运算法则}
+    \input{7_limit_laws_of_arithmetic.tex}
+  \section{极限存在准则}
+    \input{8_limit_existence_theorem.tex}
+  \section{无穷小的比较}
+    \input{9_infinitesimal_comparision.tex}
+  \section{函数的连续性和间断点}
+    \input{10_continuity_and_point_of_discontinuity.tex}
+  \section{连续函数的运算和初等函数的连续性}
+    \input{11_continuity_function_arithmetic.tex}
+  \section{闭区间上连续函数的性质}
+    \input{12_continuity_function_on_closed_interval.tex}
+\end{document}

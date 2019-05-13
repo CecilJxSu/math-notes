@@ -1,0 +1,62 @@
+\subsection{定理}
+\paragraph{}
+以下结论适合 $x \to x_0 (\text{或} x \to \infty)$。
+
+\subsubsection{定理1}
+\paragraph{}
+有限个无穷小的和也是无穷小。
+
+\subsubsection{定理2}
+\paragraph{}
+有界函数与无穷小的乘积是无穷小。
+
+\paragraph{}
+\textbf{推论1} 常数与无穷小的乘积是无穷小。
+
+\paragraph{}
+\textbf{推论2} 有限个无穷小的乘积是无穷小.
+
+\subsubsection{定理3}
+\paragraph{}
+如果 $\lim f(x) = A, \lim g(x) =B$，那么
+
+\begin{enumerate}
+  \item $\lim [f(x) \pm g(x)] = \lim f(x) \pm \lim g(x) = A \pm B$
+  \item $\lim [f(x) \cdot g(x)] = \lim f(x) \cdot \lim g(x) = A \cdot B$
+  \item 若 $B \neq 0$，则$\lim \frac{f(x)}{g(x)} = \frac{\lim f(x)}{\lim g(x)} = \frac{A}{B}$
+\end{enumerate}
+
+\paragraph{}
+\textbf{推论1} 如果 $\lim f(x)$ 存在，而 $c$ 为常数，则 $\lim[cf(x)] = c \lim f(x)$。
+
+\paragraph{}
+\textbf{推论2} 如果 $\lim f(x)$ 存在，而 $n$ 是正整数，则 $\lim{[f(x)]}^n={[\lim f(x)]}^n$。
+
+\subsubsection{定理4}
+\paragraph{}
+设有数列 $\{x_n\}$ 和 $\{y_n\}$，如果
+
+\begin{equation}
+\lim_{n \to \infty} x_n = A, \quad \lim_{n \to \infty} y_n = B
+\end{equation}
+
+\paragraph{}
+那么
+
+\begin{enumerate}
+  \item $\displaystyle{\lim_{n \to \infty}(x_n \pm y_n) = A \pm B}$
+  \item $\displaystyle{\lim_{n \to \infty}(x_n \cdot y_n) = A \cdot B}$
+  \item 当 $y_n \neq 0 (n = 1, 2, ...)$ 且 $B \neq 0$ 时，$\displaystyle{\lim_{n \to \infty} \frac{x_n}{y_n}=\frac{A}{B}}$
+\end{enumerate}
+
+\subsubsection{定理5}
+\paragraph{}
+如果 $\varphi (x) \geq \psi (x)$，而 $\lim \varphi (x) = a, \lim \psi (x) = b$，那么 $a \geq b$。
+
+\subsubsection{定理6 复合函数的极限运算法则}
+\paragraph{}
+设函数 $y = f[g(x)]$ 是由函数 $u = g(x)$ 与函数 $y = f(u)$ 复合而成，$f[g(x)]$ 在点 $x_0$ 的某去心邻域内有定义，若 $\displaystyle{\lim_{x \to x_0}g(x) = u_0, \lim_{u \to u_0} f(u) = A}$，且存在 $\delta_0 > 0$，当 $x \in \mathring{U}(x_0, \delta_0)$ 时，有 $g(x) \neq u_0$，则
+
+\begin{equation}
+\lim_{x \to x_0} f[g(x)] = \lim_{u \to u_0} f(u) = A  
+\end{equation}
