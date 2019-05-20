@@ -1,0 +1,22 @@
+% 正态分布的分布函数
+\begin{tikzpicture}[scale = 0.9]
+  \begin{axis}[clip=false,xmin=-4, xmax=6,ymin=0,ymax=1.5, axis lines = middle,
+    smooth, xlabel={$x$}, ylabel={$F(x)$},ticks=none]
+    % 用近似公式画图，F(x) = e^(a(x-u)) / (1 + e^(a(x-u))), a = 4 / sigma * sqrt(2*pi)
+    % sigma = 1, mu = 0.7
+    \addplot[draw=red,domain=-4:6, samples=200] {e^(1.5957 * (x-0.7)) / (1 + e^(1.5957 * (x-0.7)))};
+
+    % 原点标签
+    \node[below left] at (0,0) {$O$};
+
+    % y = 1 刻度
+    \draw[dashed] (0,1) -- (0.2,1);
+    \node[left] at (0,1) {$1$};
+
+    % (0.7, 0.5) 坐标的辅助线
+    \draw[dashed] (0,0.5) -- (0.7,0.5);
+    \draw[dashed] (0.7,0) -- (0.7,0.5);
+    \node[left] at (0,0.5) {$0.5$};
+    \node[below] at (0.7,0) {$\mu$};
+  \end{axis}
+\end{tikzpicture}

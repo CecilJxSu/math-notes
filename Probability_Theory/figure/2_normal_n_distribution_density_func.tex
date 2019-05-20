@@ -1,0 +1,17 @@
+% 标准正态分布的概率密度函数
+\begin{tikzpicture}[scale = 0.9]
+  \begin{axis}[clip=false,xmin=-4, xmax=4,ymin=0,ymax=0.6, axis lines = middle,
+    smooth, xlabel={$x$}, ylabel={$f(x)$},ticks=none]
+    % mu = 0, sigma = 1
+    \addplot[draw=red,domain=-4:4] {0.3989 * e^(-x^2/2)};
+
+    % x=-2, x=2
+    \draw[dashed] (-2,0) -- (-2,0.053);
+    \draw[dashed] (2,0) -- (2,0.053);
+    \node[below] at (-2,0) {$-x$};
+    \node[below] at (2,0) {$x$};
+
+    % 原点标签
+    \node[below left] at (0,0) {$O$};
+  \end{axis}
+\end{tikzpicture}
