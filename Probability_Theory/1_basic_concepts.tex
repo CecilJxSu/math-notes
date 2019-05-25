@@ -22,7 +22,7 @@ $E_1$：抛一枚硬币，观察正面$H$、反面$T$出现的情况。
 随机试验$E$的所有可能结果组成的集合称为$E$的\textbf{样本空间}，记为$S$，样本空间的元素，即每个结果，称为\textbf{样本点}。
 
 \paragraph{}
-例子，\hyperref[s1_1]{\color{blue} \underline{$E_1$}}的样本空间：
+例子，\linkref[s1_1]{$E_1$}的样本空间：
 
 \paragraph{}
 $S_1: \{H, T\};$
@@ -51,7 +51,7 @@ $S_1: \{H, T\};$
 \end{enumerate}
 
 \paragraph{}
-集合中，\textbf{差运算}$S - A$也用$S \symbol{92} A$表示，\textbf{补集}$\overline{A}$也用$A^{c}$表示。
+集合中，有些教材，\textbf{差运算}$S - A$用$S \symbol{92} A$表示，\textbf{补集}$\overline{A}$用$A^{c}$表示。
 
 \begin{figure}[h]
 \centering
@@ -236,14 +236,14 @@ $S_1: \{H, T\};$
 
 \subsubsection{乘法定理}
 \paragraph{}
-由条件概率的定义 \hyperref[条件概率定义]{\color{blue} \ref*{条件概率定义}}，可得到下述定理。
+由\linkref[条件概率定义]{条件概率的定义}，可得到下述定理。
 \paragraph{}
 \textbf{乘法定理\;}设$P(A)>0$，则有
 \begin{equation}
   \label{乘法公式}
   P(AB) = P(B|A)P(A)
 \end{equation}
-\eqref{乘法公式} 式称为\textbf{乘法公式}。
+\eqref{乘法公式}式称为\textbf{乘法公式}。
 \paragraph{}
 一般，设$A_1, A_2, \cdots, A_n$为$n$个事件，$n \geq 2$，且$P(A_1A_2\cdots A_{n-1}) > 0$，则有：
 \begin{equation}
@@ -268,7 +268,7 @@ $S_1: \{H, T\};$
     &\; P(A|B_n)P(B_n).
   \end{split}
 \end{align}
-\eqref{全概率公式} 式称为\textbf{全概率公式}。
+\eqref{全概率公式}式称为\textbf{全概率公式}。
 
 \paragraph{}
 \textbf{定理\;}设试验$E$的样本空间为$S$，$A$为$E$的事件，$B_1,B_2,\cdots,B_n$为$S$的一个划分，且$P(A)>0, P(B_i)>0(i=1,2,\cdots,n)$，则：
@@ -276,7 +276,7 @@ $S_1: \{H, T\};$
   \label{贝叶斯公式}
   P(B_i |A) = \frac{P(B_iA)}{P(A)} = \frac{P(A|B_i)P(B_i)}{\displaystyle \sum_{j=1}^n P(A|B_j)P(B_j)}, i = 1,2,\cdots,n.
 \end{equation}
-\eqref{贝叶斯公式} 式称为\textbf{贝叶斯（Bayes）公式}。
+\eqref{贝叶斯公式}式称为\textbf{贝叶斯（Bayes）公式}。
 
 \paragraph{}
 由以往的数据分析得到的，叫做\textbf{先验概率}。得到信息后再重新加以修正的概率叫做\textbf{后验概率}
