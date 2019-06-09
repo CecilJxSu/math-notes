@@ -99,6 +99,7 @@
 将$(X,Y)$看成一个随机点的坐标，由图\figureref{二维随机变量的分布函数图解}知道离散型随机变量$X$和$Y$的\textbf{联合分布函数}为：
 
 \begin{equation}
+  \label{离散型随机变量的联合分布函数}
   F(x,y) = \sum_{x_i \leq  x} \sum_{y_j \leq y} p_{ij},
 \end{equation}
 
@@ -138,3 +139,117 @@
   F(x_1,x_2,\cdots,x_n)=P\{X_1 \leq  x_1, X_2 \leq x_2, \cdots, X_n \leq x_n\}
 \end{equation}
 称为$n$维随机变量$(X_1,X_2,\cdots,X_n)$的\textbf{分布函数}或随机变量$X_1,X_2,\cdots,X_n$的\textbf{联合分布函数}。它具有类似于二维随机变量的分布函数的性质。
+
+\subsection{边缘分布}
+\subsubsection{边缘分布}
+\paragraph{}
+二维随机变量$(X,Y)$作为一个整体，具有分布函数$F(x,y)$，而$X$和$Y$都是随机变量，各自也有分布函数，将它们分别记为$F_X(x), F_Y(y)$，依次称为二维随机变量$(X,Y)$关于$X$和关于$Y$的\textbf{边缘分布函数}，边缘分布函数可以由$(X,Y)$的分布函数$F(x,y)$所确定，事实上，
+\begin{equation}
+  F_x(x) = P\{X\leq x\} = P\{X\leq x, Y < \infty\} = F(x,\infty),
+\end{equation}
+即
+\begin{equation}
+  \label{F_X(x)边缘分布}
+  F_X(x)=F(x,\infty).
+\end{equation}
+就是说，只要在函数$F(x,y)$中令$y \to \infty$就能得到$F_X(x)$，同理
+\begin{equation}
+  F_Y(y) = F(\infty,y).
+\end{equation}
+
+\subsubsection{离散型随机变量}
+\paragraph{}
+对于离散型随机变量，由\eqref{离散型随机变量的联合分布函数}、\eqref{F_X(x)边缘分布}式可得
+\begin{equation}
+  F_X(x)=F(x,\infty)=\sum_{x_i \leq x}\sum_{j=1}^\infty p_{ij}.
+\end{equation}
+
+与第二章\eqref{X的分布函数}式比较，知道$X$的分布律为
+
+\begin{equation}
+  P\{X=x_i\} = \sum_{j=1}^\infty p_{ij}, \; i = 1, 2, \cdots.
+\end{equation}
+
+同样，$Y$的分布律为
+
+\begin{equation}
+  P\{Y=y_i\} = \sum_{i=1}^\infty p_{ij}, \; j = 1, 2, \cdots.
+\end{equation}
+
+记
+\begin{align}
+\begin{split}
+  p_{i\bigcdot} &= \sum_{j=1}^\infty p_{ij} = P\{X=x_i\}, \; i = 1,2,\cdots, \\
+  p_{\bigcdot j} &= \sum_{i=1}^\infty p_{ij} = P\{Y=y_j\}, \; j = 1,2,\cdots,
+\end{split}
+\end{align}
+
+分别称$p_{i\bigcdot}(i=1,2,\cdots)$和$p_{\bigcdot j}(j=1,2,\cdots)$为$(X,Y)$关于$X$和关于$Y$的\textbf{边缘分布律}
+
+\subsubsection{连续型随机变量}
+\paragraph{}
+对于连续型随机变量$(X,Y)$，设它的概率密度为$f(x,y)$，由于
+\begin{equation}
+  F_X(x) = F(x,\infty)=\int_{-\infty}^x\Big[\int_{-\infty}^\infty f(x,y)dy\Big]dx,
+\end{equation}
+由第二章\eqref{连续型随机变量的分布函数}式知道，$X$是一个连续型随机变量，且其概率密度为
+\begin{equation}
+  f_X(x) = \int_{-\infty}^\infty f(x,y)dy.
+\end{equation}
+同样，$Y$也是一个连续型随机变量，其概率密度为
+\begin{equation}
+  f_Y(y) = \int_{-\infty}^\infty f(x,y)dy.
+\end{equation}
+分别称$f_X(x),f_Y(y)$为$(X,Y)$关于$X$和关于$Y$的\textbf{边缘概率密度}。
+
+\paragraph{}
+平时将边缘分布律写在联合分布律表格的边缘上，这就是“边缘分布律”的由来，例如：
+
+\bgroup
+\def\arraystretch{1.5}
+\setlength\tabcolsep{0.5cm}
+\begin{figure}[H]
+\centering
+  \begin{tabular}{c|cccc|c}
+    \hline
+    \backslashbox{$F$}{$D$} & $1$ & $2$ & $3$ & $4$ & $P\{F=j\}$ \\
+    \hline
+    $0$ & $\frac{1}{10}$ & $0$ & $0$ & $0$ & $\frac{1}{10}$ \\
+    $1$ & $0$ & $\frac{4}{10}$ & $\frac{2}{10}$ & $\frac{1}{10}$ & $\frac{7}{10}$ \\
+    $2$ & $0$ & $0$ & $0$ & $\frac{2}{10}$ & $\frac{2}{10}$ \\
+    \hline
+    $P\{D=i\}$ & $\frac{1}{10}$ & $\frac{4}{10}$ & $\frac{2}{10}$  & $\frac{3}{10}$ & $1$ \\
+    \hline
+  \end{tabular}
+\end{figure}
+\egroup
+
+即有边缘分布律
+\bgroup
+\def\arraystretch{2}
+\setlength\tabcolsep{0.5cm}
+\begin{figure}[H]
+\centering
+%------- 第1行 -------
+\begin{subfigure}[t]{0.48\linewidth}
+  \centering
+    \begin{tabular}{c|cccc}
+      \hline
+      $D$ & $1$ & $2$ & $3$ & $4$ \\
+      \hline
+      $p_k$ & $\frac{1}{10}$ & $\frac{4}{10}$ & $\frac{2}{10}$ & $\frac{3}{10}$ \\
+      \hline
+    \end{tabular}
+\end{subfigure}
+\begin{subfigure}[t]{0.48\linewidth}
+  \centering
+    \begin{tabular}{c|ccc}
+      \hline
+      $F$ & $0$ & $1$ & $2$ \\
+      \hline
+      $p_k$ & $\frac{1}{10}$ & $\frac{7}{10}$ & $\frac{2}{10}$ \\
+      \hline
+    \end{tabular}
+\end{subfigure}
+\end{figure}
+\egroup

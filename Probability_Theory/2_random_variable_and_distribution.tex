@@ -51,6 +51,9 @@
 
 则称$X$服从以$p$为参数的（0-1）分布或两点分布，以下以表格形式表示：
 
+\bgroup
+\def\arraystretch{1.5}
+\setlength\tabcolsep{0.8cm}
 \begin{figure}[H]
 \centering
   \begin{tabular}{c|cc}
@@ -60,6 +63,7 @@
     $p_k$ & $1-p$ & $p$ \\
   \end{tabular}
 \end{figure}
+\egroup
 
 \subsubsection{伯努利试验、二项分布}
 \paragraph{}
@@ -155,6 +159,23 @@
   \item $F(x+0) = F(x)$，即$F(x)$是右连续的。
 \end{enumerate}
 
+\paragraph{}
+一般，设离散型随机变量$X$的分布律为
+\begin{equation}
+  P\{X=x_k\}=p_k, \; k = 1,2,\cdots.
+\end{equation}
+由概率的可列可加性得$X$的分布函数为
+\begin{equation}
+  F(x) = P\{X \leq  x\} = \sum_{x_k \leq x} P\{X = x_k\},
+\end{equation}
+即
+\begin{equation}
+  \label{X的分布函数}
+  F(x) = \sum_{x_k \leq x}p_k,
+\end{equation}
+
+这里和式是对于所有满足$x_k \leq x$的$k$求和的，分布函数$F(x)$在$x=x_k(k=1,2,\cdots)$处有跳跃，其跳跃值为$p_k=P\{X=x_k\}$。
+
 \subsection{连续型随机变量及其概率密度}
 \paragraph{}
 如果对于随机变量$X$的分布函数$F(x)$，存在非负函数$f(x)$，使对于任意实数$x$有
@@ -177,7 +198,7 @@
   \item 若$f(x)$在点$x$处连续，则有$F'(x) = f(x)$
 \end{enumerate}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
   %------- 第1行 -------
   \begin{subfigure}[t]{0.48\linewidth}
@@ -256,7 +277,7 @@
 \paragraph{}
 $f(x)$及$F(x)$的图形分别为：
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
   %------- 第1行 -------
   \begin{subfigure}[t]{0.48\linewidth}
