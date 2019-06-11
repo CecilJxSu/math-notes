@@ -253,3 +253,55 @@
 \end{subfigure}
 \end{figure}
 \egroup
+
+\subsection{条件分布}
+\subsubsection{离散型随机变量}
+\paragraph{}
+\textbf{定义\;}设$(X,Y)$是二维离散型随机变量，对于固定的$j$，若$P\{Y=y_j\}>0$，则称
+\begin{equation}
+  P\{X=x_i|Y=y_j\} = \frac{P\{X=x_i,Y=y_j\}}{P\{Y=y_j\}} = \frac{p_{ij}}{p_{\bigcdot j}}, \; i = 1,2,\cdots
+\end{equation}
+为在$Y=y_j$条件下随机变量$X$的\textbf{条件分布律}。同样，可得到$Y$的条件分布律。
+
+\subsubsection{连续型随机变量}
+\paragraph{}
+\textbf{定义\;}设二维随机变量$(X,Y)$的概率密度为$f(x,y), (X,Y)$关于$Y$的边缘概率密度为$f_Y(y)$，若对于固定的$y, f_Y (y)>0$，则称$\frac{f(x,y)}{f_Y(y)}$为在$Y=y$的条件下$X$的\textbf{条件概率密度}，记为
+\begin{equation}
+  f_{X|Y}(x|y) = \frac{f(x,y)}{f_Y(y)}.
+\end{equation}
+
+称$\int_{-\infty}^x f_{X|Y}(x|y)dx = \int_{-\infty}^x \frac{f(x,y)}{f_Y(y)}dx$为在$Y=y$的条件下$X$的条件分布函数，记为$P\{X \leq  x | Y = y\}$或$F_{X|Y}(x|y)$，即
+
+\begin{equation}
+  F_{X|Y}(x|y) = P\{X \leq x | Y = y\}=\int_{-\infty}^x\frac{f(x,y)}{f_Y(y)}dx.
+\end{equation}
+
+类似地，可以定义$f_{Y|X}(y|x)=\frac{f(x,y)}{f_X(x)}$和$F_{Y|X}(y|x)=\int_{-\infty}^y\frac{f(x,y)}{f_X(x)}dy.$
+
+\subsection{相互独立的随机变量}
+\paragraph{}
+\textbf{定义\;}设$F(x,y)$及$F_X(x),F_Y(y)$分别是二维随机变量$(X,Y)$的分布函数及边缘分布函数。若对于所有$x,y$有
+\begin{equation}
+  P\{X \leq x, Y \leq y\} = P\{X \leq x\}P\{Y \leq y\},
+\end{equation}
+即
+\begin{equation}
+  \label{二维随机变量的相互独立性}
+  F(x,y) = F_X(x)F_Y(y),
+\end{equation}
+则称随机变量$X$和$Y$是\textbf{相互独立的}。
+
+\paragraph{}
+设$(X,Y)$是连续型随机变量，$f(x,y), f_X(x), f_Y(y)$分别为$(X,Y)$的概率密度和边缘概率密度，则$X$和$Y$相互独立的条件\eqref{二维随机变量的相互独立性}等价于
+\begin{equation}
+  f(x,y)=f_X(x)f_Y(y)
+\end{equation}
+在平面上几乎处处成立。
+
+\paragraph{}
+当$(X,Y)$是离散型随机变量时，$X$和$Y$相互独立的条件\eqref{二维随机变量的相互独立性}式等价于：对于$(X,Y)$的所有可能取的值$(x_i,y_j)$有
+\begin{equation}
+  P\{X=x_i,Y=y_j\} = P\{X=x_i\}P\{Y=y_j\}.
+\end{equation}
+
+\textbf{定理\;}设$(X_1, X_2, \cdots, X_m)$和$(Y_1, Y_2, \cdots, Y_n)$相互独立，则$X_i(i=1,2, \cdots, m)$和$Y_j(j=1,2, \cdots, n)$相互独立，又若$h,g$是连续函数，则$h(X_1,X_2, \cdots, X_m)$和$g(Y_1, Y_2, \cdots, Y_n)$相互独立。
