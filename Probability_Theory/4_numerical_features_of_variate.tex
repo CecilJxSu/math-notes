@@ -157,13 +157,14 @@ $D(X)$是刻画$X$取值分散程度的一个量，它是衡量$X$取值分散�
     D(CX) = C^2D(X), \; D(X+C)=D(X).
   \end{equation*}
   \item 设$X,Y$是两个随机变量，则有
-  \begin{equation*}
-    D(X+Y) = D(X) + D(Y) + 2E\{(X-E(X))(Y-E(Y))\}.
-  \end{equation*}
+  \begin{equation}
+    \label{方差性质3}
+    D(X+Y) = D(X) + D(Y) + 2E\{[X-E(X)][Y-E(Y)]\}.
+  \end{equation}
   特别，若$X,Y$相互独立，则有
-  \begin{equation*}
+  \begin{equation}
     D(X+Y) = D(X) + D(Y).
-  \end{equation*}
+  \end{equation}
   \item $D(X)=0$的充要条件是$X$以概率$1$取常数$E(X)$，即
   \begin{equation*}
     P\{X=E(X)\} = 1.
@@ -187,7 +188,104 @@ $D(X)$是刻画$X$取值分散程度的一个量，它是衡量$X$取值分散�
 这个估计是比较粗糙的，如果已经知道随机变量的分布时，那么所需求的概率可以确切地计算出来，也就没有必要利用这一不等式来作估计了。
 
 \subsection{协方差及相关系数}
+\subsubsection{定义}
 \paragraph{}
+对于二维随机变量$(X,Y)$，我们除了讨论$X$与$Y$的数学期望和方差以外，还需讨论描述$X$与$Y$之间相互关系的数字特征。
+
+\paragraph{}
+在本章的\linkref[方差性质3]{方差性质3}中如果两个随机变量$X$和$Y$是相互独立的，则
+\begin{equation}
+  E\{[X - E(X)][Y - E(Y)]\} = 0.
+\end{equation}
+这意味着当$E\{[X - E(X)][Y - E(Y)]\} \neq 0$时，$X$与$Y$不相互独立，而是存在着一定的关系的。
+
+\paragraph{}
+\textbf{定义\;}量$E\{[X - E(X)][Y - E(Y)]\}$称为随机变量$X$与$Y$的\textbf{协方差}。记为$Cov(X,Y)$，即
+\begin{equation}
+  Cov(X,Y) = E\{[X - E(X)][Y - E(Y)]\}.
+\end{equation}
+而
+\begin{equation}
+  \rho_{XY} = \frac{Cov(X,Y)}{\sqrt{D(X)}\sqrt{D(Y)}}
+\end{equation}
+称为随机变量$X$与$Y$的\textbf{相关系数}。
+
+\paragraph{}
+由定义，即知
+
+\begin{equation}
+  Cov(X,Y)=Cov(Y,X), \; Cov(X,X) = D(X).
+\end{equation}
+
+\paragraph{}
+由上述定义及\linkref[方差性质3]{方差性质3}知道，对于任意两个随机变量$X$和$Y$，下列等式成立：
+\begin{equation}
+  D(X+Y) = D(X) + D(Y) + 2Cov(X,Y).
+\end{equation}
+
+\paragraph{}
+将$Cov(X,Y)$的定义式展开，易得
+\begin{equation}
+  Cov(X,Y) = E(XY) - E(X)E(Y).
+\end{equation}
+我们常常利用这一式子计算协方差。
+
+\subsubsection{性质}
+\paragraph{}
+协方差性质
+\begin{enumerate}
+  \item $Cov(aX,bY)=abCov(X,Y), a, b$是常数。
+  \item $Cov(X_1 + X_2,Y)=Cov(X_1,Y)+Cov(X_2,Y)$。
+\end{enumerate}
+
+\subsubsection{定理}
+\paragraph{}
+考虑以$X$的线性函数$a+bX$来近似表示$Y$。我们以均方误差
+\begin{align}
+\begin{split}
+  \label{a+bX的均方误差}
+  e =& \; E[(Y-(a+bX))^2] \\
+    =& \; E(Y^2) + b^2E(X^2) + a^2 - 2bE(XY) + 2abE(X) - 2aE(Y)
+\end{split}
+\end{align}
+来衡量以$a+bX$近似表达$Y$的好坏程度。$e$的值越小表示$a+bX$与$Y$的近似程度越好。这样，我们就取$a,b$使$e$取到最小。下面来求最佳近似式$a+bX$中的$a,b$。为此，将$e$分别关于$a,b$求偏导数，并令它们等于零，得
+\begin{equation}
+\left\{
+  \begin{array}{l}
+    \frac{\partial e}{\partial a} = 2a + 2bE(X) - 2E(Y) = 0. \\
+    \frac{\partial e}{\partial b} = 2bE(X^2) - 2E(XY) + 2aE(X) = 0.
+  \end{array}
+\right.
+\end{equation}
+解得
+\begin{align}
+\begin{split}
+  b_0 =&\; \frac{Cov(X,Y)}{D(X)}, \\
+  a_0 =&\; E(Y) - b_0E(X) = E(Y) - E(X)\frac{Cov(X,Y)}{D(X)}.
+\end{split}
+\end{align}
+将$a_0,b_0$代入\eqref{a+bX的均方误差}式得
+\begin{align}
+  \label{最佳均方误差公式}
+  \min_{a,b}E\{[Y-(a+bX)]^2\} =&\; E\{[Y-(a_0+b_0X)]^2\} \\
+                     =&\; (1-\rho_{XY}^2)D(Y)
+\end{align}
+
+\paragraph{}
+由\eqref{最佳均方误差公式}式得到下述定理：
+
+\paragraph{}
+\textbf{定理\;}
+\begin{enumerate}
+  \item $|\rho_{XY}| \leq 1$。
+  \item $|\rho_{XY}| = 1$的充要条件是，存在常数$a,b$使
+  \begin{equation}
+    P\{Y = a+bX\} = 1.
+  \end{equation}
+\end{enumerate}
+
+\paragraph{}
+当$\rho_{XY} = 0$时，称$X$和$Y$\textbf{不相关}。
 
 \subsection{矩、协方差矩阵}
 \paragraph{}
