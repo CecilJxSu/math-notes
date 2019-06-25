@@ -60,3 +60,220 @@ dy = f'(x_0)\Delta x.
 \begin{equation}
 \Delta y = dy + o(dy).
 \end{equation}
+
+即$dy$是$\Delta y$ 的\uwave{主部}。又由于$dy = f'(x_0) \Delta x$是$\Delta x$的线性函数，所以在$f'(x_0) \neq 0$的条件下，我们说$dy$是$\Delta y$的\uwave{线性主部}（当$\Delta x \to 0$）。
+
+\paragraph{}
+于是，在$f'(x_0) \neq 0$的条件下，以微分$dy = f'(x_0)\Delta x$近似代替增量$\Delta y = f(x_0+\Delta x) - f(x_0)$时，其误差为$o(dy)$。因此，在$|\Delta x|$很小时，有近似等式
+\begin{equation}
+  \Delta y \approx dy.
+\end{equation}
+
+\paragraph{}
+函数$y=f(x)$在任意点$x$的微分，称为\uwave{函数的微分}，记作$dy$或$df(x)$，即
+
+\begin{equation}
+  dy = f'(x)\Delta x.
+\end{equation}
+
+\paragraph{}
+通常把自变量$x$的增量$\Delta x$称为\uwave{自变量的微分}，记作$dx$，即$dx = \Delta x$。于是，函数$y=f(x)$的微分又可记作
+
+\begin{equation}
+  dy = f'(x)dx.
+\end{equation}
+
+从而有
+
+\begin{equation}
+  \frac{dy}{dx} = f'(x).
+\end{equation}
+
+\paragraph{}
+也就是说，函数的微分$dy$与自变量的微分$dx$之商等于该函数的导数。因此，导数也叫做“\uwave{微商}”。
+
+\subsection{微分的几何意义}
+\paragraph{}
+在直角坐标系中，函数$y = f(x)$的图形是一条曲线。对于某一固定的$x_0$值，曲线上有一个确定点$M(x_0,y_0)$，当自变量$x$有微小增量$\Delta x$时，就得到曲线上另一点$N(x_0 + \Delta x, y_0 + \Delta y)$。从图\figureref{differential_geometric_meaning}可知：
+
+\begin{align*}
+  MQ =&\; \Delta x, \\
+  QN =&\; \Delta y.
+\end{align*}
+
+过点$M$作曲线的切线$MT$，它的倾角为$\alpha$，则
+\begin{equation*}
+  QP = MQ \bigcdot \tan{\alpha} = \Delta x \bigcdot f'(x_0),
+\end{equation*}
+即
+\begin{equation*}
+  dy = QP.
+\end{equation*}
+
+\begin{figure}[H]
+  \centering
+    \input{figure/differential_geometric_meaning.tex}
+    \caption{几何意义}
+    \label{differential_geometric_meaning}
+\end{figure}
+
+\paragraph{}
+由此可见，对于可微函数$y=f(x)$而言，当$\Delta y$是曲线$y=f(x)$上的点的纵坐标的增量时，$dy$就是曲线的切线上点的纵坐标的相应增量。
+
+\paragraph{}
+当$|\Delta x|$很小时，$|\Delta y - dy|$比$|\Delta x|$小得多。因此在点$M$的邻近，我们可以用切线段来近似代替曲线段。
+
+\paragraph{}
+在局部范围内用线性函数近似代替非线性函数，在几何上就是局部用切线段近似代替曲线段，这在数学上称为\textbf{非线性函数的局部线性化}，这是微分学的基本思想方法之一。
+
+\subsection{基本初等函数的微分公司与微分运算法则}
+\paragraph{}
+从函数的微分的表达式
+\begin{equation}
+  dy = f'(x)dx
+\end{equation}
+可以看出，要计算函数的微分，只要计算函数的导数，再乘以自变量的微分。因此可得如下的微分公司和微分运算法则。
+
+\subsubsection{基本初等函数的微分公式}
+\paragraph{}
+
+\bgroup
+\def\arraystretch{1.8}
+\setlength\tabcolsep{1.8cm}
+\begin{figure}[H]
+\centering
+  \begin{tabular}{c|c}
+    \hline
+    导数公式 & 微分公式 \\
+    \hline
+    $(x^\mu)' = \mu x^{\mu - 1}$ & $d(x^\mu) = \mu x^{\mu - 1}dx$ \\
+    $(\sin{x})' = \cos{x}$ & $d(\sin{x}) = \cos{x}dx$ \\
+    $(\cos{x})' = -\sin{x}$ & $d(\cos{x}) = -\sin{x}dx$ \\
+    $(\tan{x})' = \sec^2{x}$ & $d(\tan{x}) = \sec^2{x}dx$ \\
+    $(\cot{x})' = -\csc^2{x}$ & $d(\cot{x}) = -\csc^2{x}dx$ \\
+    $(\sec{x})' = \sec{x}\tan{x}$ & $d(\sec{x}) = \sec{x}\tan{x}dx$ \\
+    $(\csc{x})' = -\csc{x}\cot{x}$ & $d(\csc{x}) = -\csc{x}\cot{x}dx$ \\
+    $(a^x)' = a^x\ln{a}$ & $d(a^x) = a^x\ln{a}dx$ \\
+    $(e^x)' = e^x$ & $d(e^x) = e^xdx$ \\
+    $(\log_a{x})' = \frac{1}{x\ln{a}}$ & $d(\log_a{x}) = \frac{1}{x\ln{a}}dx$ \\
+    $(\ln{x})' = \frac{1}{x}$ & $d(\ln{x}) = \frac{1}{x}dx$ \\
+    $(\arcsin{x})' = \frac{1}{\sqrt{1-x^2}}$ & $d(\arcsin{x}) = \frac{1}{\sqrt{1-x^2}}dx$ \\
+    $(\arccos{x})' = -\frac{1}{\sqrt{1-x^2}}$ & $d(\arccos{x}) = -\frac{1}{\sqrt{1-x^2}}dx$ \\
+    $(\arctan{x})' = \frac{1}{\sqrt{1+x^2}}$ & $d(\arctan{x}) = \frac{1}{\sqrt{1+x^2}}dx$ \\
+    $(\arccot{x})' = -\frac{1}{\sqrt{1+x^2}}$ & $d(\arccot{x}) = -\frac{1}{\sqrt{1+x^2}}dx$ \\
+    \hline
+  \end{tabular}
+\end{figure}
+\egroup
+
+\subsubsection{函数和、差、积、商的微分法则}
+\paragraph{}
+由函数和、差、积、商的求导法则，可推得相应的微分法则，表中$u = u(x), v = v(x)$都可导。
+
+\bgroup
+\def\arraystretch{2}
+\setlength\tabcolsep{1.2cm}
+\begin{figure}[H]
+\centering
+  \begin{tabular}{c|c}
+    \hline
+    函数和、差、积、商的求导法则 & 函数和、差、积、商的微分法则 \\
+    \hline
+    $(u \pm v)' = u' \pm v'$ & $d(u \pm v) = du \pm dv$ \\
+    $(Cu)' = Cu'$ & $d(Cu) = Cdu$ \\
+    $(uv)' = u'v + uv'$ & $d(uv) = vdu + udv$ \\
+    $(\frac{u}{v})' = \frac{u'v - uv'}{v^2} \;(v \neq 0)$ & $d(\frac{u}{v}) = \frac{vdu - udv}{v^2} \;(v \neq 0)$ \\
+    \hline
+  \end{tabular}
+\end{figure}
+\egroup
+
+\subsubsection{复合函数的微分法则}
+\paragraph{}
+设$y = f(u)$及$u = g(x)$都可导，则复合函数$y=f[g(x)]$的微分为
+\begin{equation}
+  dy = y'_x dx = f'(u)g'(x)dx.
+\end{equation}
+由于$g'(x)dx = du$，所以，复合函数$y = f[g(x)]$的微分公式也可以写成
+\begin{equation}
+  dy = f'(u)du \; \text{或} \; dy = y'_u du.
+\end{equation}
+
+\paragraph{}
+由此可见，无论$u$是自变量还是中间变量，微分形式$dy = f'(u)du$保持不变，这一性质称为\textbf{微分形式不变性}。这性质表示，当变换自变量时，微分形式$dy = f'(u)du$并不改变。
+
+\subsection{微分在近似计算中的应用}
+\subsubsection{函数的近似计算}
+\paragraph{}
+在工程问题中，经常会遇到一些复杂的计算公式。如果直接用这些公式进行计算，那是很费力的。利用微分往往可以把一些复杂的计算公式用简单的近似公式来代替。
+\paragraph{}
+前面说过，如果$y = f(x)$在点$x_0$处的导数$f'(x_0) \neq 0$，且$|\Delta x|$很小时，我们有
+\begin{equation}
+  \label{函数的近似计算例子1}
+  \Delta y \approx dy = f'(x_0)\Delta x.
+\end{equation}
+这个式子也可以写成
+\begin{equation}
+  \label{函数的近似计算例子2}
+  \Delta y = f(x_0 + \Delta x) - f(x_0) \approx f'(x_0)\Delta x,
+\end{equation}
+或
+\begin{equation}
+  \label{函数的近似计算例子3}
+  f(x_0 + \Delta x) \approx f(x_0) + f'(x_0)\Delta x.
+\end{equation}
+在\eqref{函数的近似计算例子3}式中令$x = x_0 + \Delta x$，即$\Delta x = x - x_0$，那么\eqref{函数的近似计算例子3}式可改写为
+\begin{equation}
+  \label{函数的近似计算例子4}
+  f(x) \approx f(x_0) + f'(x_0)(x-x_0).
+\end{equation}
+
+\paragraph{}
+如果$f(x_0)$与$f'(x_0)$都容易计算，那么可利用\eqref{函数的近似计算例子2}式来近似计算$\Delta y$，利用\eqref{函数的近似计算例子3}式来近似计算$f(x_0 + \Delta x)$，或利用\eqref{函数的近似计算例子4}式来近似计算$f(x)$。
+
+\paragraph{}
+这种近似计算的实质就是用$x$的线性函数$f(x_0) + f'(x_0)(x-x_0)$来近似表达函数$f(x)$。从导数的几何意义[图\figureref{differential_geometric_meaning}]可知道，这也就是用曲线$y=f(x)$在点$(x_0, f(x_0))$处的切线来近似代替该曲线（就切点邻近部分来说）。
+
+\subsubsection{误差估计}
+\paragraph{}
+例如，计算圆钢的截面积$A$，可先用卡尺测量圆钢截面的直径$D$，然后根据公式$A = \frac{\pi}{4}D^2$算出$A$。
+
+\paragraph{}
+由于测量仪器的精度、测量的条件和测量的方法等各种因素的影响，测得的数据往往带有误差，而根据带有误差的数据计算，所得的结果也会有误差，我们把它叫做\uwave{间接测量误差}。
+
+\paragraph{}
+可以通过微分来估计间接测量误差。
+
+\paragraph{}
+如果某个量的精确值为$A$，它的近似值为$a$，那么$|A-a|$叫做$a$的\uwave{绝对误差}。而绝对误差与$|a|$的比值$\frac{|A-a|}{|a|}$叫做$a$的\uwave{相对误差}。
+
+\paragraph{}
+在实际工作中，某个量的精确值往往是无法知道的，于是绝对误差和相对误差也就无法求得。但是根据测量仪器的精度等因素，有时能够确定误差在某一个范围内。
+
+\paragraph{}
+如果某个量的精确值是$A$，测得它的近似值是$a$，又知道它的误差不超过$\delta_A$，即
+\begin{equation}
+  |A-a| \leq  \delta_A,
+\end{equation}
+那么$\delta_A$叫做测量$A$的\uwave{绝对误差限}，而$\frac{\delta_A}{|a|}$叫做测量$A$的\uwave{相对误差限}。
+
+\paragraph{}
+一般的，根据直接测量的$x$值按公式$y=f(x)$计算$y$值时，如果已知测量$x$的绝对误差限是$\delta_x$，即
+\begin{equation}
+  |\Delta x| \leq \delta_x,
+\end{equation}
+那么，当$y' \neq 0$时，$y$的绝对误差
+\begin{equation}
+  |\Delta y| \approx |dy| = |y'| \bigcdot |\Delta x| \leq |y'| \bigcdot \delta_x,
+\end{equation}
+即$y$的绝对误差限约为
+\begin{equation}
+  \delta_y = |y'| \bigcdot \delta_x;
+\end{equation}
+$y$的相对误差限约为
+\begin{equation}
+  \frac{\delta_y}{|y|} = |\frac{y'}{y}| \bigcdot \delta_x.
+\end{equation}
+
+\paragraph{}
+以后常把绝对误差限与相对误差限简称为\uwave{绝对误差}与\uwave{相对误差}。

@@ -15,6 +15,12 @@
 % 修改公式编号
 \usepackage{chngcntr}
 
+% make cdot thicker，比 cdot 更粗的圆点
+\makeatletter
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
 % 设置行间距 1.5 倍
 \renewcommand{\baselinestretch}{1.5}
 
@@ -42,18 +48,23 @@
 % 每个章节后，重置公式编号
 \counterwithin*{equation}{section}
 
+% 修改公式标签引用颜色
+\def\eqref#1{{\color{blue}\hypersetup{linkcolor=blue} (\ref{#1}) }}
+% 修改图片标签引用的颜色
+\def\figureref#1{{\color{blue}\hypersetup{linkcolor=blue} (\ref{#1}) }}
+
 \begin{document}
   \tableofcontents
   \newpage
 
-  % \section{导数概念}
-  %   \input{1_derivative_concepts.tex}
-  % \section{函数的求导法则}
-  %   \input{2_derivation_rules.tex}
-  % \section{高阶导数}
-  %   \input{3_higher_derivatives.tex}
-  % \section{隐函数及由参数方程所确定的函数的导数 相关变化率}
-  %   \input{4_implicit_and_parametric_equations_related_rates.tex}
+  \section{导数概念}
+    \input{1_derivative_concepts.tex}
+  \section{函数的求导法则}
+    \input{2_derivation_rules.tex}
+  \section{高阶导数}
+    \input{3_higher_derivatives.tex}
+  \section{隐函数及由参数方程所确定的函数的导数 相关变化率}
+    \input{4_implicit_and_parametric_equations_related_rates.tex}
   \section{函数的微分}
     \input{5_integral_of_function.tex}
 \end{document}
