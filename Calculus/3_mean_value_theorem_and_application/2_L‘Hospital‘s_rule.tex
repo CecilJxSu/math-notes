@@ -1,0 +1,43 @@
+\subsection{洛必达法则}
+\paragraph{}
+如果当$x \to a$（或$x\to \infty$）时，两个函数$f(x)$与$F(x)$都趋于$0$或$\infty$，那么极限$\displaystyle \lim_{\substack{x \to a \\ (x \to \infty)}} \frac{f(x)}{F(x)}$可能存在、也可能不存在。通常把这种极限叫做\uwave{未定式}，并分别简记为$\frac{0}{0}$或$\frac{\infty}{\infty}$。
+
+\paragraph{}
+对于这类极限，即使它存在也不能用“商的极限等于极限的商”这一法则。下面根据柯西中值定理推出这类极限的一种简便且重要的方法。
+
+\subsubsection{定理1}
+\paragraph{}
+\textbf{定理1\;}$x \to a$时的未定式$\frac{0}{0}$的情形，设：
+\begin{enumerate}
+  \item 当$x \to a$时，函数$f(x)$及$F(x)$都趋于零；
+  \item 在点$a$的某去心邻域内，$f'(x)$及$F'(x)$都存在且$F'(x) \neq 0$；
+  \item $\displaystyle \lim_{x \to a}\frac{f'(x)}{F'(x)}$存在（或为$\infty$），
+\end{enumerate}
+那么
+\begin{equation}
+  \lim_{x \to a}\frac{f(x)}{F(x)} = \lim_{x \to a} \frac{f'(x)}{F'(x)}.
+\end{equation}
+
+\paragraph{}
+这种在一定条件下通过分子分母分别求导再求极限来确定未定式的值的方法称为\uwave{洛必达法则}。
+
+\paragraph{}
+\textbf{证\;}因为求$\frac{f(x)}{F(x)}$当$x\to a$时的极限与$f(a)$及$F(a)$无关，所以可以假定$f(a) = F(a) = 0$，于是由条件$1$、$2$知道，$f(x)$及$F(x)$在点$a$的某一邻域内是连续的。设$x$是这邻域内的一点，那么在以$x$及$a$为端点的区间上，柯西中值定理的条件均满足，因此有
+
+\begin{equation}
+  \frac{f(x)}{F(x)} = \frac{f(x) - f(a)}{F(x) - F(a)} = \frac{f'(\xi)}{F'(\xi)} \; \text{（$\xi$在$x$与$a$之间）}.
+\end{equation}
+令$x \to a$，并对上式两端求极限，注意到$x\to a$时$\xi \to a$，再根据条件$3$便得到证明的结论。
+
+\subsubsection{定理2}
+\paragraph{}
+\textbf{定理2\;}$x \to \infty$时的未定式$\frac{\infty}{\infty}$的情形，设：
+\begin{enumerate}
+  \item 当$x \to \infty$时，函数$f(x)$及$F(x)$都趋于零；
+  \item 当$|x|>N$时$f'(x)$与$F'(x)$都存在，且$F'(x) \neq 0$；
+  \item $\displaystyle \lim_{x \to \infty}\frac{f'(x)}{F'(x)}$存在（或为$\infty$），
+\end{enumerate}
+那么
+\begin{equation}
+  \lim_{x\to \infty}\frac{f(x)}{F(x)} = \lim_{x\to \infty}\frac{f'(x)}{F'(x)}.
+\end{equation}
