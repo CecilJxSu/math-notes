@@ -1,0 +1,35 @@
+% 费马引理
+\begin{tikzpicture}[scale = 0.8]
+  \begin{axis}[clip=false,xmin=0, xmax=8,ymin=0,ymax=8, grid=none,
+    xtick=\empty, ytick=\empty, axis lines=middle,
+    smooth, xlabel={$x$}, ylabel={$y$}]
+
+    % 曲线
+    \addplot[draw=red,domain=1:7.283] {sin(deg(x - 1)) + 4};
+
+    % 辅助线
+    \draw [dashed] (1, 0) -- (1, 4);
+    \draw [dashed] (7.283, 0) -- (7.283, 4);
+    \draw [dashed] (2.570, 0) -- (2.570, 5);
+
+    \draw (1.57, 5) -- (3.570, 5);
+    \draw (4.712, 3) -- (6.712, 3);
+
+    \draw (1, 4) -- (7.283, 4);
+
+    % 标识
+    \node [left] at (1,4) {$A$};
+    \node [below] at (1,0) {$a$};
+
+    \node [above] at (2.570,5) {$C$};
+    \node [below] at (2.570,0) {$\xi$};
+
+    \node [below] at (5.712,3) {$D$};
+
+    \node [right] at (7.283,4) {$B$};
+    \node [below] at (7.283,0) {$b$};
+
+    % 原点
+    \node [below left] at (0,0) {$O$};
+  \end{axis}
+\end{tikzpicture}
