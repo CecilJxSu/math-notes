@@ -1,0 +1,175 @@
+\subsection{问题引言}
+\paragraph{}
+对于一些较复杂的函数，为了便于研究，往往希望用一些简单的函数来近似表达。由于多项式表示的函数，只要对自变量进行有限次加、减、乘三种算术运算，便能求出它的函数值来。
+\paragraph{}
+在微分的应用中已经知道，当$|x|$很小时，有如下的近似等式：
+
+\begin{equation}
+  e^x \approx 1 + x, \; \ln{(1+x)} \approx x.
+\end{equation}
+
+显然，在$x=0$处这些一次多项式及其一阶导数的值，分别等于被近似表达的函数及其导数的相应值。
+
+\paragraph{}
+但是这种近似表达式还存在着不足之处：
+\begin{enumerate}
+  \item 首先精确度不高，它所产生的误差仅是关于$x$的高阶无穷小；
+  \item 其次是用它来作近似计算时，不能具体估算出误差大小。
+\end{enumerate}
+因此，对于精确度要求较高且需要估计误差的时候，就必须用高次多项式来近似表达函数，同时给出误差公式。
+
+\subsection{问题提出}
+\paragraph{}
+\textbf{问题\;}设函数$f(x)$在含有$x_0$的开区间内具有直到$(n+1)$阶导数，试找出一个关于$(x - x_0)$的$n$次多项式
+\begin{equation}
+  \label{高阶多项式近似公式}
+  p_n(x) = a_0 + a_1(x-x_0)+a_2(x-x_0)^2+ \cdots + a_n(x-x_0)^n
+\end{equation}
+来近似表达$f(x)$，要求$p_n(x)$与$f(x)$之差是比$(x-x_0)^n$高阶的无穷小，并给出误差$|f(x) - p_n(x)|$的具体表达式。
+
+\subsection{问题讨论}
+\paragraph{}
+假设$p_n(x)$在$x_0$处的函数值及它的直到$n$阶导数在$x_0$处的值依次与 \\ $f(x_0), f'(x_0), \cdots, f^{(n)}(x_0)$相等，即满足
+\begin{gather*}
+  p_n(x_0) = f(x_0), \; p'_n(x_0)=f'(x_0), \\
+  p''_n(x_0) = f''(x_0), \; \cdots, \; p^{(n)}_n(x_0) = f^{(n)}(x_0),
+\end{gather*}
+按这些等式来确定多项式\eqref{高阶多项式近似公式}的系数$a_0,a_1,a_2,\cdots,a_n$。为此，对\eqref{高阶多项式近似公式}式求各阶导数，然后分别代入以上等式，得
+
+\begin{gather*}
+  a_0 = f(x_0), \; 1 \bigcdot a_1 = f'(x_0), \\
+  2!a_2=f''(x_0), \; \cdots, \; n!a_n = f^{(n)}(x_0),
+\end{gather*}
+即得
+\begin{gather*}
+  a_0 = f(x_0), \; a_1 = f'(x_0), \\
+  a_2 = \frac{1}{2!}f''(x_0), \; \cdots, \; a_n = \frac{1}{n!}f^{(n)}(x_0).
+\end{gather*}
+将求得的系数$a_0,a_1,a_2, \cdots, a_n$代入\eqref{高阶多项式近似公式}式，有
+
+\begin{align}
+\begin{split}
+  \label{泰勒多项式}
+  p_n(x) = f(x_0) + f'(x_0)(x-x_0) + \frac{f''(x_0)}{2!}(x-x_0)^2 + \cdots + \\
+   \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n.
+\end{split}
+\end{align}
+
+\subsection{泰勒中值定理}
+\paragraph{}
+\textbf{泰勒中值定理\;}如果函数$f(x)$在含有$x_0$的某个开区间$(a,b)$内具有直到$(n+1)$阶的导数，则对任一$x \in (a,b)$，有
+\begin{align}
+\begin{split}
+  \label{泰勒公式}
+  f(x) = f(x_0) + f'(x_0)(x-x_0)+\frac{f''(x_0)}{2!}(x-x_0)^2 + \cdots + \\
+  \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n + R_n(x),
+\end{split}
+\end{align}
+其中
+\begin{equation}
+  R_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1},
+\end{equation}
+这里$\xi$是$x_0$与$x$之间的某个值。
+
+\paragraph{}
+多项式\eqref{泰勒多项式}称为函数$f(x)$按$(x-x_0)$的幂展开的$n$次\uwave{泰勒多项式}，公式\eqref{泰勒公式}称为$f(x)$按$(x-x_0)$的幂展开的带有拉格朗日型余项的$n$阶\uwave{泰勒公式}，而$R_n(x)$的表达式称为\uwave{拉格朗日型余项}。
+
+\paragraph{}
+当$n=0$时，泰勒公式变成拉格朗日中值公式
+\begin{equation*}
+  f(x) = f(x_0) + f'(\xi)(x-x_0) \; \text{（$\xi$在$x_0$与$x$之间）},
+\end{equation*}
+因此，泰勒中值定理是拉格朗日中值定理的推广。
+
+\paragraph{}
+由泰勒中值定理可知，以多项式$p_n(x)$近似表达函数$f(x)$时，其误差为$|R_n(x)|$。
+
+\subsection{佩亚诺（Peano）型余项}
+\paragraph{}
+如果对于某个固定的$n$，当$x\in (a,b)$时，$|f^{(n+1)}(x)| \leq M$，则有估计式
+
+\begin{equation}
+  \label{佩亚诺型余项误差估计式}
+  |R_n(x)| = \Big|\frac{f^{n+1}(\xi)}{(n+1)!}(x-x_0)^{n+1}\Big| \leq \frac{M}{(n+1)!}|x-x_0|^{n+1}
+\end{equation}
+及
+\begin{equation}
+  \lim_{x\to x_0}\frac{R_n(x)}{(x-x_0)^n} = 0
+\end{equation}
+由此可见，当$x\to x_0$时误差$|R_n(x)|$是比$(x-x_0)^n$高阶的无穷小，即
+
+\begin{equation}
+  \label{佩亚诺型余项}
+  R_n(x) = o[(x-x_n)^n].
+\end{equation}
+这样，我们提出的问题圆满地得到解决。
+
+\paragraph{}
+在不需要余项的精确表达式时，$n$阶泰勒公式也可写成
+\begin{equation}
+  \label{带有佩亚诺型余项的n阶泰勒公式}
+  f(x) = f(x_0) + f'(x_0)(x-x_0)+\cdots+\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n + o[(x-x_0)^n].
+\end{equation}
+$R_n(x)$的表达式\eqref{佩亚诺型余项}称为\uwave{佩亚诺型余项}，公式\eqref{带有佩亚诺型余项的n阶泰勒公式}称为$f(x)$按$(x-x_0)$的幂展开的带有佩亚诺型余项的$n$阶泰勒公式。
+
+\subsection{麦克劳林（Maclaurin）公式}
+\paragraph{}
+在泰勒公式\eqref{泰勒公式}中，如果取$x_0 = 0$，则$\xi$在$0$与$x$之间，因此可以令$\xi=\theta x(0<\theta<1)$，从而泰勒公式变成较简单的形式，即所谓带有拉格朗日型余项的\uwave{麦克劳林公式}
+\begin{align}
+\begin{split}
+  \label{带有拉格朗日型余项的麦克劳林公式}
+  f(x) = f(0) + f'(0)x+\frac{f''(0)}{2!}x^2 + \cdots + \frac{f^{(n)}(0)}{n!}x^n + \\
+  \frac{f^{(n+1)}(\theta x)}{(n+1)!}x^{n+1} \; (0 < \theta < 1).
+\end{split}
+\end{align}
+
+\paragraph{}
+在泰勒公式\eqref{带有佩亚诺型余项的n阶泰勒公式}中，如果取$x_0 = 0$，则有带有佩亚诺型余项的麦克劳林公式
+\begin{equation}
+  \label{带有佩亚诺型余项的麦克劳林公式}
+  f(x) = f(0) + f'(0)x + \cdots + \frac{f^{(n)(0)}}{n!}x^n + o(x^n).
+\end{equation}
+由\eqref{带有拉格朗日型余项的麦克劳林公式}或\eqref{带有佩亚诺型余项的麦克劳林公式}可得近似公式
+\begin{equation}
+  f(x) \approx f(0) + f'(0)x + \frac{f''(0)}{2!}x^2 + \cdots + \frac{f^{(n)}(0)}{n!}x^n.
+\end{equation}
+误差估计式\eqref{佩亚诺型余项误差估计式}相应的变成
+\begin{equation}
+  |R_n(x)| \leq \frac{M}{(n+1)!}|x|^{n+1}.
+\end{equation}
+
+\subsection{例子}
+\paragraph{}
+\textbf{例1\;}写出函数$f(x)=e^x$的带有拉格朗日型余项的$n$阶麦克劳林公式。
+
+\paragraph{}
+\textbf{解\;}因为
+
+\begin{equation*}
+  f'(x)=f''(x)=\cdots=f^{(n)}(x) = e^x,
+\end{equation*}
+所以
+\begin{equation*}
+  f(0)=f'(0)=f''(0)=\cdots=f^{(n)}(0) = 1.
+\end{equation*}
+把这些值代入公式\eqref{带有拉格朗日型余项的麦克劳林公式}，并注意到$f^{(n+1)}(\theta x) = e^{\theta x}$便得
+\begin{equation*}
+  e^x = 1 + x + \frac{x^2}{2!} + \cdots + \frac{x^n}{n!} + \frac{e^{\theta x}}{(n+1)!}x^{n+1} \; (0 < \theta < 1).
+\end{equation*}
+由这个公式可知，若把$e^x$用它的$n$次泰勒多项式表达为
+\begin{equation*}
+  e^x \approx 1 + x + \frac{x^2}{2!} + \cdots + \frac{x^n}{n!},
+\end{equation*}
+这时所产生的误差为
+\begin{equation*}
+  |R_n(x)| = \Big|\frac{e^{\theta x}}{(n+1)!}x^{n+1}\Big| < \frac{e^{|x|}}{(n+1)!}|x|^{n+1} \; (0 < \theta < 1).
+\end{equation*}
+如果取$x=1$，则得无理数$e$的近似式为
+\begin{equation*}
+  e \approx 1 + 1 + \frac{1}{2!} + \cdots + \frac{1}{n!},
+\end{equation*}
+其误差
+\begin{equation*}
+  |R_n| < \frac{e}{(n+1)!} < \frac{3}{(n+1)!}.
+\end{equation*}
+当$n = 10$时，可算出$e\approx2.718 \; 282$，其误差不超过$10^{-6}$。
