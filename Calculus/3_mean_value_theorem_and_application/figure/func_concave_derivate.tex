@@ -1,0 +1,18 @@
+% 函数凹弧一阶、二阶导函数
+\begin{tikzpicture}[scale=0.8]
+  \begin{axis}[clip=false,xmin=0, xmax=6,ymin=-5,ymax=10, grid=none,
+    xtick=\empty, ytick=\empty, axis lines=middle,
+    smooth, xlabel={$x$}, ylabel={$y$}]
+
+    % 一阶导函数
+    \addplot[draw=red,domain=1.3:4.7] {1 - 9 * x^(-2)};
+    % 二阶导函数
+    \addplot[draw=blue,domain=1.3:4.7] {18 * x^(-3)};
+
+    \node [left] at (1.5,-3) {$f'(x)$};
+    \node [left] at (1.5,5.33) {$f''(x)$};
+
+    % 原点
+    \node [below left] at (0,0) {$O$};
+  \end{axis}
+\end{tikzpicture}

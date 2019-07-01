@@ -1,0 +1,98 @@
+\subsection{函数单调性的判定法}
+\paragraph{}
+如果函数$y=f(x)$在$[a,b]$上单调增加（单调减少），那么它的图形是一条沿$x$轴正向上升（下降）的曲线。
+
+\begin{figure}[H]
+\centering
+  %------- 第1行 -------
+  \begin{subfigure}[t]{0.48\linewidth}
+    \centering
+      \input{figure/func_increasing}
+    \subcaption{单调增加}
+  \end{subfigure}
+  \begin{subfigure}[t]{0.48\linewidth}
+    \centering
+      \input{figure/func_decreasing}
+    \subcaption{单调减少}
+  \end{subfigure}
+  \caption{函数单调性}
+  \label{函数单调性}
+\end{figure}
+
+\paragraph{}
+由拉格朗日中值定理和定义可证明：
+
+\paragraph{}
+\textbf{定理1\;}设函数$y=f(x)$在$[a,b]$上连续，在$(a,b)$内可导：
+\begin{enumerate}
+  \item 如果在$(a,b)$内$f'(x) > 0$，那么函数$y=f(x)$在$[a,b]$上单调增加；
+  \item 如果在$(a,b)$内$f'(x) < 0$，那么函数$y=f(x)$在$[a,b]$上单调减少；
+\end{enumerate}
+
+\subsection{曲线的凹凸性与拐点}
+\subsubsection{凹凸性}
+\paragraph{}
+\textbf{定义\;}设$f(x)$在区间$I$上连续，如果对$I$上任意两点$x_1,x_2$恒有
+\begin{equation}
+  f(\frac{x_1+x_2}{2}) < \frac{f(x_1) + f(x_2)}{2},
+\end{equation}
+那么称$f(x)$在$I$上的图形是\uwave{（向上）凹的（或凹弧）}；如果恒有
+\begin{equation}
+  f(\frac{x_1+x_2}{2}) > \frac{f(x_1)+f(x_2)}{2},
+\end{equation}
+那么称$f(x)$在$I$上的图形是\uwave{（向上）凸的（或凸弧）}。
+
+\paragraph{}
+
+\begin{figure}[H]
+\centering
+  %------- 第1行 -------
+  \begin{subfigure}[t]{0.48\linewidth}
+    \centering
+      \input{figure/func_concave}
+    \subcaption{凹弧}
+  \end{subfigure}
+  \begin{subfigure}[t]{0.48\linewidth}
+    \centering
+      \input{figure/func_concave_derivate}
+    \subcaption{一阶和二阶导函数}
+  \end{subfigure}
+  %------- 第2行 -------
+  \begin{subfigure}[t]{0.48\linewidth}
+    \centering
+      \input{figure/func_convex}
+    \subcaption{凸弧}
+  \end{subfigure}
+  \begin{subfigure}[t]{0.48\linewidth}
+    \centering
+      \input{figure/func_convex_derivate}
+    \subcaption{一阶和二阶导函数}
+  \end{subfigure}
+  \caption{函数凹凸性}
+  \label{函数凹凸性}
+\end{figure}
+
+\paragraph{}
+由拉格朗日中值定理和定义可证明：
+
+\paragraph{}
+\textbf{定理2\;}设$f(x)$在$[a,b]$上连续，在$(a,b)$内具有一阶和二阶导数，那么
+\begin{enumerate}
+  \item 若在$(a,b)$内$f''(x) > 0$，则$f(x)$在$[a,b]$上的图形是凹的；
+  \item 若在$(a,b)$内$f''(x) < 0$，则$f(x)$在$[a,b]$上的图形是凸的。
+\end{enumerate}
+
+\subsubsection{拐点}
+\paragraph{}
+设$y=f(x)$在区间$I$上连续，$x_0$是$I$的内点。如果曲线$y=f(x)$在经过点$(x_0,f(x_0))$时，曲线的凹凸性改变了，那么就称点$(x_0,f(x_0))$为这曲线的\uwave{拐点}。
+
+\paragraph{}
+由$f''(x)$的符号可以判定曲线的凹凸性，因此，如果$f''(x)$在$x_0$的左右两侧邻近异号，那么点$(x_0,f(x_0))$就是曲线的一个拐点。
+
+\paragraph{}
+除此之外，$f(x)$的二阶导数不存在的点，也有可能是$f''(x)$的符号发生变化的分界点。因此，找拐点的步骤：
+\begin{enumerate}
+  \item 求$f''(x)$;
+  \item 令$f''(x)=0$，解出这方程在区间$I$内的实根，并求出在区间$I$内$f''(x)$不存在的点；
+  \item 对于$2$中求出的每一个实根或二阶导数不存在的点$x_0$，检查$f''(x)$在$x_0$左、右两侧邻近的符号，当两侧的符号相反时，点$(x_0,f(x_0))$是拐点，当两侧的符号相同时，点$(x_0,f(x_0))$不是拐点。
+\end{enumerate}
