@@ -1,18 +1,18 @@
 % relsize.sty       4.1       Mar 29, 2013
-% 
+%
 % Setting the font size relative to the current size
-% 
+%
 % Authored by Donald Arseneau <asnd@triumf.ca> and Matt Swift <swift@bu.edu>.
 % (Inspired by smaller.sty author Bernie Cosell)
-% 
+%
 % This software is contributed to the public domain by its authors, who disclaim
 % all copyrights. For people and jurisdictions that do not recognize contribution
-% to the public domain, this software is licensed by the terms of the unlicense, 
+% to the public domain, this software is licensed by the terms of the unlicense,
 % <http://unlicense.org/>
 %
 % commands are:
 % \relsize{n}  where n gives the number of steps ("mag-step" = factor of 1.2)
-%              to change the size by;  n = 3 changes from \normalsize to 
+%              to change the size by;  n = 3 changes from \normalsize to
 %              \LARGE size.  Negative n selects smaller fonts. n is an
 %              integer (or half-integer).
 %
@@ -27,11 +27,11 @@
 %
 % The font-size command nearest the requested size will be used, and if
 % the size error is more than \RSpercentTolerance, then the size will
-% be adjusted more precisely using \fontsize.  (The default empty 
-% \RSpercentTolerance signals automatic handling, choosing the tolerance 
+% be adjusted more precisely using \fontsize.  (The default empty
+% \RSpercentTolerance signals automatic handling, choosing the tolerance
 % based on the font declarations.)
 %
-% \mathsmaller{A}, \mathlarger{B}       - math versions 
+% \mathsmaller{A}, \mathlarger{B}       - math versions
 %   (The math versions are entirely different from the text versions.)
 %
 % More comments at the end of this file, and full documentation in
@@ -48,7 +48,7 @@
   % \message{^^JChange \the\@tempcnta\space half-magsteps from \f@size. }%
   % calculate desired target size -> \@tempdimb
   \@tempdimb\f@size\p@
-  \ifnum\@tempcnta<\z@ 
+  \ifnum\@tempcnta<\z@
     \def\@tempa{.912871}\@tempcnta=-\@tempcnta
   \else
     \def\@tempa{1.09545}%
@@ -76,13 +76,15 @@
   % perform automatic tolerance adjustment, if requested
   \ifx\RSpercentTolerance\@empty \rs@autoTol \fi
   % apply limits
-  \ifdim\@tempdimb<\RSsmallest 
-      \rs@size@warning{\the\@tempdimb}{small}{\RSsmallest}%
+  \ifdim\@tempdimb<\RSsmallest
+      %% 不显示字体文字
+      % \rs@size@warning{\the\@tempdimb}{small}{\RSsmallest}%
       \@tempdimb=\RSsmallest
   \fi
-  \ifdim\@tempdimb>\RSlargest 
-      \rs@size@warning{\the\@tempdimb}{large}{\RSlargest}%
-      \@tempdimb=\RSlargest 
+  \ifdim\@tempdimb>\RSlargest
+      %% 不显示字体文字
+      % \rs@size@warning{\the\@tempdimb}{large}{\RSlargest}%
+      \@tempdimb=\RSlargest
   \fi
   % Look up that size in list of pre-defined sizes.  Put error of
   % closest match in \@tempdima
@@ -93,11 +95,11 @@
   \ifdim\@tempdima<\z@ \@tempdima-\@tempdima\fi
   %  ... percentage error in \@tempdima (as a count)
   %  (messiness to prevent numeric overflows)
-  \ifdim\@tempdima<160\p@ \@tempdima 100\@tempdima 
+  \ifdim\@tempdima<160\p@ \@tempdima 100\@tempdima
     \ifdim\@tempdimb>\p@ \divide\@tempdima\@tempdimb \fi
     %\message{or \number\@tempdima \@percentchar. }%
   \fi
-  % if error is beyond tolerance, append \fontsize adjustment.  
+  % if error is beyond tolerance, append \fontsize adjustment.
   \ifnum\@tempdima>\RSpercentTolerance
     %\message{Adjust size to \strip@pt\@tempdimb. }%
     \@tempdima1.2\@tempdimb % baselineskip (could be improved)
@@ -134,7 +136,7 @@
 \def\rs@autoTOL#1>#2-#3\delimiter{%
    \ifx\delimiter#3\delimiter % no -
      \def\RSpercentTolerance{30}%
-   \else % font size def has -, assume it covers continuum 
+   \else % font size def has -, assume it covers continuum
      \def\RSpercentTolerance{5}%
    \fi
    % \message{ Automatic tolerance is \RSpercentTolerance. }%
@@ -158,7 +160,7 @@
 % Default empty definition triggers auto-tolerance.
 % Beware that \providecommand makes \long macro that fails to trigger.
 
-\def\RSpercentTolerance{} 
+\def\RSpercentTolerance{}
 
 % The next two aren't the real initializations!  The real ones are done
 % in \@tempb below.  The user can change them afterwards.
@@ -215,7 +217,7 @@
   \fi
 }
 
-% examine each (expected) pre-defined font size 
+% examine each (expected) pre-defined font size
 \@tempa\normalsize
 \@tempa\small
 \@tempa\footnotesize
@@ -227,10 +229,10 @@
 \@tempa\huge
 \@tempa\Huge
 % moresize.sty
-\@tempa\HUGE  
+\@tempa\HUGE
 \@tempa\ssmall
 % beamer
-\@tempa\Tiny 
+\@tempa\Tiny
 \@tempa\TINY
 % AMS classes
 \@tempa\SMALL
@@ -240,13 +242,13 @@
 
 % Check that we recorded sizes for at least two font-size commands.
 % Value of \RSpercentTolerance is both a setting and a flag
-\ifx\rs@fontsizes\@empty 
+\ifx\rs@fontsizes\@empty
    \def\RSpercentTolerance{0}%
 \else\ifdim\RSsmallest<\RSlargest\else
-   \def\RSpercentTolerance{3}% 
+   \def\RSpercentTolerance{3}%
 \fi\fi
 
-\ifx\RSpercentTolerance\@empty \else 
+\ifx\RSpercentTolerance\@empty \else
 
   \PackageWarningNoLine{relsize}
      {Failed to get list of defined font sizes.\MessageBreak
@@ -280,8 +282,8 @@
   \ifx\@tempa\limits \let\@tempb\rs@collect@one@decor \fi
   \ifx\@tempa\displaylimits \let\@tempb\rs@collect@one@decor \fi
   \ifx\@tempa\nolimits \let\@tempb\rs@collect@one@decor \fi
-  \if\noexpand\@tempa^\let\@tempb\rs@collect@two@decor \fi 
-  \if\noexpand\@tempa_\let\@tempb\rs@collect@two@decor \fi 
+  \if\noexpand\@tempa^\let\@tempb\rs@collect@two@decor \fi
+  \if\noexpand\@tempa_\let\@tempb\rs@collect@two@decor \fi
   \ifx\@tempa\sp \let\@tempb\rs@collect@two@decor \fi
   \ifx\@tempa\sb \let\@tempb\rs@collect@two@decor \fi
   \@tempb}
@@ -346,12 +348,12 @@ These limits are controlled by the commands \RSsmallest and \RSlargest, which
 get set automatically when relsize.sty is loaded, but you can redefine them
 to other length values: \renewcommand\RSlargest{50pt}.
 
-Fine point:  The combination \relsize{n}\relsize{-n} is not guaranteed to 
-restore the current font size! 
+Fine point:  The combination \relsize{n}\relsize{-n} is not guaranteed to
+restore the current font size!
 
 Typically, the font-size commands do not select fonts at regular size
 intervals.  \relsize (and the others) will select, and execute, the command
-for the size closest to the desired size.  Then, if the relative difference 
+for the size closest to the desired size.  Then, if the relative difference
 from the target size is more than \RSpercentTolerance a further font-size
 selection is made.  By default, \RSpercentTolerance is an empty macro, which
 causes automatic selection: "30" (30%) when the current "fontshape" definition
@@ -359,9 +361,9 @@ is composed of only discrete sizes, and "5" when the fontshape definition
 covers ranges of sizes.  The higher setting for discrete fonts ensures
 only the pre-defined sizes get used.  (By default LaTeX uses Computer
 Modern fonts at discrete sizes; you get full coverage of sizes by using
-\usepackage{type1cm} or various other font packages.)  For special uses, 
-or when the font shape definitions are not parsed properly, you can redefine 
-the percent tolerance: 
+\usepackage{type1cm} or various other font packages.)  For special uses,
+or when the font shape definitions are not parsed properly, you can redefine
+the percent tolerance:
 \renewcommand\RSpercentTolerance{10}.
 
 All of the commands described above are text commands; they cannot be used
@@ -372,10 +374,10 @@ set using the commands \displaystyle, \textstyle, \scriptstyle, and
 \scriptscriptstyle [see Lamport, LaTeX/Manual (1st ed, p.54); GMS The LaTeX
 Companion, p.255].  However, the \mathlarger command will also increase the
 size beyond regular \displaystyle by selecting a larger regular font size
-(using \larger).  (Yes, this is a kludge, and doesn't work very well, but 
-it can still be useful.)  If you want to use this to create big integral 
+(using \larger).  (Yes, this is a kludge, and doesn't work very well, but
+it can still be useful.)  If you want to use this to create big integral
 signs, then you must also load the package "exscale" so that math symbols
-can change size.  The sizes selected are: 
+can change size.  The sizes selected are:
 
 Current style       \mathsmaller gives         \mathlarger gives
 ---------------     ----------------------     ------------------------
@@ -384,13 +386,13 @@ Current style       \mathsmaller gives         \mathlarger gives
 \scriptstyle        \scriptscriptstyle         \textstyle
 \scriptscriptstyle  \scriptscriptstyle (same)  \scriptstyle
 
-These commands will attempt to attach superscripts and subscripts to the 
-symbol as if the symbol were used alone, but math accents and the math 
+These commands will attempt to attach superscripts and subscripts to the
+symbol as if the symbol were used alone, but math accents and the math
 spacing behave as if the symbol is enclosed in braces (which it is).
 Operators should be explicitly declared to use the right operator
 type (\mathrel, \mathbin, \mathop) to get the correct spacing.
 
-Due to their oddities, the math larger/smaller commands should not be 
+Due to their oddities, the math larger/smaller commands should not be
 trusted blindly, and they will not be useful in every instance.
 
 

@@ -2,13 +2,13 @@
 %
 % arcs.dtx
 % Copyright 2004 Gianfranco Boggio-Togna
-% 
+%
 % This program may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either version~1.2
 % of this license or (at your option) any later version.
 % The latest version of this license is in
 % http://www.latex-project.org/lppl.txt
-% and version 1.2 or later is part of all distributions of LaTeX  
+% and version 1.2 or later is part of all distributions of LaTeX
 % version 1999/12/01 or later.
 %
 % This program consists of the files arcs.dtx and arcs.ins
@@ -42,7 +42,7 @@
 % \date{}
 % \maketitle
 % \vspace{6ex}
-% The package provides two commands for placing an arc over or under 
+% The package provides two commands for placing an arc over or under
 % a short (up to three letters) piece of text.  The commands generate an
 % |\hbox| and can be used in math formulas
 % (see \textit{The \TeX{}book}, p.\,151).
@@ -52,7 +52,7 @@
 %
 % The size of the arc is chosen so that it embraces all the text. In
 % some cases, you may wish to use a smaller or larger size. An
-% optional argument can specify a factor which 
+% optional argument can specify a factor which
 % is multiplied by the width of the text: the size of the symbol is then
 % chosen as if the text had that width. Keep in mind, however, that only
 % a limited range of sizes is available in the Computer Modern fonts.
@@ -61,12 +61,12 @@
 % \noindent \copyright\ Copyright 2004 Gianfranco Boggio\,--Togna.\par
 % This program may be distributed and/or modified under the
 % conditions of the \LaTeX{} Project Public License, either version~1.2
-% of this license or (at your option) any later version. 
-% The latest version of this license is in  
-% \texttt{http://www.latex-project.org/lppl.txt} 
-% and version 1.2 or later is part of all distributions of \LaTeX{} 
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+% \texttt{http://www.latex-project.org/lppl.txt}
+% and version 1.2 or later is part of all distributions of \LaTeX{}
 % version 1999/12/01 or later.\par
-% This program consists of the files \texttt{arcs.dtx} and 
+% This program consists of the files \texttt{arcs.dtx} and
 % \texttt{arcs.ins}
 % }
 % \newpage
@@ -75,7 +75,10 @@
 %    \begin{macrocode}
 \NeedsTeXFormat {LaTeX2e}[2003/12/01]
 \ProvidesPackage {arcs}[2004/05/09]
-\RequirePackage {relsize}
+%% \RequirePackage {relsize}
+%% 移除 warning 提示，以及使用自己修复的 relsize 包，避免输出错误字体大小文字
+\RequirePackage {fix-cm}
+\RequirePackage {./package/relsize/relsize}
 \newcommand{\overarc}[2][1]{\over@under@arc{#1}{#2}\z@}
 \newcommand{\underarc}[2][1]{\over@under@arc{#1}{#2}\@ne}
 \newcommand{\over@under@arc}[3]{%
@@ -83,11 +86,11 @@
   \hbox {%
     \setbox\z@ = \hbox {#2}%
     \ifdim \ht\z@ = \z@ %      arc over/under space
-      \ifdim \dp\z@ = \z@ 
+      \ifdim \dp\z@ = \z@
         \ht\z@ = 1ex\relax
       \fi
     \fi
-    \dimen@ = #1\wd\z@ 
+    \dimen@ = #1\wd\z@
     \begingroup
     \let \rs@size@warning = \@gobbletwo
     \relsize{-10}%
@@ -102,11 +105,11 @@
         \fontshape{it}\fontsize{\ssf@size}{\skip@}\selectfont
         \global \setbox\@ne = \hbox {%
            \hss\symbol{"5\ifnum #3=\z@ F\else E\fi}\hss}%
-        \ifdim \wd\@ne < \dimen@ 
+        \ifdim \wd\@ne < \dimen@
           \fontsize{\sf@size}{\skip@}\selectfont
           \global \setbox\@ne = \hbox {%
              \hss\symbol{"5\ifnum #3=\z@ F\else E\fi}\hss}%
-          \ifdim \wd\@ne < \dimen@ 
+          \ifdim \wd\@ne < \dimen@
             \fontsize{\tf@size}{\skip@}\selectfont
             \global \setbox\@ne = \hbox {%
               \hss\symbol{"5\ifnum #3=\z@ F\else E\fi}\hss}%
@@ -114,32 +117,32 @@
         \fi
         $%
       \fi
-      \ifdim \wd\@ne < \dimen@ 
+      \ifdim \wd\@ne < \dimen@
         \relsize{+1}%
       \fi
       \global \dimen@i = \fontdimen5\the\font
     }%
     \endgroup
     \ifnum #3 = \z@
-      \dimen@ii = 1.067\ht\z@ 
+      \dimen@ii = 1.067\ht\z@
       \global \divide \dimen@i by \tw@
       \global \advance \dimen@i by -\ht\@ne
       \advance \dimen@ii by .6\dimen@i
     \else
       \dimen@ii = -1.05\ht\@ne
       \advance \dimen@ii by -.75pt
-      \ifdim \dp\z@ > \z@ 
-        \advance \dimen@ii by -\dp\z@ 
+      \ifdim \dp\z@ > \z@
+        \advance \dimen@ii by -\dp\z@
       \fi
     \fi
-    \copy\z@ 
-    \dimen@ = \wd\z@ 
-    \advance \dimen@ by \wd\@ne 
-    \kern -.5\dimen@ 
+    \copy\z@
+    \dimen@ = \wd\z@
+    \advance \dimen@ by \wd\@ne
+    \kern -.5\dimen@
     \raisebox {\dimen@ii}[\z@][\z@]{\copy\@ne}%
-    \dimen@ = \wd\z@ 
-    \advance \dimen@ by -\wd\@ne 
-    \dimen@ = .5\dimen@ 
+    \dimen@ = \wd\z@
+    \advance \dimen@ by -\wd\@ne
+    \dimen@ = .5\dimen@
     \kern \dimen@
   }%
 }
