@@ -1,0 +1,41 @@
+% 曲率，例子 2
+\begin{tikzpicture}[scale=0.8]
+  \begin{axis}[clip=false,xmin=-3, xmax=3,ymin=-3,ymax=3, grid=none,
+    xtick=\empty, ytick=\empty, axis lines=none, smooth]
+
+    % y = 1.732 * x
+    % y = -1.732 * x
+    \draw [-Latex] (-0.8,-1.386) -- (2,3.464);
+    \draw [-Latex] (-2,3.464) -- (0.8,-1.386);
+
+    % -------------------------------------------------
+    % 辅助线
+    % \addplot[draw=blue,domain=-2.5:-0.5] {1.732 * x + 6};
+    % \addplot[draw=blue,domain=0.5:2.5] {3 * x - 2};
+
+    % 曲线 M1M2
+    \draw [red] (-1.48,3.44) to [out=-130,in=130] (-1.5,2.598);
+    \draw [red] (-1.5,2.598) to [out=-60,in=-130] (1.5,2.598);
+    \draw [red] (1.5,2.598) to [out=60,in=-108.43] (1.75,3.25);
+
+    % -------------------------------------------------
+    % 辅助线
+    % \addplot[draw=red,domain=-1.5:0] {1.732 * x + 3};
+    % \addplot[draw=red,domain=0:1.5] {3 * x - 1.2};
+
+    % 曲线 N1N2
+    \draw [blue] (-0.78,1.65) to [out=-130,in=130] (-0.8,1.386);
+    \draw [blue] (-0.8,1.386) to [out=-60,in=-130] (0.8,1.386);
+    \draw [blue] (0.8,1.386) to [out=60,in=-108.43] (1.05,1.95);
+
+    \node [left] at (-1.5,2.598) {$M_1$};
+    \node [right] at (1.5,2.5988) {$M_2$};
+    \node [left] at (-0.8,1.386) {$N_1$};
+    \node [right] at (0.8,1.386) {$N_2$};
+
+    % 倾角
+    \draw [domain=-60:60] plot ({0.3*cos(\x)}, {0.3*sin(\x)});
+    \node [right] at (0.3,0) {$\varphi$};
+
+  \end{axis}
+\end{tikzpicture}

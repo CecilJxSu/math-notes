@@ -1,0 +1,43 @@
+% 曲率概念
+\begin{tikzpicture}[scale=1]
+  \begin{axis}[clip=false,xmin=0, xmax=8,ymin=0,ymax=8, grid=none,
+    xtick=\empty, ytick=\empty, axis lines=middle,
+    smooth, xlabel={$x$}, ylabel={$y$}]
+
+    % 曲线 C
+    % y' = 0.5*(x-3)
+    \addplot[draw=red,domain=1:7] {(x-3)^2/4 + 2};
+
+    % 弧段
+    \node [above] at (3.25,2.02) {$s$};
+    \node [left] at (5.5,3.56) {$\Delta s$};
+
+    % 切线
+    % y = 0.75 * x - 0.815
+    \draw [-Latex] (1.125,0) -- (4.5,2.56) -- (7,4.434);
+    % y = 1.5 * x - 4.75
+    \draw [-Latex] (3.17,0) -- (6,4.25) -- (7,5.75);
+
+    % 标记
+    \node [left] at (7,6) {$C$};
+    \node [above] at (2,2.25) {$M_0$};
+    \draw [fill] (2,2.25) circle [radius=0.05];
+    \node [above left] at (4.5,2.56) {$M$};
+    \draw [fill] (4.5,2.56) circle [radius=0.05];
+    \node [above left] at (6,4.25) {$M'$};
+    \draw [fill] (6,4.25) circle [radius=0.05];
+
+    % 倾角
+    \draw [domain=0:36.88] plot ({1.086 + 0.5*cos(\x)}, {0.5*sin(\x)});
+    \node [above right] at (1.586,0) {$\alpha$};
+
+    \draw [domain=0:56.6] plot ({3.17 + 0.5*cos(\x)}, {0.5*sin(\x)});
+    \node [above right] at (3.67,0) {$\alpha + \Delta\alpha$};
+
+    \draw [domain=36.88:56.6] plot ({5.25 + 1.1 * cos(\x)}, {3.12 + 1.1 * sin(\x)});
+    \node [above right,rotate=45] at (6.4,3.9) {$\Delta\alpha$};
+
+    % 原点
+    \node [below left] at (0,0) {$O$};
+  \end{axis}
+\end{tikzpicture}

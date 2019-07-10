@@ -1,0 +1,159 @@
+\subsection{弧微分}
+\paragraph{}
+设函数$f(x)$在区间$(a,b)$内具有连续导数。在曲线$y=f(x)$上取固定点$M_0(x_0,y_0)$作为度量弧长的基点，并规定依$x$增大的方向作为曲线的正向。对曲线上任一点$M(x,y)$，规定有向弧段$\overarc{M_0M}$的值$s$（简称为弧$s$）；$s$的绝对值等于这弧段的长度，当有向弧段$\overarc{M_0M}$的方向与曲线的正向一致时$s>0$，相反时$s<0$。显然，弧$s$与$x$存在函数关系：$s=s(x)$，而且$s(x)$是$x$的单调增加函数。下面求$s(x)$的导数及微分。
+
+\paragraph{}
+
+\begin{figure}[H]
+\centering
+  \input{figure/differential_of_arc}
+  \caption{弧微分}
+  \label{弧微分}
+\end{figure}
+
+\paragraph{}
+\textbf{推导\;}设$x, x+\Delta x$为$(a,b)$内两个邻近的点，它们在曲线$y=f(x)$上的对应点为$M, M'$（图\figureref{弧微分}），并设对应于$x$的增量$\Delta x$，弧$s$的增量为$\Delta s$，那么
+
+\begin{equation}
+  \Delta s = \overarc{M_0M'} - \overarc{M_0M} = \overarc{MM'}.
+\end{equation}
+
+于是
+\begin{align}
+\begin{split}
+  \big(\frac{\Delta s}{\Delta x}\big)^2 = \big(\frac{\overarc{MM'}}{\Delta x}\big)^2 =&\; \big(\frac{\overarc{MM'}}{|MM'|}\big)^2 \bigcdot \frac{|MM'|^2}{(\Delta x)^2} \\
+  =&\; \big(\frac{\overarc{MM'}}{|MM'|}\big)^2 \bigcdot \frac{(\Delta x)^2+(\Delta y)^2}{(\Delta x)^2} \\
+  =&\; \big(\frac{\overarc{MM'}}{|MM'|}\big)^2\big[1+\big(\frac{\Delta y}{\Delta x}\big)^2\big],
+\end{split}
+\end{align}
+得
+\begin{equation}
+  \frac{\Delta s}{\Delta x} = \pm \sqrt{\rule{0pt}{5ex} \big(\frac{\overarc{MM'}}{|MM'|}\big)^2\big[1+\big(\frac{\Delta y}{\Delta x}\big)^2\big]}.
+\end{equation}
+令$\Delta x \to 0$取极限，由于$\Delta x \to 0$时，$M' \to M$，这时弧的长度与弦的长度之比的极限等于$1$，即
+
+\begin{equation}
+  \lim_{M'\to M}\frac{\overarc{MM'}}{|MM'|}=1,
+\end{equation}
+又
+\begin{equation}
+  \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = y',
+\end{equation}
+因此得
+\begin{equation}
+  \frac{ds}{dx} = \pm \sqrt{1+y'^2}.
+\end{equation}
+由于$s=s(x)$是单调增加函数，从而根号前应取正号，于是有
+\begin{equation}
+  \label{弧微分公式}
+  ds=\sqrt{1+y'^2}dx.
+\end{equation}
+这就是\uwave{弧微分公式}。
+
+\subsection{曲率及其计算公式}
+\paragraph{}
+研究曲线的弯曲程度。曲线弧的弯曲程度与\uwave{切线转过的角度{$\varphi$}}和\uwave{弧段的长度}有关。
+
+\begin{figure}[H]
+\centering
+  %------- 第1行 -------
+  \begin{subfigure}[t]{0.45\linewidth}
+    \centering
+      \input{figure/curvature_exam1}
+      \subcaption{切线转过的角度$\varphi$不同}
+      \label{curvature_exam1}
+  \end{subfigure}
+  \begin{subfigure}[t]{0.45\linewidth}
+    \centering
+      \input{figure/curvature_exam2}
+      \subcaption{角度$\varphi$相同，长度不同}
+      \label{curvature_exam2}
+  \end{subfigure}
+  \caption{曲线弧的弯曲程度}
+  \label{曲线弧的弯曲程度}
+\end{figure}
+
+\subsubsection{曲率概念}
+\paragraph{}
+设曲线$C$是光滑的，在曲线$C$上选定一点$M_0$作为度量弧$s$的基点。设曲线上点$M$对应于弧$s$，在点$M$处切线的倾角为$\alpha$，曲线上另外一点$M'$对应于弧$s+\Delta s$，在点$M'$处切线的倾角为$\alpha+\Delta\alpha$，那么弧段$\overarc{MM'}$的长度为$|\Delta s|$，当动点从$M$移动到$M'$时切线转过的角度为$|\Delta\alpha|$。
+
+\paragraph{}
+我们用比值$\displaystyle \big|\frac{\Delta\alpha}{\Delta s}\big|$，即单位弧段上切线转过的角度的大小来表达弧段$\overarc{MM'}$的平均弯曲程度，把这比值叫做弧段$\overarc{MM'}$的\uwave{平均曲率}，并记作$\overline{K}$，即
+
+\begin{equation}
+  \overline{K} = \big|\frac{\Delta\alpha}{\Delta s}\big|.
+\end{equation}
+
+\begin{figure}[H]
+\centering
+  \input{figure/curvature_concept}
+  \caption{曲率概念}
+  \label{曲率概念}
+\end{figure}
+
+\paragraph{}
+类似于从平均速度引进瞬时速度的方法，当$\Delta s \to 0$时（即$M' \to M$时），上述平均曲率的极限叫做曲线$C$在点$M$处的\uwave{曲率}，记作$K$，即
+
+\begin{equation}
+  K = \lim_{\Delta s \to 0}\big|\frac{\Delta\alpha}{\Delta s}\big|.
+\end{equation}
+
+在$\displaystyle\lim_{\Delta s \to 0}\frac{\Delta\alpha}{\Delta s}=\frac{d\alpha}{ds}$存在的条件下，$K$也可以表示为
+\begin{equation}
+  \label{曲率的定义式}
+  K = \big|\frac{d\alpha}{ds}\big|.
+\end{equation}
+
+\paragraph{}
+直线的切线与本身重合，切线的倾角$\alpha$不变，曲率为$K=0$。半径为$a$的圆，其曲率为$\displaystyle K=\frac{1}{a}$。
+
+\subsubsection{直角坐标方程的曲率计算推导}
+\paragraph{}
+在一般情况下，我们根据\eqref{曲率的定义式}式来导出便于实际计算曲率的公式。
+\paragraph{}
+设曲线的直角坐标方程是$y=f(x)$，且$f(x)$具有二阶导数（这时$f'(x)$连续，从而曲线是光滑的）。因为$\tan\alpha=y'$，所以
+
+\begin{align}
+\begin{split}
+  y'' =&\; (y')' \\
+      =&\; (\tan\alpha)' \quad \text{（复合函数求导法则）} \\
+      =&\; \sec^2\alpha \bigcdot (\alpha)' \\
+     =&\; \sec^2\alpha \bigcdot \frac{\Delta\alpha}{\Delta x},
+\end{split}
+\end{align}
+又因为
+\begin{equation}
+  \tan^2\alpha + 1 = \sec^2\alpha,
+\end{equation}
+所以
+\begin{equation}
+  \frac{d\alpha}{dx} = \frac{y''}{1+\tan^2\alpha}=\frac{y''}{1+y'^2},
+\end{equation}
+于是
+\begin{equation}
+  d\alpha=\frac{y''}{1+y'^2}dx.
+\end{equation}
+又由\eqref{弧微分公式}知道
+\begin{equation}
+  ds = \sqrt{1+y'^2}dx.
+\end{equation}
+从而，根据曲率$K$的表达式\eqref{曲率的定义式}，有
+\begin{equation}
+  \label{直角坐标方程的曲率计算公式}
+  K = \frac{|y''|}{(1+y'^2)^{3/2}}.
+\end{equation}
+
+\subsubsection{参数方程的曲率计算推导}
+\paragraph{}
+设曲线由参数方程
+\begin{equation}
+  \left\{\begin{array}{l}
+    x=\varphi(t), \\
+    y=\psi(t)
+  \end{array} \right.
+\end{equation}
+给出，则可利用由参数方程所确定的函数的求导法，求出$y'_x$及$y''_x$，代入\eqref{直角坐标方程的曲率计算公式}便得
+
+\begin{equation}
+  K=\frac{|\varphi'(t)\psi''(t)-\varphi''(t)\psi'(t)|}{[\varphi'^2(t)+\psi'^2(t)]^{3/2}}.
+\end{equation}

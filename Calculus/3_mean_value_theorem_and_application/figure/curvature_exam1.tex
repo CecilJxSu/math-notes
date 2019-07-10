@@ -1,0 +1,32 @@
+% 曲率，例子 1
+\begin{tikzpicture}[scale=1]
+  \begin{axis}[clip=false,xmin=0, xmax=6,ymin=0,ymax=6, grid=none,
+    xtick=\empty, ytick=\empty, axis lines=none, smooth]
+
+    % 曲线
+    \addplot[draw=red,domain=1.3:4] {-(x - 3)^2 + 4.5};
+
+    % 导数
+    % y' = -2*(x-3)
+
+    % 切线1：y = 3.4 * x - 2.81
+    \draw [-Latex] (1.3,1.61) -- (2.5,5.69);
+    % 切线2：y = x + 1.75
+    \draw [-Latex] (1.9,3.65) -- (2.5,4.25) -- (4,5.75);
+    % 切线3：y = -x + 7.75
+    \draw [-Latex] (3,4.75) -- (3.5,4.25) -- (4.5,3.25);
+
+    % 标记
+    \node [right,inner sep=0.5] at (1.3,1.61) {$M_1$};
+    \node [below right,inner sep=0.5] at (2.5,4.25) {$M_2$};
+    \node [below,inner sep=0.5] at (3.5,4.25) {$M_3$};
+
+    % 倾角
+    \draw [domain=45:72] plot ({1.9+0.6*cos(\x)}, {3.65+0.6*sin(\x)});
+    \node [right] at (2.1,4.4) {$\varphi_1$};
+
+    \draw [domain=-45:45] plot ({3+0.6*cos(\x)}, {4.75+0.6*sin(\x)});
+    \node [right] at (3.6,4.8) {$\varphi_2$};
+
+  \end{axis}
+\end{tikzpicture}
