@@ -1,0 +1,34 @@
+% 切线法的 4 种不同情形
+\begin{tikzpicture}[scale=0.8]
+  \begin{axis}[clip=false,xmin=0, xmax=8,ymin=-4,ymax=4, grid=none,
+    xtick=\empty, ytick=\empty, axis lines=middle,
+    smooth, xlabel={$x$}, ylabel={$y$}]
+
+    % y' = -20*(x+1)^-2
+    \addplot[draw=red,domain=1.5:6] {20/(x+1) - 5};
+
+    % 实根
+    \node [above] at (3,0) {$\xi$};
+
+    % A
+    \draw [dashed] (1.5,3) -- (1.5,0);
+    \draw [fill] (1.5,3) circle [radius=0.05];
+    \node [left] at (1.5,3) {$A$};
+    \node [below] at (1.5,0) {$a$};
+
+    \node [below right] at (1.8,3) {$y=f(x)$};
+
+    % 切线
+    \addplot[domain=1.5:2.44] {-3.2*x + 7.8};
+    \node [below] at (2.44,0) {$x_1$};
+
+    % B
+    \draw [dashed] (6,-2.14) -- (6,0);
+    \draw [fill] (6,-2.14) circle [radius=0.05];
+    \node [right] at (6,-2.14) {$B$};
+    \node [above] at (6,0) {$b$};
+
+    % 原点
+    \node [left] at (0,0) {$O$};
+  \end{axis}
+\end{tikzpicture}

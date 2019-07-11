@@ -1,0 +1,63 @@
+\subsection{方程的近似解}
+\paragraph{}
+求解高次代数方程或其它类型的方程的问题。求得这类方程的实根的精确值，比较困难，因此，可以寻求方程的近似解。
+
+\begin{enumerate}
+  \item 确定根的大致范围，确定一个区间$[a,b]$，使所求的根位于这区间内。这一步工作称为\uwave{根的隔离}，区间$[a,b]$称为所求实根的\uwave{隔离区间}。
+  \item 以根的隔离区间的端点作为根的初始近似值，逐步逼近精确值，或在精确度范围内的值。
+\end{enumerate}
+
+\subsubsection{二分法}
+\paragraph{}
+设$f(x)$在区间$[a,b]$上连续，$f(a)\bigcdot f(b) < 0$，且方程$f(x)=0$在$(a,b)$内仅有一个实根$\xi$，于是$[a,b]$即是这个根的一个隔离区间。
+
+\paragraph{}
+取$[a,b]$的中点$\displaystyle \xi_1 = \frac{a+b}{2}$，计算$f(\xi_1)$，然后不断缩小隔离区间的范围，不断计算中点$\xi_1$直到$f(\xi_1)=0$或在精确度之内$f(\xi_1) - 0 < \varepsilon$
+
+\subsubsection{切线法}
+\paragraph{}
+用曲线弧一端的切线来代替曲线弧，从而求出方程实根的近似值。这种方法叫做\uwave{切线法}。端点的选取根据下面$4$种情况。
+\begin{figure}[H]
+\centering
+  %------- 第1行 -------
+  \begin{subfigure}[t]{0.45\linewidth}
+    \centering
+      \input{figure/approximation_1}
+      \subcaption{$f(a)<0,f(b)>0$\newline$f'(x)>0,f''(x)>0$}
+  \end{subfigure}
+  \begin{subfigure}[t]{0.45\linewidth}
+    \centering
+      \input{figure/approximation_2}
+      \subcaption{$f(a)>0,f(b)<0$\newline$f'(x)<0,f''(x)>0$}
+  \end{subfigure}
+  %------- 第2行 -------
+  \begin{subfigure}[t]{0.45\linewidth}
+    \centering
+      \input{figure/approximation_3}
+      \subcaption{$f(a)<0,f(b)>0$\newline$f'(x)>0,f''(x)<0$}
+  \end{subfigure}
+  \begin{subfigure}[t]{0.45\linewidth}
+    \centering
+      \input{figure/approximation_4}
+      \subcaption{$f(a)>0,f(b)<0$\newline$f'(x)<0,f''(x)<0$}
+  \end{subfigure}
+
+  \caption{切线的$4$种不同情形}
+  \label{切线的4种不同情形}
+\end{figure}
+
+\paragraph{}
+假设选取端点为$a$的情形，令$x_0 = a$，在端点$(x_0,f(x_0))$作切线，这切线的方程为
+\begin{equation*}
+  y - f(x_0) = f'(x_0)(x-x_0)
+\end{equation*}
+令$y=0$，可以解出$x_1$为
+\begin{equation*}
+  x_1 = x_0 - \frac{f(x_0)}{f'(x_0)}
+\end{equation*}
+
+\paragraph{}
+然后继续在点$(x_1,f(x_1))$作切线，直到逼近$\xi$，一般的，在点$(x_{n-1},f(x_{n-1}))$作切线，得根的近似值
+\begin{equation}
+  x_n = x_{n-1} - \frac{f(x_{n-1})}{f'(x_{n-1})}.
+\end{equation}
