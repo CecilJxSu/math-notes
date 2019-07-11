@@ -177,3 +177,23 @@
 \begin{equation}
   \rho=\frac{1}{K}, \; K = \frac{1}{\rho}.
 \end{equation}
+
+\subsection{曲率中心的计算公式 渐屈线与渐伸线}
+\paragraph{}
+当点$(x,f(x))$沿曲线$C$移动时，相应的曲率中心$D$的轨迹曲线$G$称为曲线$C$的\uwave{渐屈线}，而曲线$C$称为曲线$G$的\uwave{渐伸线}。所以曲线$y=f(x)$的渐屈线的参数方程为：
+
+\begin{equation}
+  \left\{\begin{array}{l}
+    \alpha = x - \frac{y'(1+y'^2)}{y''} \\
+    \beta = y + \frac{1+y'^2}{y''}
+  \end{array} \right.
+\end{equation}
+其中$y=f(x), y'=f'(x),y''=f''(x), x$为参数，直角坐标系$\alpha O \beta$与$xOy$坐标系重合。
+
+\begin{figure}[H]
+\centering
+  % involute aka evolvent
+  \input{figure/evolute_and_involute}
+  \caption{渐屈线和渐伸线}
+  \label{渐屈线和渐伸线}
+\end{figure}
