@@ -1,0 +1,72 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{pgfplots}
+% figure[H] float
+\usepackage{float}
+% subfigure
+\usepackage{subcaption}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{setspace}
+% 字体底部样式：下划线、波浪线等
+\usepackage{ulem}
+% 修改公式编号
+\usepackage{chngcntr}
+
+% make cdot thicker，比 cdot 更粗的圆点
+\makeatletter
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+% 设置行间距 1.5 倍
+\renewcommand{\baselinestretch}{1.5}
+% 自定义图片的标题：Figure -> 图
+\renewcommand{\figurename}{图}
+% 自定义表格的标题：Table -> 表
+\renewcommand{\tablename}{表}
+
+% 设置页大小和页边距，或者scale=0.8
+\geometry{a4paper,left=3.18cm,right=3.18cm,top=2.54cm,bottom=2.54cm}
+% 兼容
+\pgfplotsset{compat=1.16}
+% 中文默认没有斜体和粗体格式，开启伪斜体和指定黑体；
+\setCJKmainfont[AutoFakeSlant, BoldFont=SimHei]{SimSun}
+\usetikzlibrary{positioning}
+% area of hatch，面积阴影部分
+\usetikzlibrary{patterns}
+% 箭头类型
+\usetikzlibrary{arrows.meta}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+% 定义amsmath arccot
+\DeclareMathOperator{\arccot}{arccot}
+% 每个章节后，重置公式编号
+\counterwithin*{equation}{section}
+
+% 修改公式标签引用颜色
+\def\eqref#1{{\color{blue}\hypersetup{linkcolor=blue} (\ref{#1}) }}
+% 修改图片标签引用的颜色
+\def\figureref#1{{\color{blue}\hypersetup{linkcolor=blue} (\ref{#1}) }}
+
+\begin{document}
+  \tableofcontents
+  \newpage
+
+  \section{不定积分}
+    \input{1_concept_and_property}
+    \input{2_integration_by_substitution}
+    \input{3_integration_by_parts}
+    \input{4_integration_of_rational_function}
+    \input{5_integral_table}
+\end{document}

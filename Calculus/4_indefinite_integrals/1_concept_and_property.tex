@@ -1,0 +1,77 @@
+\subsection{不定积分的概念与性质}
+\subsubsection{原函数与不定积分的概念}
+\paragraph{}
+\textbf{定义1\;}如果在区间$I$上，可导函数$F(x)$的导函数为$f(x)$，即对任一$x\in I$，都有
+\begin{equation}
+  F'(x) = f(x) \;\textbf{或}\; dF(x) = f(x)dx,
+\end{equation}
+那么函数$F(x)$就称为$f(x)$（或$f(x)dx$）在区间$I$上的\uwave{原函数}。
+
+\paragraph{}
+\textbf{原函数存在定理\;}如果函数$f(x)$在区间$I$上连续，那么在区间$I$上存在可导函数$F(x)$，使对任一$x\in I$都有
+\begin{equation*}
+  F'(x) = f(x).
+\end{equation*}
+即\textbf{连续函数一定有原函数}。
+
+\paragraph{}
+\textbf{定义2\;}在区间$I$上，函数$f(x)$的带有任意常数项的原函数称为$f(x)$（或$f(x)dx$）在区间$I$上的\uwave{不定积分}，记作
+\begin{equation}
+  \int{f(x)dx},
+\end{equation}
+其中记号$\int$称为\uwave{积分号}，$f(x)$称为\uwave{被积函数}，$f(x)dx$称为\uwave{被积表达式}，$x$称为\uwave{积分变量}。
+
+\paragraph{}
+由此定义及前面的说明可知，如果$F(x)$是$f(x)$在区间$I$上的一个原函数，那么$F(x)+C$就是$f(x)$的不定积分，即
+\begin{equation}
+  \int{f(x)dx} = F(x) + C.
+\end{equation}
+因而不定积分$\int{f(x)dx}$可以表示$f(x)$的任意一个原函数。
+
+\subsubsection{基本积分表}
+\paragraph{}
+
+\bgroup
+\def\arraystretch{3}
+\setlength\tabcolsep{0.8cm}
+\begin{table}[H]
+\centering
+  \caption{基本积分表}
+  \begin{tabular}{l|l}
+    \hline
+    $\displaystyle\int{kdx}=kx+C(k\text{是常数})$ &
+    $\displaystyle\int{x^\mu dx}=\frac{x^{\mu+1}}{\mu+1} + C(\mu \neq -1)$ \\
+    \hline
+    $\displaystyle\int{\frac{dx}{x}} = \ln{|x|} + C$ &
+    $\displaystyle\int{\frac{dx}{1+x^2}} = \arctan{x} + C$ \\
+    \hline
+    $\displaystyle\int{\frac{dx}{\sqrt{1-x^2}}} = \arcsin{x} + C$ &
+    $\displaystyle\int{\cos{x}dx} = \sin{x} + C$ \\
+    \hline
+    $\displaystyle\int{\sin{x}dx} = -\cos{x} + C$ &
+    $\displaystyle\int{\frac{dx}{\cos^2x}} = \int{\sec^2xdx} = \tan{x} + C$ \\
+    \hline
+    $\displaystyle\int{\frac{dx}{\sin^2x}} = \int{\csc^2xdx} = -\cot{x} + C$ &
+    $\displaystyle\int{\sec{x}\tan{x}dx} = \sec{x} + C$ \\
+    \hline
+    $\displaystyle\int{\csc{x}\cot{x}dx} = -\csc{x} + C$ &
+    $\displaystyle\int{e^xdx} = e^x + C$ \\
+    \hline
+    $\displaystyle\int{a^xdx} = \frac{a^x}{\ln{a}} + C$ & \\
+    \hline
+  \end{tabular}
+\end{table}
+\egroup
+
+\subsubsection{不定积分的性质}
+\paragraph{}
+\textbf{性质1\;}设函数$f(x)$及$g(x)$的原函数存在，则
+\begin{equation}
+  \int{[f(x)+g(x)]dx} = \int{f(x)dx} + \int{g(x)}dx.
+\end{equation}
+
+\paragraph{}
+\textbf{性质2\;}设函数$f(x)$的原函数存在，$k$为非零常数，则
+\begin{equation}
+  \int{kf(x)dx}=k\int{f(x)dx}.
+\end{equation}
