@@ -27,6 +27,8 @@
 \renewcommand{\baselinestretch}{1.5}
 % 自定义图片的标题：Figure -> 图
 \renewcommand{\figurename}{图}
+% 自定义表格的标题：Table -> 表
+\renewcommand{\tablename}{表}
 
 % 设置页大小和页边距，或者scale=0.8
 \geometry{a4paper,left=3.18cm,right=3.18cm,top=2.54cm,bottom=2.54cm}
@@ -47,8 +49,10 @@
     linkcolor=black,
     urlcolor=black
 }
-% 定义amsmath arccot
+% 定义amsmath arccot, ch, sh
 \DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\sh}{sh}
 % 每个章节后，重置公式编号
 \counterwithin*{equation}{section}
 
@@ -56,11 +60,17 @@
 \def\eqref#1{{\color{blue}\hypersetup{linkcolor=blue} (\ref{#1}) }}
 % 修改图片标签引用的颜色
 \def\figureref#1{{\color{blue}\hypersetup{linkcolor=blue} (\ref{#1}) }}
+% 修改跳转标签引用的颜色
+\def\linkref[#1]#2{\hyperref[#1]{\color{blue}\ #2\ }}
 
 % 添加 input 搜索目录
 \makeatletter
 \def\input@path{
-  {../../latex_package/}
+  {../latex_package/}
+  {./1_functions_and_limits/}
+  {./2_derivative_and_integral/}
+  {./3_mean_value_theorem_and_application/}
+  {./4_indefinite_integrals/}
 }
 \makeatother
 
@@ -69,8 +79,48 @@
 
 \begin{document}
   \tableofcontents
-  \newpage
 
+  \newpage
+  \part{函数与极限}
+  \section{集合}
+    \input{1_set}
+  \section{映射}
+    \input{2_map}
+  \section{函数}
+    \input{3_function}
+  \section{数列的极限}
+    \input{4_limit_of_progression}
+  \section{函数的极限}
+    \input{5_limit_of_function}
+  \section{无穷小与无穷大}
+    \input{6_infinite_and_infinitesimal}
+  \section{极限运算法则}
+    \input{7_limit_laws_of_arithmetic}
+  \section{极限存在准则}
+    \input{8_limit_existence_theorem}
+  \section{无穷小的比较}
+    \input{9_infinitesimal_comparision}
+  \section{函数的连续性和间断点}
+    \input{10_continuity_and_point_of_discontinuity}
+  \section{连续函数的运算和初等函数的连续性}
+    \input{11_continuity_function_arithmetic}
+  \section{闭区间上连续函数的性质}
+    \input{12_continuity_function_on_closed_interval}
+
+  \newpage
+  \part{导数与微分}
+  \section{导数概念}
+    \input{1_derivative_concepts}
+  \section{函数的求导法则}
+    \input{2_derivation_rules}
+  \section{高阶导数}
+    \input{3_higher_derivatives}
+  \section{隐函数及由参数方程所确定的函数的导数 相关变化率}
+    \input{4_implicit_and_parametric_equations_related_rates}
+  \section{函数的微分}
+    \input{5_differential_of_function}
+
+  \newpage
   \part{微分中值定理与导数的应用}
   \section{微分中值定理}
     \input{1_mean_value_theorem_of_differential}
@@ -88,4 +138,17 @@
     \input{7_curvature}
   \section{方程的近似解}
     \input{8_approximation_of_formula}
+
+  \newpage
+  \part{不定积分}
+  \section{不定积分的概念与性质}
+    \input{1_concept_and_property}
+  \section{换元积分法}
+    \input{2_integration_by_substitution}
+  \section{分部积分法}
+    \input{3_integration_by_parts}
+  \section{有理函数的积分}
+    \input{4_integration_of_rational_function}
+  \section{积分表的使用}
+    \input{5_integral_table}
 \end{document}
