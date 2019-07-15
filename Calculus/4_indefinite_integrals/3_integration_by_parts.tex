@@ -1,0 +1,69 @@
+\subsection{分部积分法}
+\paragraph{}
+设函数$u=u(x)$及$v=v(x)$具有连续导数。那么，两个函数乘积的导数公式为
+\begin{equation}
+  (uv)' = u'v + uv',
+\end{equation}
+移项，得
+\begin{equation}
+  uv' = (uv)' - u'v.
+\end{equation}
+对这个等式两边求不定积分，得
+\begin{equation}
+  \label{分部积分公式}
+  \int uv'dx = uv - \int u'vdx.
+\end{equation}
+公式\eqref{分部积分公式}称为\uwave{分部积分公式}。如果求$\displaystyle \int uv'dx$有困难，而求$\displaystyle \int u'vdx$比较容易时，分部积分公式就可以发挥作用了。
+
+\paragraph{}
+为简便起见，也可把公式\eqref{分部积分公式}写成下面的形式：
+\begin{equation}
+  \int udv = uv - \int vdu.
+\end{equation}
+
+\subsection{技巧}
+\paragraph{}
+选取$u$和$dv$一般要考虑下面两点：
+\begin{enumerate}
+  \item $v$要容易求得；
+  \item $\displaystyle \int vdu$要比$\displaystyle \int udv$容易积出。
+\end{enumerate}
+
+\paragraph{}
+如果被积函数是幂函数与正（余）弦函数或幂函数与指数函数的乘积，就可以考虑设幂函数为$u$。这样用一次分部积分法就可以使幂函数的幂次降低一次。这里假定幂指数是正整数。
+
+\paragraph{}
+\textbf{例子1\;}求$\displaystyle\int x^2e^xdx$
+
+\paragraph{}
+\textbf{解\;}设$u=x^2, dv = e^xdx = d(e^x)$，那么
+\begin{equation*}
+  \int x^2e^xdx = \int x^2d(e^x) = x^2e^x - \int e^xd(x^2) = x^2e^x - 2\int xe^xdx.
+\end{equation*}
+这样就将$x$的幂次降低了一次。对$\displaystyle\int xe^xdx$再使用一次分部积分法就可以了。于是：
+\begin{align*}
+\begin{split}
+  \int x^2e^xdx \;=&\; \int x^2d(e^x) = x^2e^x - \int e^xd(x^2) = x^2e^x - 2\int xe^xdx. \\
+  =&\; x^2e^x - 2(xe^x-e^x) + C \\
+  =&\; e^x(x^2-2x+2)+C.
+\end{split}
+\end{align*}
+
+\paragraph{}
+如果被积函数是幂函数与对数函数或幂函数与反三角函数的乘积，就可以考虑设对数函数或反三角函数为$u$。
+
+\paragraph{}
+\textbf{例子2\;}求$\displaystyle\int x\arctan{x}dx$
+
+\paragraph{}
+\textbf{解\;}用到$\displaystyle (\arctan{x})' = \frac{1}{1+x^2}$
+\begin{align*}
+\begin{split}
+  \int x\arctan{x}dx \;=&\; \frac{1}{2}\int \arctan{x}d(x^2) \\
+  =&\; \frac{x^2}{2}\arctan{x} - \frac{1}{2}\int \frac{x^2}{1+x^2}dx \\
+  =&\; \frac{x^2}{2}\arctan{x} - \frac{1}{2}\int\frac{1+x^2-1}{1+x^2}dx \\
+  =&\; \frac{x^2}{2}\arctan{x} - \frac{1}{2}\int(1-\frac{1}{1+x^2})dx \\
+  =&\; \frac{x^2}{2}\arctan{x} - \frac{1}{2}\int(x-\arctan{x}) + C \\
+  =&\; \frac{1}{2}(x^2+1)\arctan{x} - \frac{1}{2}x + C.
+\end{split}
+\end{align*}
