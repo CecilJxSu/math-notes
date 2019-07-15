@@ -1,0 +1,82 @@
+\subsection{有理函数的积分}
+\paragraph{}
+两个多项式的商$\displaystyle \frac{P(x)}{Q(x)}$称为\uwave{有理函数}，又称\uwave{有理分式}。我们总假定分子多项式$P(x)$与分母多项式$Q(x)$之间是没有公因式的。当分子多项式$P(x)$的次数（幂的次数）小于分母多项式$Q(x)$的次数时，称这有理函数为\uwave{真分式}，否则称为\uwave{假分式}。
+
+\paragraph{}
+对于真分式$\displaystyle \frac{P(x)}{Q(x)}$，如果分母可分解为两个多项式的乘积
+\begin{equation}
+  Q(x) = Q_1(x)Q_2(x),
+\end{equation}
+且$Q_1(x)$与$Q_2(x)$没有公因式，那么它可拆分成两个真分式之和
+\begin{equation}
+  \frac{P(x)}{Q(x)} = \frac{P_1(x)}{Q_1(x)} + \frac{P_2(x)}{Q_2(x)},
+\end{equation}
+上述步骤称为把真分式化成\uwave{部分分式}之和。
+
+\subsection{可化为有理函数的积分举例}
+\subsubsection{三角函数化为有理函数的积分}
+\paragraph{}
+$\sin{x}$与$\cos{x}$都可以用$\tan\frac{\pi}{2}$的有理式表示，即
+\begin{align}
+\begin{split}
+  \sin{x} = 2\sin\frac{x}{2}\cos\frac{x}{2}
+          = \frac{2\tan\frac{x}{2}}{\sec^2\frac{x}{2}}
+          = \frac{2\tan\frac{x}{2}}{1+\tan^2\frac{x}{2}} \\
+  \cos{x} = \cos^2\frac{x}{2}-\sin^2\frac{x}{2}
+          = \frac{1-\tan^2\frac{x}{2}}{\sec^2\frac{x}{2}}
+          = \frac{1-\tan^2\frac{x}{2}}{1+\tan^2\frac{x}{2}}
+\end{split}
+\end{align}
+如果作变换$u=\tan\frac{x}{2}\;(-\pi<x<\pi)$，那么
+\begin{equation}
+  \sin{x}=\frac{2u}{1+u^2}, \; \cos{x} = \frac{1-u^2}{1+u^2},
+\end{equation}
+而$x=2\arctan{u}$，从而
+\begin{equation}
+  dx = \frac{2}{1+u^2}du.
+\end{equation}
+
+\paragraph{}
+\textbf{例子1\;}求$\displaystyle\int \frac{1+\sin x}{\sin x(1+\cos x)}dx$。
+
+\paragraph{}
+\textbf{解\;}
+\begin{align*}
+\begin{split}
+  \int\frac{1+\sin x}{\sin x(1+\cos x)}dx \;=&\; \int\frac{(1+\frac{2u}{1+u^2})\frac{2du}{1+u^2}}{\frac{2u}{1+u^2}(1+\frac{1-u^2}{1+u^2})} \\
+  =&\; \frac{1}{2}\int(u+2+\frac{1}{u})du \\
+  =&\; \frac{1}{2}(\frac{u^2}{2}+2u+\ln|u|) + C \\
+  =&\; \frac{1}{4}\tan^2\frac{x}{2} + \tan\frac{x}{2}+\frac{1}{2}\ln|\tan\frac{x}{2}|+C.
+\end{split}
+\end{align*}
+
+\subsubsection{根式化为有理函数的积分}
+\paragraph{}
+如果被积函数中含有简单根式$\sqrt[n]{ax+b}$或$\displaystyle\sqrt[n]{\frac{ax+b}{cx+d}}$，可以令这个简单根式为$u$。由于这样的变换具有反函数，且反函数是$u$的有理函数，因此原积分即可化为有理函数的积分。
+
+\paragraph{}
+\textbf{例子2\;}求$\displaystyle\int \frac{dx}{1+\sqrt[3]{x+2}}$。
+
+\paragraph{}
+\textbf{解\;}为了去掉根号，可以设$\sqrt[3]{x+2} = u$。于是$x=u^3-2, dx = 3u^2du$，从而所求积分为
+\begin{align*}
+\begin{split}
+  \int \frac{dx}{1+\sqrt[3]{x+2}} \;=&\; \int \frac{3u^2}{1+u}du \\
+  =&\; 3\int(u-1+\frac{1}{1+u})du = 3(\frac{u^2}{2} - u + \ln|1+u|) + C \\
+  =&\; \frac{3}{2}\sqrt[3]{(x+2)^2} - 3\sqrt[3]{x+2} + 3\ln|1+\sqrt[3]{x+2}| + C.
+\end{split}
+\end{align*}
+
+\paragraph{}
+\textbf{例子3\;}求$\displaystyle\int \frac{dx}{(1+\sqrt[3]{x})\sqrt{x}}$。
+
+\paragraph{}
+\textbf{解\;}被积函数中出现了两个根式$\sqrt{x}$及$\sqrt[3]{x}$。为了能同时消去这两个根式，可令$x=t^6$。于是$dx=6t^5dt$，从而所求积分为
+\begin{align*}
+\begin{split}
+  \int\frac{dx}{(1+\sqrt[3]{x})\sqrt{x}} \;=&\; \int\frac{6t^5}{(1+t^2)t^3}dt
+  = 6\int\frac{t^2}{1+t^2}dt \\
+  =&\; 6\int(1-\frac{1}{1+t^2})dt = 6(t-\arctan{t}) + C \\
+  =&\; 6(\sqrt[6]{x} - \arctan\sqrt[6]{x}) + C.
+\end{split}
+\end{align*}
