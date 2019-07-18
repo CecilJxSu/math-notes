@@ -1,0 +1,25 @@
+% 定积分中值定理示例
+\begin{tikzpicture}[scale=0.8]
+  \begin{axis}[clip=false,xmin=0, xmax=6,ymin=0,ymax=6, grid=none,
+    xtick=\empty, ytick=\empty, axis lines=middle,
+    smooth, xlabel={$x$}, ylabel={$y$}]
+
+    \addplot[draw=red,domain=1:5] {2*ln(x) + 2};
+
+    \node [above] at (4,5.22) {$y=f(x)$};
+
+    \draw (1,0) -- (1,2);
+    \draw (5,0) -- (5,5.22);
+    \draw [dashed] (3,0) -- (3,4.2);
+    \draw [dashed] (0,4.2) -- (5,4.2);
+    \draw [dashed] (1,0) -- (1,4.2);
+
+    \node [below] at (1,0) {$a$};
+    \node [below] at (3,0) {$\xi$};
+    \node [below] at (5,0) {$b$};
+    \node [left] at (0,4.2) {$f(\xi)$};
+
+    % 原点
+    \node [below left] at (0,0) {$O$};
+  \end{axis}
+\end{tikzpicture}
