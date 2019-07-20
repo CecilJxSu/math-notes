@@ -1,0 +1,10 @@
+% x 与 y 关系，一对一
+\begin{tikzpicture}[scale=0.8]
+  \node [fill=cyan,minimum size=1cm,rounded corners=.1cm]   (x1) at (0,0)    {$x_1$};
+  \node [fill=cyan,minimum size=1cm,rounded corners=.1cm]   (x2) at (0,-2)   {$x_2$};
+  \node [fill=cyan,minimum size=1cm,rounded corners=.1cm]   (y1) at (4,0)   {$y_1$};
+  \node [fill=cyan,minimum size=1cm,rounded corners=.1cm]   (y2) at (4,-2)   {$y_2$};
+
+  \draw [->] (x1) -- (y1) node[midway] {$f$};
+  \draw [->] (x2) -- (y2) node[midway] {$f$};
+\end{tikzpicture}

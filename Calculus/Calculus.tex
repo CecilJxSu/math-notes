@@ -62,6 +62,8 @@
 \def\figureref#1{{\color{blue}\hypersetup{linkcolor=blue} (\ref{#1}) }}
 % 修改跳转标签引用的颜色
 \def\linkref[#1]#2{\hyperref[#1]{\color{blue}\ #2\ }}
+% 引用 section 的章节号
+\def\secref#1{\hyperref[#1]{\color{blue}[\ref{#1}节]}}
 
 % 添加 input 搜索目录
 \makeatletter
@@ -71,6 +73,7 @@
   {./2_derivative_and_integral/}
   {./3_mean_value_theorem_and_application/}
   {./4_indefinite_integrals/}
+  {./5_definite_integrals/}
 }
 \makeatother
 
@@ -151,4 +154,17 @@
     \input{4_integration_of_rational_function}
   \section{积分表的使用}
     \input{5_list_of_integrals}
+
+  \newpage
+  \part{定积分}
+  \section{定积分的概念与性质}
+    \input{1_definite_integrals-concept_and_property}
+  \section{微积分基本公式}
+    \input{2_fundamental_theorem_of_calculus}
+  \section{定积分的换元法和分部积分法}
+    \input{3_integration_of_definite_integrals}
+  \section{反常积分}
+    \input{4_improper_integrals}
+  \section{反常积分的审敛法 $\Gamma$函数}
+    \input{5_convergence_tests_of_improper_integrals}
 \end{document}
