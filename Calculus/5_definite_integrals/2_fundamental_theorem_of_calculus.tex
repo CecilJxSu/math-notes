@@ -1,0 +1,148 @@
+\subsection{变速直线运动中位置函数与速度函数之间的联系}
+\paragraph{}
+有一物体在一直线上运动。在这直线上取定原点、正向及长度单位，使它成一数轴。设时刻$t$时物体所在位置为$s(t)$，速度为$v(t)$（为了讨论方便起见，可以设$v(t) \geq 0$）。
+
+\paragraph{}
+从第一节知道：物体在时间间隔$[T_1,T_2]$内经过的路程可以用速度函数$v(t)$在$[T_1,T_2]$上的定积分
+
+\begin{equation*}
+  \int_{T_1}^{T_2}v(t)dt
+\end{equation*}
+来表达；另一方面，这段路程又可以通过位置函数$s(t)$在区间$[T_1,T_2]$上的增量
+
+\begin{equation*}
+  s(T_2) - s(T_1)
+\end{equation*}
+
+来表达。由此可见，位置函数$s(t)$与速度函数$v(t)$之间有如下关系：
+\begin{equation}
+  \label{变速直线运动速度定积分与路程关系}
+  \int_{T_1}^{T_2}v(t)dt = s(T_2) - s(T_1).
+\end{equation}
+
+\paragraph{}
+因为$s'(t)=v(t)$，即位置函数$s(t)$是速度函数$v(t)$的原函数，所以关系式\eqref{变速直线运动速度定积分与路程关系}表示，速度函数$v(t)$在区间$[T_1,T_2]$上的定积分等于$v(t)$的原函数$s(t)$在区间$[T_1,T_2]$上的增量
+\begin{equation*}
+  s(T_2) - s(T_1).
+\end{equation*}
+
+\paragraph{}
+上述讨论的问题具有特殊性。因此，在\secref{sec:牛顿-莱布尼茨公式}下面进一步论证普遍性的函数$f(x)$在区间$[a,b]$上的积分等于原函数在区间$[a,b]$上的增量
+
+\begin{equation*}
+  F(b) - F(a).
+\end{equation*}
+
+\subsection{积分上限的函数及其导数}
+\paragraph{}
+设函数$f(x)$在区间$[a,b]$上连续，并且设$x$为$[a,b]$上的一点。我们考察$f(x)$在部分区间$[a,x]$上的定积分
+\begin{equation*}
+  \int_a^xf(x)dx.
+\end{equation*}
+
+\paragraph{}
+由于$f(x)$在$[a,x]$上仍旧连续，因此这个定积分存在。这里，$x$即表示定积分的上限，又表示积分变量。因为定积分与积分变量的记法无关，所以，为了不混淆起见，可以把积分变量改用其它符号，例如用$t$表示，则上面的定积分可以写成
+
+\begin{equation*}
+  \int_a^xf(t)dt.
+\end{equation*}
+
+\paragraph{}
+如果上限$x$在区间$[a,b]$上任意变动，则对于每一个取定的$x$值，定积分有一个对应值，所以它在$[a,b]$上定义了一个函数，记作$\Phi(x)$：
+\begin{equation*}
+  \Phi(x) = \int_a^xf(t)dt \; (a\leq x \leq b).
+\end{equation*}
+
+\paragraph{}
+\textbf{定理1\;}如果函数$f(x)$在区间$[a,b]$上连续，则积分上限的函数
+\begin{equation}
+  \Phi(x) = \int_a^xf(t)dt
+\end{equation}
+在$[a,b]$上可导，并且它的导数
+\begin{equation}
+  \Phi'(x) = \frac{d}{dx}\int_a^xf(t)dt = f(x) \; (a \leq x \leq b).
+\end{equation}
+
+\paragraph{}
+\textbf{证\;}若$x\in(a,b)$，设$x$获得增量$\Delta x$，其绝对值足够地小，使得$x+\Delta x\in(a,b)$，则$\Phi(x)$在$x+\Delta x$处的函数值为
+
+\begin{equation*}
+  \Phi(x+\Delta x) = \int_a^{x+\Delta x}f(t)dt.
+\end{equation*}
+
+\begin{figure}[H]
+\centering
+  \input{figure/prove-upper_limit_function}
+  \caption{积分上限的函数证明}
+  \label{积分上限的函数证明}
+\end{figure}
+
+由此得函数的增量
+\begin{align*}
+\Delta\Phi \;=&\; \Phi(x+\Delta x) - \Phi(x) \\
+  =&\; \int_a^{x+\Delta x}f(t)dt - \int_a^xf(t)dt \\
+  =&\; \int_a^xf(t)dt + \int_x^{x+\Delta x}f(t)dt - \int_a^xf(t)dt \\
+  =&\; \int_x^{x+\Delta x}f(t)dt.
+\end{align*}
+再应用积分中值定理，即有等式
+\begin{equation*}
+  \Delta\Phi = f(\xi)\Delta x,
+\end{equation*}
+这里，$\xi$在$x$与$x+\Delta x$之间，把上式两端各除以$\Delta x$，得函数增量与自变量增量的比值
+\begin{equation*}
+  \frac{\Delta\Phi}{\Delta x} = f(\xi).
+\end{equation*}
+
+\paragraph{}
+由于假设$f(x)$在$[a,b]$上连续，而$\Delta x \to 0$时，$\xi \to x$，因此$\displaystyle\lim_{\Delta x \to 0}=f(x)$。于是，令$\Delta x \to 0$对上式两端取极限时，左端的极限也应该存在且等于$f(x)$。这就是说，函数$\Phi(x)$的导数存在，并且
+\begin{equation*}
+  \Phi'(x) = f(x).
+\end{equation*}
+
+\paragraph{}
+若$x=a$，取$\Delta x > 0$，则同理可证$\Phi'_+(a) = f(a)$；若$x=b$，取$\Delta x < 0$，则同理可证$\Phi'_-(b)=f(b)$。
+
+\paragraph{}
+\label{积分上限的函数}
+\textbf{定理2\;}如果函数$f(x)$在区间$[a,b]$上连续，则函数
+\begin{equation}
+  \label{积分上限函数的定义式}
+  \Phi(x)=\int_a^xf(t)dt
+\end{equation}
+就是$f(x)$在$[a,b]$上的一个原函数。
+
+\subsection{牛顿-莱布尼茨公式}
+\label{sec:牛顿-莱布尼茨公式}
+\paragraph{}
+\textbf{定理3\;}如果函数$F(x)$是连续函数$f(x)$在区间$[a,b]$上的一个原函数，则
+\begin{equation}
+  \label{微积分基本公式}
+  \int_a^bf(x)dx = F(b) - F(a).
+\end{equation}
+
+\paragraph{}
+\textbf{证\;}已知函数$F(x)$是连续函数$f(x)$的一个原函数，又根据\linkref[积分上限的函数]{定理2}知道，积分上限的函数
+\begin{equation}
+  \Phi(x) = \int_a^xf(t)dt
+\end{equation}
+也是$f(x)$的一个原函数。于是这两个原函数之差$F(x) - \Phi(x)$在$[a,b]$上必定是某一个常数$C$，即
+\begin{equation}
+  \label{定积分原函数之差}
+  F(x) - \Phi(x) = C \; (a \leq x \leq b).
+\end{equation}
+在上式中令$x=a$，得$F(a) - \Phi(a) = C$。又由$\Phi(x)$的定义式\eqref{积分上限函数的定义式}可知$\Phi(a) = 0$，因此，$C=F(a)$。以$F(a)$代入\eqref{定积分原函数之差}式中的$C$，以$\displaystyle\int_a^xf(t)dt$代入\eqref{定积分原函数之差}式中的$\Phi(x)$，可得
+
+\begin{equation}
+  \int_a^xf(t)dt = F(x) - F(a).
+\end{equation}
+
+在上式中令$x=b$，就得到所要证明的公式\eqref{微积分基本公式}。
+
+\paragraph{}
+\eqref{微积分基本公式}式对$a>b$的情形同样成立。为了方便起见，以后把$F(b) - F(a)$记成$[F(x)]_a^b$，于是\eqref{微积分基本公式}式又可写成
+\begin{equation}
+  \int_a^bf(x)dx = [F(x)]_a^b.
+\end{equation}
+
+\paragraph{}
+公式\eqref{微积分基本公式}叫做\uwave{牛顿（Newton）-莱布尼茨（Leibniz）公式}，也通常叫做\uwave{微积分基本公式}。
