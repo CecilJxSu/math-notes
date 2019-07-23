@@ -1,0 +1,63 @@
+\subsection{定积分的换元法}
+\paragraph{}
+\textbf{定理\;}假设函数$f(x)$在区间$[a,b]$上连续，函数$x=\varphi(t)$满足条件：
+\begin{enumerate}
+  \item $\varphi(\alpha) = a, \varphi(\beta) = b$；
+  \item $\varphi(t)$在$[\alpha,\beta]$（或$[\beta,\alpha]$）上具有连续导数，且其值域$R_\varphi=[a,b]$，则有
+  \begin{equation}
+    \label{换元公式}
+    \int_a^bf(x)dx = \int_\alpha^\beta f[\varphi(t)]\varphi'(t)dt.
+  \end{equation}
+\end{enumerate}
+公式\eqref{换元公式}叫做定积分的\uwave{换元公式}。
+
+\paragraph{}
+\textbf{证\;}由假设可以知道，上式两边的被积函数都是连续的，因此不仅上式两边的定积分都存在，而且由上节的\linkref[积分上限函数的定义式]{定理2}知道，被积函数的原函数也都存在。所以，\eqref{换元公式}式两边的定积分都可应用牛顿-莱布尼茨公式。假设$F(x)$是$f(x)$的一个原函数，则
+\begin{equation*}
+  \int_a^bf(x)dx = F(b) - F(a).
+\end{equation*}
+另一方面，记$\Phi(t)=F[\varphi(t)]$，它是由$F(x)$与$x=\varphi(t)$复合而成的函数。由复合函数求导法则，得
+\begin{equation*}
+  \Phi'(t) = \frac{dFdx}{dxdt} = f(x)\varphi'(t) = f[\varphi(t)]\varphi'(t).
+\end{equation*}
+这表明$\Phi(t)$是$f[\varphi(t)]\varphi'(t)$的一个原函数。因此有
+\begin{equation*}
+  \int_\alpha^\beta f[\varphi(t)]\varphi'(t)dt = \Phi(\beta) - \Phi(\alpha).
+\end{equation*}
+又由$\Phi(t)=F[\varphi(t)]$及$\varphi(\alpha) = a, \varphi(\beta) = b$可知
+\begin{equation*}
+  \Phi(\beta) - \Phi(\alpha) = F[\varphi(\beta)] - F[\varphi(\alpha)] = F(b) - F(a).
+\end{equation*}
+所以
+\begin{align*}
+  \int_a^bf(x)dx \;=&\; F(b) - F(a) = \Phi(\beta) - \Phi(\alpha) \\
+  =&\; \int_\alpha^\beta f[\varphi(t)]\varphi'(t)dt.
+\end{align*}
+这就证明了换元公式。
+
+\paragraph{}
+换元公式也可反过来使用。为使用方便起见，把换元公式中左右两边对调位置，同时把$t$改记为$x$，而$x$改记为$t$，得
+\begin{equation}
+  \int_a^bf[\varphi(x)]\varphi'(x)dx = \int_\alpha^\beta f(t)dt.
+\end{equation}
+这样，我们可用$t=\varphi(x)$来引入新变量$t$，而$\alpha = \varphi(a), \beta = \varphi(b)$。
+
+\subsection{定积分的分部积分法}
+\paragraph{}
+依据不定积分的分部积分法，可得
+\begin{align}
+\begin{split}
+  \int_a^bu(x)v'(x)dx \;=&\; \big[ \int u(x)v'(x)dx \big]_a^b \\
+    =&\; \big[ u(x)v(x) - \int v(x)u'(x)dx \big]_a^b \\
+    =&\; \big[ u(x)v(x) \big]_a^b - \int_a^b v(x)u'(x)dx,
+\end{split}
+\end{align}
+简记作
+\begin{equation}
+  \int_a^buv'dx = [uv]_a^b - \int_a^bvu'dx,
+\end{equation}
+或
+\begin{equation}
+  \int_a^budv = [uv]_a^b - \int_a^bvdu.
+\end{equation}
+这就是\uwave{定积分的分部积分公式}。公式表明原函数已经积出的部分可以先用上、下限代入。
