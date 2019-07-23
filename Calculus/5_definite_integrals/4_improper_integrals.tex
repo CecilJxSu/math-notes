@@ -1,0 +1,54 @@
+\paragraph{}
+在一些实际问题中，常会遇到积分区间为无穷区间，或者被积函数为无界函数的积分，它们已经不属于前面所说的定积分了。因此，我们对定积分作如下两种推广，从而形成\uwave{反常积分}的概念。
+
+\subsection{无穷限的反常积分}
+\paragraph{}
+\textbf{定义1\;}设函数$f(x)$在区间$[a,+\infty)$上连续，取$t>a$，如果极限
+\begin{equation}
+  \lim_{t \to +\infty} \int_a^tf(x)dx
+\end{equation}
+存在，则称此极限为\uwave{函数{$f(x)$}在无穷区间{$[a,+\infty)$}上的反常积分}，记作$\displaystyle\int_a^{+\infty}f(x)dx$，即
+
+\begin{equation}
+  \int_a^{+\infty}f(x)dx = \lim_{t \to +\infty}\int_a^tf(x)dx,
+\end{equation}
+这时也称\uwave{反常积分}$\displaystyle\int_a^{+\infty}f(x)dx$\uwave{收敛}；如果上述极限不存在，则函数$f(x)$在无穷区间$[a,+\infty)$上的反常积分$\displaystyle\int_a^{+\infty}f(x)dx$就没有意义，习惯上称为\uwave{反常积分}$\displaystyle\int_a^{+\infty}f(x)dx$\uwave{发散}，这时记号$\displaystyle\int_a^{+\infty}f(x)dx$不再表示数值了。
+
+\paragraph{}
+类似地，函数$f(x)$在区间$(-\infty,b]$或$(-\infty,+\infty)$上也存在相同概念。
+
+\paragraph{}
+上述反常积分统称为\uwave{无穷限的反常积分}。
+
+\subsection{无界函数的反常积分}
+\paragraph{}
+如果函数$f(x)$在点$a$的任一领域内都无界，那么点$a$称为函数$f(x)$的\uwave{瑕点}（也称为无界间断点）。无界函数的反常积分又称为\uwave{瑕积分}。
+
+\textbf{定义2\;}设函数$f(x)$在$(a,b]$上连续，点$a$为$f(x)$的瑕点。取$t>a$，如果极限
+\begin{equation}
+  \lim_{t \to a^+}\int_t^bf(x)dx
+\end{equation}
+存在，则称此极限为\uwave{函数{$f(x)$}在{$(a,b]$}上的反常积分}，仍然记作$\displaystyle\int_a^bf(x)dx$，即
+\begin{equation}
+  \int_a^bf(x)dx = \lim_{t \to a^+}\int_t^bf(x)dx.
+\end{equation}
+这时也称\uwave{反常积分}$\displaystyle\int_a^bf(x)dx$\uwave{收敛}。如果上述极限不存在，则称\uwave{反常积分}$\displaystyle\int_a^bf(x)dx$\uwave{发散}。
+
+\paragraph{}
+类似地，可得到函数$f(x)$在$[a,b)$上的反常积分定义。
+
+\paragraph{}
+设函数$f(x)$在$[a,b]$上除点$c \; (a<c<b)$外连续，点$c$为$f(x)$的瑕点。如果两个反常积分
+
+\begin{equation}
+  \int_a^cf(x)dx \;\text{与}\; \int_c^bf(x)dx
+\end{equation}
+都收敛，则定义
+
+\begin{align}
+\begin{split}
+  \int_a^bf(x)dx \;=&\; \int_a^cf(x)dx + \int_c^bf(x)dx \\
+  =&\; \lim_{t \to c^-}\int_a^tf(x)dx + \lim_{t\to c^+}\int_t^bf(x)dx;
+\end{split}
+\end{align}
+否则，就称\uwave{反常积分}$\displaystyle\int_a^bf(x)dx$\uwave{发散}。
