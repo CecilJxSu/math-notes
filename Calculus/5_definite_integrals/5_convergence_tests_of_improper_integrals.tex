@@ -1,0 +1,130 @@
+\paragraph{}
+本节中我们来建立不通过被积函数的原函数判断反常积分收敛性的判定法。
+
+\subsection{无穷限反常积分的审敛法}
+\paragraph{}
+\textbf{定理1\;}设函数$f(x)$在区间$[a,+\infty)$上连续，且$f(x) \geq 0$。若函数
+\begin{equation}
+  F(x) = \int_a^xf(t)dt
+\end{equation}
+在$[a,+\infty)$上有上界，则反常积分$\displaystyle\int_a^{+\infty}f(x)dx$收敛。
+
+\paragraph{}
+按照“$[a,+\infty)$上的单调有界函数$F(x)$必有极限$\displaystyle\lim_{x \to +\infty}F(x)$”的准则，可证。
+
+\paragraph{}
+\textbf{定理2（比较审敛原理）\;}设函数$f(x), g(x)$在区间$[a,+\infty)$上连续。如果$0 \leq f(x) \leq g(x) \; (a \leq x < +\infty)$，并且$\displaystyle\int_a^{+\infty}g(x)dx$收敛，则$\displaystyle\int_a^{+\infty}f(x)dx$也收敛；如果$0\leq g(x) \leq f(x) \; (a \leq x < +\infty)$，并且$\displaystyle\int_a^{+\infty}g(x)dx$发散，则$\displaystyle\int_a^{+\infty}f(x)dx$也发散。
+
+\paragraph{}
+\textbf{定理3（比较审敛法1）\;}设函数$f(x)$在区间$[a,+\infty) \; (a>0)$上连续，且$f(x) \geq 0$。如果存在常数$M > 0$及$p > 1$，使得$\displaystyle f(x) \leq \frac{M}{x^p} \; (a \leq x < +\infty)$，则反常积分$\displaystyle\int_a^{+\infty}f(x)dx$收敛；如果存在常数$N > 0$，使得$\displaystyle f(x) \geq \frac{N}{x} \; (a \leq x < +\infty)$，则反常积分$\displaystyle\int_a^{+\infty}f(x)dx$发散。
+
+\paragraph{}
+\label{极限审敛法1}
+\textbf{定理4（极限审敛法1）\;}设函数$f(x)$在区间$[a, +\infty)$上连续，且$f(x) \geq 0$。如果存在常数$p > 1$，使得$\displaystyle\lim_{x \to +\infty}x^pf(x)$存在，则反常积分$\displaystyle\int_a^{+\infty}f(x)dx$收敛；如果$\displaystyle\lim_{x \to +\infty}xf(x)=d > 0$（或$\displaystyle\lim_{x\to+\infty}xf(x) = +\infty$），则反常积分$\displaystyle\int_a^{+\infty}f(x)dx$发散。
+
+\paragraph{}
+\textbf{定理5\;}设函数$f(x)$在区间$[a,+\infty)$上连续。如果反常积分
+\begin{equation}
+  \int_a^{+\infty}|f(x)|dx
+\end{equation}
+收敛，则反常积分
+\begin{equation}
+  \int_a^{+\infty}f(x)dx
+\end{equation}
+也收敛。
+
+\paragraph{}
+通常称满足定理5条件的反常积分$\displaystyle\int_a^{+\infty}f(x)dx$为\uwave{绝对收敛}。于是，定理5可简单地表达为：\textbf{绝对收敛的反常积分$\displaystyle\int_a^{+\infty}f(x)dx$必定收敛}。
+
+\subsection{无界函数的反常积分的审敛法}
+\paragraph{}
+\label{比较审敛法2}
+\textbf{定理6（比较审敛法2）\;}设函数$f(x)$在区间$(a,b]$上连续，且$f(x) \geq 0, x = a$为$f(x)$的瑕点。如果存在常数$M > 0$及$q < 1$，使得
+\begin{equation}
+  f(x) \leq \frac{M}{(x-a)^q} \; (a < x \leq b),
+\end{equation}
+则反常积分$\displaystyle\int_a^bf(x)dx$收敛；如果存在常数$N > 0$，使得
+\begin{equation}
+  f(x) \geq \frac{N}{x-a} \; (a<x\leq b),
+\end{equation}
+则反常积分$\displaystyle\int_a^bf(x)dx$发散。
+
+\paragraph{}
+\textbf{定理7（极限审敛法2）\;}设函数$f(x)$在区间$(a,b]$上连续，且$f(x) \geq 0, x = a$为$f(x)$的瑕点。如果存在常数$0 < q < 1$，使得
+\begin{equation}
+  \lim_{x \to a^+}(x-a)^qf(x)
+\end{equation}
+存在，则反常积分$\displaystyle\int_a^bf(x)dx$收敛；如果
+\begin{equation}
+  \lim_{x \to a^+}(x-a)f(x) = d > 0 \; (\text{或} \lim_{x \to a^+}(x-a)f(x) = +\infty),
+\end{equation}
+则反常积分$\displaystyle\int_a^bf(x)dx$发散。
+
+\subsection[Γ函数]{$\Gamma$函数}
+\paragraph{}
+$\Gamma$函数的定义：
+\begin{equation}
+  \label{Gamma 函数定义}
+  \Gamma(s) = \int_0^{+\infty}e^{-x}x^{s-1}dx \; (s > 0).
+\end{equation}
+
+\begin{figure}[H]
+\centering
+  \input{figure/gamma_function}
+  \caption{Gamma 函数}
+  \label{Gamma 函数}
+\end{figure}
+
+\paragraph{}
+首先讨论\eqref{Gamma 函数定义}式右端积分的收敛性问题。这个积分区间为无穷，又当$s-1<0$时$x=0$是被积函数的瑕点。为此，分别讨论下列两个积分的收敛性：
+\begin{align*}
+  I_1 \;=&\; \int_0^1e^{-x}x^{s-1}dx, \\
+  I_2 \;=&\; \int_1^{+\infty}e^{-x}x^{s-1}dx
+\end{align*}
+
+\paragraph{}
+先讨论$I_1$，当$s \geq 1$时，$I_1$是定积分；当$0 < s < 1$时，因为
+\begin{equation}
+  e^{-x} \bigcdot x^{s-1} = \frac{1}{x^{1-s}} \bigcdot \frac{1}{e^x} < \frac{1}{x^{1-s}},
+\end{equation}
+而$1-s < 1$，根据\linkref[比较审敛法2]{比较审敛法2}，反常积分$I_1$收敛。
+
+\paragraph{}
+再讨论$I_2$。因为
+\begin{equation}
+  \lim_{x \to +\infty}x^2 \bigcdot (e^{-x}x^{s-1}) = \lim_{x \to +\infty}\frac{x^{s+1}}{e^x} = 0,
+\end{equation}
+根据\linkref[极限审敛法1]{极限审敛法1}，$I_2$也收敛。
+
+\paragraph{}
+由以上讨论即得反常积分$\displaystyle\int_0^{+\infty}e^{-x}x^{s-1}dx$对$s>0$均收敛。
+
+\subsubsection{性质}
+\paragraph{}
+
+\begin{enumerate}
+  \item \textbf{递推公式\;} $\Gamma(s+1)=s\Gamma(s) \; (s > 0)$。
+  \item 当$s\to 0^+$时，$\Gamma(s) \to +\infty$。
+  \item \textbf{余元公式\;} $\displaystyle\Gamma(s)\Gamma(1-s)=\frac{\pi}{\sin\pi s} \; (0 < s < 1)$。
+  \item 在$\displaystyle\Gamma(s) = \int_0^{+\infty}e^{-x}x^{s-1}dx$中，作代换$x=u^2$，有
+  \begin{equation}
+    \label{Gamma函数性质4公式}
+    \Gamma(s) = 2\int_0^{+\infty}e^{-u^2}u^{2s-1}du.
+  \end{equation}
+  再令$2s-1=t$或$\displaystyle s=\frac{1+t}{2}$，即有
+  \begin{equation}
+    \int_0^{+\infty}e^{-u^2}u^tdu = \frac{1}{2}\Gamma\big( \frac{1+t}{2} \big) \; (t > -1).
+  \end{equation}
+  上式左端是应用上常见的积分，它的值可以通过上式用$\Gamma$函数计算出来。
+\end{enumerate}
+
+\paragraph{}
+在\eqref{Gamma函数性质4公式}中，令$\displaystyle s=\frac{1}{2}$，得
+\begin{equation}
+  2\int_0^{+\infty}e^{-u^2}du = \Gamma(\frac{1}{2}) = \sqrt{\pi}.
+\end{equation}
+从而
+\begin{equation}
+  \int_0^{+\infty}e^{-u^2}du=\frac{\sqrt{\pi}}{2}.
+\end{equation}
+上式左端的积分是在概率论中常用的积分。

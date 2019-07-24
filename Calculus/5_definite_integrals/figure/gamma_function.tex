@@ -1,0 +1,12 @@
+% Gamma 函数
+\psset{unit=1cm}
+\begin{pspicture*}(-1,-1)(5,5)
+  % 坐标
+  \psaxes[showorigin=false,linewidth=.5pt,ticksize=3pt 0]{->}(0,0)(0,0)(5,5)[$ s $, -120][$ \Gamma(s) $, -140]
+  % 原点标签
+  \rput[tr](-.1,-.1){$O$}
+  % 设置画线的样式
+  \psset{linecolor=red,linewidth=.5pt,plotpoints=100,algebraic}
+  % Gamma 函数
+  \psplot{.2}{3.75}{GAMMA(x)}
+\end{pspicture*}
