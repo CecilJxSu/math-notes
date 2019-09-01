@@ -37,11 +37,10 @@
 \pgfplotsset{compat=1.16}
 % 中文默认没有斜体和粗体格式，开启伪斜体和指定黑体；
 \setCJKmainfont[AutoFakeSlant, BoldFont=SimHei]{SimSun}
-\usetikzlibrary{positioning}
-% area of hatch，面积阴影部分
-\usetikzlibrary{patterns}
-% 箭头类型
-\usetikzlibrary{arrows.meta}
+% area of hatch，面积阴影部分, 箭头类型
+\usetikzlibrary{patterns, arrows.meta, positioning}
+% 极坐标系
+\usepgfplotslibrary{polar}
 
 \hypersetup{
     colorlinks,
@@ -65,6 +64,16 @@
 \def\linkref[#1]#2{\hyperref[#1]{\color{blue}\ #2\ }}
 % 引用 section 的章节号
 \def\secref#1{\hyperref[#1]{\color{blue}[\ref{#1}节]}}
+
+% 添加 input 搜索目录
+\makeatletter
+\def\input@path{
+  {../../latex_package/}
+}
+\makeatother
+
+% 文字顶部和底部的弧度，使用自定义的包，避免输出错误字体文字和 warning 提示
+\usepackage{./arcs/arcs}
 
 \begin{document}
   \tableofcontents

@@ -1,0 +1,40 @@
+% 极坐标的定积分应用
+\begin{tikzpicture}[scale=1.5]
+  \begin{polaraxis}[
+    clip=false,ticks=none,grid=none,ylabel={$x$},
+    axis lines=middle,x axis line style = {transparent},
+    xmin=0,xmax=40,ymin=0,ymax=170,font=\tiny
+  ]
+
+    % ρ = φ(θ)
+    \addplot[red,domain=10:40,samples=100] (x, {150+x/2)});
+    \node [red,below right] at (40,175) {$\rho=\varphi(\theta)$};
+
+    % alpha
+    \addplot[blue,domain=0:155] (10, x);
+    \addplot[blue,domain=0:10] (x,50);
+    \node [blue] at (5,55) {$\alpha$};
+
+    % beta
+    \addplot[cyan,domain=0:170] (40, x);
+    \addplot[cyan,domain=0:40] (x, 70);
+    \node [cyan,rotate=15] at (15,75) {$\beta$};
+
+    % θ
+    \addplot[domain=0:20] (x, 90);
+    \node [rotate=5] at (5,95) {$\theta$};
+
+    % θ + dθ
+    \addplot[domain=0:30] (x, 110);
+    \node [right,rotate=5] at (5,107) {$\theta + d\theta$};
+
+    \filldraw[pattern=north east lines] (0,0) -- (20,160) arc (20:30:32mm) -- cycle;
+
+    % dθ
+    \addplot[domain=20:30] (x, 130);
+    \node [fill=white,right,rotate=25, inner sep = 1] at (25,130) {$d\theta$};
+
+    % 原点
+    \node [below left] at (0,0) {$O$};
+  \end{polaraxis}
+\end{tikzpicture}

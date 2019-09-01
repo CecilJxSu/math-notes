@@ -37,11 +37,10 @@
 \pgfplotsset{compat=1.16}
 % 中文默认没有斜体和粗体格式，开启伪斜体和指定黑体；
 \setCJKmainfont[AutoFakeSlant, BoldFont=SimHei]{SimSun}
-\usetikzlibrary{positioning}
-% area of hatch，面积阴影部分
-\usetikzlibrary{patterns}
-% 箭头类型
-\usetikzlibrary{arrows.meta}
+% area of hatch，面积阴影部分, 箭头类型
+\usetikzlibrary{patterns, arrows.meta, positioning}
+% 极坐标系
+\usepgfplotslibrary{polar}
 
 \hypersetup{
     colorlinks,

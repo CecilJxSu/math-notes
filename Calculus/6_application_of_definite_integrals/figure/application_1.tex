@@ -1,0 +1,33 @@
+% 直角坐标的定积分应用
+\begin{tikzpicture}[scale=0.8]
+  \begin{axis}[clip=false,xmin=0, xmax=10,ymin=-5,ymax=5, grid=none,
+    xtick=\empty, ytick=\empty, axis lines=middle,
+    smooth, xlabel={$x$}, ylabel={$y$}]
+
+    % 曲线: y^2=2x,y=x-4
+    \addplot[draw=red,domain=0:9,samples=150] {sqrt(2*x)};
+    \addplot[draw=red,domain=0:9,samples=150] {-sqrt(2*x)};
+    \addplot[draw=blue,domain=0:9] {x-4};
+
+    \node [right] at (2.4,-1.8) {$(2,-2)$};
+    \node [below right] at (7.8,4) {$(8,4)$};
+
+    \node [above] at (9,5) {$y=x-4$};
+    \node [above left] at (7,3.74) {$y^2=2x$};
+
+    \node [left] at (0,2.7) {$y + dy$};
+    \node [left] at (0,2) {$y$};
+
+    \draw [dashed] (0,2.7) -- (6.7,2.7);
+    \draw [dashed] (0,2) -- (6,2);
+
+    \draw [pattern=north east lines] (2,2) rectangle (6,2.7);
+
+
+    \draw [dashed,draw=cyan] (0,-2) -- (9,-2);
+    \draw [dashed,draw=cyan] (0,4) -- (9,4);
+
+    % 原点
+    \node [below left] at (0,0) {$O$};
+  \end{axis}
+\end{tikzpicture}
