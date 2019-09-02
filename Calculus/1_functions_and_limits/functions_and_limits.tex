@@ -37,6 +37,14 @@
 % 每个章节后，重置公式编号
 \counterwithin*{equation}{section}
 
+% 缩进
+\usepackage{indentfirst}
+\makeatletter
+\def\paragraph{
+    \parindent2em
+}
+\makeatother
+
 \begin{document}
   \tableofcontents
   \newpage

@@ -76,6 +76,14 @@
 % 文字顶部和底部的弧度，使用自定义的包，避免输出错误字体文字和 warning 提示
 \usepackage{./arcs/arcs}
 
+% 缩进
+\usepackage{indentfirst}
+\makeatletter
+\def\paragraph{
+    \parindent2em
+}
+\makeatother
+
 \begin{document}
   \tableofcontents
   \newpage

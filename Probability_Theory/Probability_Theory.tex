@@ -22,6 +22,10 @@
 
 % 设置行间距 1.5 倍
 \renewcommand{\baselinestretch}{1.5}
+% 自定义图片的标题：Figure -> 图
+\renewcommand{\figurename}{图}
+% 自定义表格的标题：Table -> 表
+\renewcommand{\tablename}{表}
 
 % 设置页大小和页边距，或者scale=0.8
 \geometry{a4paper,left=3.18cm,right=3.18cm,top=2.54cm,bottom=2.54cm}
@@ -53,6 +57,14 @@
 \def\figureref#1{{\color{blue}\hypersetup{linkcolor=blue} (\ref{#1}) }}
 % 修改跳转标签引用的颜色
 \def\linkref[#1]#2{\hyperref[#1]{\color{blue} #2}}
+
+% 缩进
+\usepackage{indentfirst}
+\makeatletter
+\def\paragraph{
+    \parindent2em
+}
+\makeatother
 
 \begin{document}
   \tableofcontents

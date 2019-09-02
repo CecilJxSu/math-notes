@@ -63,6 +63,14 @@
 % 修改跳转标签引用的颜色
 \def\linkref[#1]#2{\hyperref[#1]{\color{blue}\ #2\ }}
 
+% 缩进
+\usepackage{indentfirst}
+\makeatletter
+\def\paragraph{
+    \parindent2em
+}
+\makeatother
+
 \begin{document}
   \tableofcontents
   \newpage

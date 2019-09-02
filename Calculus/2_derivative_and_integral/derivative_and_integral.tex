@@ -55,6 +55,14 @@
 % 修改图片标签引用的颜色
 \def\figureref#1{{\color{blue}\hypersetup{linkcolor=blue} (\ref{#1}) }}
 
+% 缩进
+\usepackage{indentfirst}
+\makeatletter
+\def\paragraph{
+    \parindent2em
+}
+\makeatother
+
 \begin{document}
   \tableofcontents
   \newpage
