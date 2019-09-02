@@ -75,15 +75,23 @@
 % 文字顶部和底部的弧度，使用自定义的包，避免输出错误字体文字和 warning 提示
 \usepackage{./arcs/arcs}
 
+% 缩进
+\usepackage{indentfirst}
+\makeatletter
+\def\paragraph{
+    \parindent2em
+}
+\makeatother
+
 \begin{document}
   \tableofcontents
   \newpage
 
   \part{定积分的应用}
-  \section{定积分的元素法}
-    \input{1_element_method}
-  \section{定积分在几何学上的应用}
-    \input{2_application_in_geometry}
+  % \section{定积分的元素法}
+  %   \input{1_element_method}
+  % \section{定积分在几何学上的应用}
+  %   \input{2_application_in_geometry}
   \section{定积分在物理学上的应用}
     \input{3_application_in_physics}
 \end{document}

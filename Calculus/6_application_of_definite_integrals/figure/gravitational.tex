@@ -1,0 +1,31 @@
+% 引力应用
+\begin{tikzpicture}[scale=0.6]
+
+  \node[left] at (0,5) {$y$};
+  \draw[-latex] (0,-5) -- (0,5);
+  \node[below] at (7,0) {$x$};
+  \draw[-latex] (0,0) -- (7,0);
+
+  % M
+  \node[below right] at (4,0) {$M$};
+  \draw[fill=black] (4,0) circle (0.08cm);
+  \draw[-latex] (4,0) -- (0,2);
+
+  % y
+  \node[left] at (-0.15,2) {$y$};
+  \draw (0,2) -- (-0.15,2);
+
+  \node[left] at (-0.15,2.6) {$y+dy$};
+  \draw (0,2.6) -- (-0.15,2.6);
+
+  \node[below] at (2,0) {$a$};
+
+  \draw[line width=0.05cm] (0,3.5) -- (0,-3.5);
+  \node[left] at (0,3.5) {$\frac{l}{2}$};
+  \node[left] at (0,-3.5) {$-\frac{l}{2}$};
+
+  \node[above right] at (2,1) {$r$};
+
+  % 原点
+  \node [left] at (0,0) {$O$};
+\end{tikzpicture}

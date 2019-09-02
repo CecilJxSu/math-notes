@@ -1,0 +1,19 @@
+% 水压力例子(b)
+\begin{tikzpicture}[scale=0.6]
+  \node[below] at (2.6,0) {$y$};
+  \draw[-latex] (-2.6,0) -- (2.6,0);
+  \node[left] at (0,-2.6) {$x$};
+  \draw[-latex] (0,2.6) -- (0,-2.6);
+  \draw (0,0) circle (1.6cm);
+
+  \draw (1.2,0) -- (1,0.2) -- (1.4,0.2) -- (1.2,0);
+  \path[fill=black!60] (1.2,-0.15) -- (1.05,0) -- (1.35,0) -- (1.2,-0.15);
+
+  \node[above left] at (0,0) {$O$};
+  \node[below right] at (1.5,0.05) {\small $R$};
+
+  \node[above right] at (-0.05,-0.6) {$x$};
+
+  \draw[pattern=north east lines] (-1.45,-0.6) -- (1.45,-0.6) -- (1.45,-0.9) -- (-1.45,-0.9) -- (-1.45,-0.6);
+  \node[below right] at (-0.05,-0.9) {\footnotesize $x+dx$};
+\end{tikzpicture}
