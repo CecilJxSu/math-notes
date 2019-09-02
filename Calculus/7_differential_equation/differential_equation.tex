@@ -39,8 +39,6 @@
 \setCJKmainfont[AutoFakeSlant, BoldFont=SimHei]{SimSun}
 % area of hatch，面积阴影部分, 箭头类型
 \usetikzlibrary{patterns, arrows.meta, positioning}
-% 极坐标系
-\usepgfplotslibrary{polar}
 
 \hypersetup{
     colorlinks,
@@ -65,16 +63,6 @@
 % 引用 section 的章节号
 \def\secref#1{\hyperref[#1]{\color{blue}[\ref{#1}节]}}
 
-% 添加 input 搜索目录
-\makeatletter
-\def\input@path{
-  {../../latex_package/}
-}
-\makeatother
-
-% 文字顶部和底部的弧度，使用自定义的包，避免输出错误字体文字和 warning 提示
-\usepackage{./arcs/arcs}
-
 % 缩进
 \usepackage{indentfirst}
 \makeatletter
@@ -87,11 +75,25 @@
   \tableofcontents
   \newpage
 
-  \part{定积分的应用}
-  \section{定积分的元素法}
-    \input{1_element_method}
-  \section{定积分在几何学上的应用}
-    \input{2_application_in_geometry}
-  \section{定积分在物理学上的应用}
-    \input{3_application_in_physics}
+  \part{微分方程}
+  \section{微分方程的基本概念}
+    \input{1_concepts_of_differential_equation}
+  \section{可分离变量的微分方程}
+    \input{2_separation_of_variables}
+  \section{齐次方程}
+    \input{3_homogeneous_equation}
+  \section{一阶线性微分方程}
+    \input{4_first_order_linear_equation}
+  \section{可降解的高阶微分方程}
+    \input{5_reduction_of_order}
+  \section{高阶线性微分方程}
+    \input{6_higher_order_linear_equation}
+  \section{常系数齐次线性微分方程}
+    \input{7_constant_coefficient-homogeneous-linear}
+  \section{常系数非齐次线性微分方程}
+    \input{8_constant_coefficient-inhomogeneous-linear}
+  \section{欧拉方程}
+    \input{9_euler‘s_formula}
+  \section{常系数线性微分方程组解法举例}
+    \input{10_solving_examples}
 \end{document}
