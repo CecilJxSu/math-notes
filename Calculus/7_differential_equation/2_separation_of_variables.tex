@@ -1,0 +1,77 @@
+\paragraph{}
+一阶微分方程$y'=f(x,y)$有时也写成如下的对称形式：
+\begin{equation}
+  \label{微分方程的对称形式}
+  P(x,y)dx + Q(x,y)dy = 0.
+\end{equation}
+
+在方程\eqref{微分方程的对称形式}中，变量$x$与$y$对称，它既可看作是以$x$为自变量、$y$为因变量的方程
+\begin{equation}
+  \frac{dy}{dx} = -\frac{P(x,y)}{Q(x,y)}, \; (Q(x,y) \neq 0)
+\end{equation}
+也可看作是以$y$为自变量、$x$为因变量的方程
+\begin{equation}
+  \frac{dx}{dy} = -\frac{Q(x,y)}{P(x,y)}, \; (P(x,y) \neq 0)
+\end{equation}
+
+\paragraph{}
+在第一节的例1中，一阶微分方程$\displaystyle \frac{dy}{dx}=2x$，或$dy=2xdx$，可以把两端都积分就得到方程的通解$y=x^2+C$。但是并不是所有的一阶微分方程都能这样求解。例如，对于一阶微分方程
+
+\begin{equation}
+  \label{二阶微分方程例子1}
+  \frac{dy}{dx}=2xy^2
+\end{equation}
+就不能像上面那样用直接对两端积分的方法求出它的通解。原因是方程\eqref{二阶微分方程例子1}的右端含有与$x$存在函数关系的变量$y$，积分
+\begin{equation}
+  \int{2xy^2dx}
+\end{equation}
+求不出来。
+
+\paragraph{}
+为了解决这个困难，在方程\eqref{二阶微分方程例子1}的两端同时乘以$\displaystyle \frac{dx}{y^2}$，使方程\eqref{二阶微分方程例子1}变为
+\begin{equation}
+  \frac{dy}{y^2}=2xdx,
+\end{equation}
+这样，变量$x$与$y$已分离在等式的两端，然后两端积分得
+\begin{align}
+  -\frac{1}{y} \;=&\; x^2 + C, \\
+  y \;=&\; -\frac{1}{x^2+C}
+\end{align}
+其中$C$是任意常数。
+
+\paragraph{}
+一般的，如果一个一阶微分方程能写成
+\begin{equation}
+  \label{可分离变量的微分方程}
+  g(y)dy = f(x)dx
+\end{equation}
+的形式，就是说，能把微分方程写成一端只含$y$的函数和$dy$，另一端只含$x$的函数和$dx$，那么原方程就称为\uwave{可分离变量的微分方程}。
+
+\paragraph{}
+\textbf{证~~}假定方程\eqref{可分离变量的微分方程}中的函数$g(y)$和$f(x)$是连续的。设$y=\varphi(x)$是方程\eqref{可分离变量的微分方程}的解，将它代入\eqref{可分离变量的微分方程}中得到恒等式
+\begin{equation}
+  g[\varphi(x)]\varphi'(x)dx = f(x)dx.
+\end{equation}
+将上式两端积分，并由$y=\varphi(x)$引进变量$y$，得
+\begin{equation}
+  \int{g(y)dy} = \int{f(x)dx}.
+\end{equation}
+
+设$G(y)$及$F(x)$依次为$g(y)$及$f(x)$的原函数，于是有
+\begin{equation}
+  \label{可分离变量的微分方程的通解}
+  G(y) = F(x) + C.
+\end{equation}
+因此，方程\eqref{可分离变量的微分方程}的解满足关系式\eqref{可分离变量的微分方程的通解}。
+
+\paragraph{}
+反之，如果$y=\Phi(x)$是由关系式\eqref{可分离变量的微分方程的通解}所确定的隐函数，那么在$g(y) \neq 0$的条件下，$y=\Phi(x)$也是方程\eqref{可分离变量的微分方程}的解，事实上，由隐函数的求导法可知，当$g(y) \neq 0$时，
+
+\begin{equation}
+  \phi'(x) = \frac{F'(x)}{G'(y)} = \frac{f(x)}{g(y)},
+\end{equation}
+
+这就表示函数$y=\Phi(x)$满足方程\eqref{可分离变量的微分方程}。所以，如果已分离变量的方程\eqref{可分离变量的微分方程}中，$g(y)$和$f(x)$是连续的，且$g(y) \neq 0$，那么\eqref{可分离变量的微分方程}式两端积分后得到的关系式\eqref{可分离变量的微分方程的通解}，就用隐式给出了方程\eqref{可分离变量的微分方程}的解，\eqref{可分离变量的微分方程的通解}式就叫做微分方程\eqref{可分离变量的微分方程}的\uwave{隐式解}。
+
+\paragraph{}
+又由于关系式\eqref{可分离变量的微分方程的通解}中含有任意常数，因此\eqref{可分离变量的微分方程的通解}式所确定的隐函数是方程\eqref{可分离变量的微分方程}的通解，所以\eqref{可分离变量的微分方程的通解}式叫做微分方程\eqref{可分离变量的微分方程}的\uwave{隐式通解}（当$f(x)\neq0$时，\eqref{可分离变量的微分方程的通解}式所确定的隐函数$x=\Psi(y)$也可认为是方程\eqref{可分离变量的微分方程}的解）。
