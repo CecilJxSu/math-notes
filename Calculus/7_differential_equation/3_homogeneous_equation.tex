@@ -1,0 +1,109 @@
+\subsection{齐次方程}
+\paragraph{}
+如果一阶微分方程可化成
+\begin{equation}
+  \label{齐次方程形式}
+  \frac{dy}{dx} = \varphi(\frac{y}{x})
+\end{equation}
+的形式，那么就称这方程为\uwave{齐次方程}，例如
+\begin{equation*}
+  (xy-y^2)dx - (x^2-2xy)dy = 0
+\end{equation*}
+是齐次方程，因为它可化成
+\begin{align*}
+  \frac{dy}{dx} \;=&\; \frac{xy-y^2}{x^2-2xy}, \\
+  \;=&\; \frac{\frac{y}{x} - (\frac{y}{x})^2}{1 - 2(\frac{y}{x})}.
+\end{align*}
+
+\paragraph{}
+在齐次方程
+\begin{equation*}
+  \frac{dy}{dx} = \varphi(\frac{y}{x})
+\end{equation*}
+中，引进新的未知函数
+\begin{equation}
+  \label{齐次方程换元函数}
+  u = \frac{y}{x},
+\end{equation}
+就可把它化为可分离变量的方程。因为由\eqref{齐次方程换元函数}有
+
+\begin{equation*}
+  y = ux, \; \text{两边对$x$求导得} \; \frac{dy}{dx} = u + x\frac{du}{dx},
+\end{equation*}
+代入方程\eqref{齐次方程形式}，便得方程
+\begin{equation*}
+  u + x\frac{du}{dx} = \varphi(u),
+\end{equation*}
+即
+\begin{equation*}
+    x\frac{du}{dx} = \varphi(u) - u.
+\end{equation*}
+分离变量，得
+\begin{equation*}
+  \frac{du}{\varphi(u) - u} = \frac{dx}{x}.
+\end{equation*}
+两端积分，得
+\begin{equation*}
+  \int\frac{du}{\varphi(u) - u} = \int\frac{dx}{x}.
+\end{equation*}
+求出积分后，再以$\displaystyle \frac{y}{x}$代替$u$，便得所给齐次方程的通解。
+
+\subsubsection{可化为齐次的方程}
+\paragraph{}
+方程
+\begin{equation}
+  \label{可化为齐次的方程通式}
+  \frac{dy}{dx} = \frac{ax+by+c}{a_1x+b_1y+c_1}
+\end{equation}
+
+当$c=c_1=0$时是齐次的，否则不是齐次的。在非齐次的情形，可用下列变换把它化为齐次方程：令
+\begin{equation*}
+  x = X + h, y = Y + k,
+\end{equation*}
+其中$h$及$k$是待定的常数，于是
+\begin{equation*}
+  dx = dX, dy = dY,
+\end{equation*}
+从而方程\eqref{可化为齐次的方程通式}成为
+\begin{equation*}
+  \frac{dY}{dX} = \frac{aX+bY+ah+bk+c}{a_1X+b_1Y+a_1h+b_1k+c_1}.
+\end{equation*}
+
+\paragraph{}
+\setlength{\baselineskip}{30pt}
+如果方程组
+\begin{align*}
+  \left\{\begin{array}{l}
+    ah + bk + c = 0, \\
+    a_1h+b_1k+c_1 = 0
+  \end{array} \right.
+\end{align*}
+的系数行列式$\displaystyle \left|\begin{array}{ll}
+  a & b \\ a_1 & b_1
+\end{array} \right| \neq 0$，即$\displaystyle \frac{a_1}{a} \neq \frac{b_1}{b}$，那么可以定出$h$及$k$使它们满足上述方程组。这样，方程\eqref{可化为齐次的方程通式}便化为齐次方程
+\begin{equation*}
+  \frac{dY}{dX} = \frac{aX+bY}{a_1X+b_1Y}.
+\end{equation*}
+求出这齐次方程的通解后，在通解中以$x-h$代$X$，$y-k$代$Y$，便得方程\eqref{可化为齐次的方程通式}的通解。
+
+\paragraph{}
+当$\displaystyle \frac{a_1}{a}=\frac{b_1}{b}$时，$h$及$k$无法求得，因此上述方法不能应用。但这时令$\displaystyle \frac{a_1}{a}=\frac{b_1}{b}=\lambda$，从而方程\eqref{可化为齐次的方程通式}可写成
+
+\begin{equation*}
+  \frac{dy}{dx} = \frac{ax+by+c}{\lambda(ax+by)+c_1}.
+\end{equation*}
+引入新变量$v=ax+by$，两边对$x$求导，则
+\begin{equation*}
+  \frac{dv}{dx} = a + b\frac{dy}{dx} \;\text{或}\; \frac{dy}{dx} = \frac{1}{b}(\frac{dv}{dx} - a).
+\end{equation*}
+于是方程\eqref{可化为齐次的方程通式}成为
+\begin{equation*}
+  \frac{1}{b}(\frac{dv}{dx} - a) = \frac{v+c}{\lambda v + c_1},
+\end{equation*}
+这是可分离变量的方程。
+
+\paragraph{}
+以上所介绍的方法可以应用于更一般的方程
+\begin{equation*}
+  \frac{dy}{dx} = f(\frac{ax+by+c}{a_1x+b_1y+c_1}).
+\end{equation*}
