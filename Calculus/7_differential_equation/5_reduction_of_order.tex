@@ -1,0 +1,72 @@
+二阶及二阶以上的微分方程，即所谓\uwave{高阶微分方程}。通过代换将它化成较低阶的方程来求解。
+
+\subsection[y＾(n)=f(x) 型的微分方程]{$y^{(n)}=f(x)$型的微分方程}
+\paragraph{}
+微分方程
+\begin{equation}
+  \label{y^(n)=f(x)型的微分方程}
+  y^{(n)}=f(x)
+\end{equation}
+的右端仅含有自变量$x$。容易看出，只要把$y^{(n-1)}$作为新的未知函数，那么\eqref{y^(n)=f(x)型的微分方程}式就是新未知函数的一阶微分方程。两边积分，就得到一个$n-1$阶的微分方程
+\begin{equation*}
+  y^{(n-1)} = \int f(x)dx + C_1.
+\end{equation*}
+
+\paragraph{}
+同理可得
+\begin{equation*}
+  y^{(n-2)} = \int\big[ \int f(x)dx + C_1 \big]dx + C_2.
+\end{equation*}
+依此法继续进行，接连积分$n$次，便得方程\eqref{y^(n)=f(x)型的微分方程}的含有$n$个任意常数的通解。
+
+\subsection{$y''=f(x,y')$型的微分方程}
+\paragraph{}
+方程
+\begin{equation}
+  \label{y''=f(x,y')型的微分方程}
+  y'' = f(x,y')
+\end{equation}
+的右端不显含未知函数$y$。如果我们设$y'=p$，那么
+\begin{equation*}
+  y'' = \frac{dp}{dx} = p',
+\end{equation*}
+而方程\eqref{y''=f(x,y')型的微分方程}就成为
+\begin{equation*}
+  p' = f(x,p).
+\end{equation*}
+这是一个关于变量$x, p$的一阶微分方程。设其通解为
+\begin{equation*}
+  p = \varphi(x,C_1),
+\end{equation*}
+但是$\displaystyle p = \frac{dy}{dx}$，因此又得到一个一阶微分方程
+\begin{equation*}
+  \frac{dy}{dx} = \varphi(x,C_1).
+\end{equation*}
+对它进行积分，便得方程\eqref{y''=f(x,y')型的微分方程}的通解为
+\begin{equation*}
+  y = \int\varphi(x,C_1)dx + C_2.
+\end{equation*}
+
+\subsection{$y''=f(y,y')$型的微分方程}
+\paragraph{}
+方程
+\begin{equation}
+  \label{y''=f(y,y')型的微分方程}
+  y'' = f(y,y')
+\end{equation}
+中不明显地含自变量$x$。为了求出它的解。我们令$y'=p$，并利用复合函数的求导法则，把$y''$化为对$y$的导数，即
+\begin{equation*}
+  y'' = \frac{dp}{dx} = \frac{dp}{dy} \bigcdot \frac{dy}{dx} = p\frac{dp}{dy}.
+\end{equation*}
+这样，方程\eqref{y''=f(y,y')型的微分方程}就成为
+\begin{equation*}
+  p\frac{dp}{dy} = f(y,p).
+\end{equation*}
+这是一个关于变量$y, p$的一阶微分方程。设它的通解为
+\begin{equation*}
+  y' = p = \varphi(y,C_1),
+\end{equation*}
+分离变量并积分，便得方程\eqref{y''=f(y,y')型的微分方程}的通解为
+\begin{equation*}
+  \int\frac{dy}{\varphi(y,C_1)} = x + C_2.
+\end{equation*}
