@@ -1,0 +1,65 @@
+\subsection{线性方程}
+\paragraph{}
+方程
+\begin{equation}
+  \label{一阶线性微分方程}
+  \frac{dy}{dx} + P(x)y = Q(x)
+\end{equation}
+叫做\uwave{一阶线性微分方程}，因为它对于未知函数$y$及齐导数是一次方程。如果$Q(x) \equiv 0$，则方程\eqref{一阶线性微分方程}称为\uwave{齐次}的；如果$Q(x) \not\equiv 0$，则方程\eqref{一阶线性微分方程}称为\uwave{非齐次}的。
+
+\paragraph{}
+设\eqref{一阶线性微分方程}为非齐次线性方程。为了求出非齐次线性方程\eqref{一阶线性微分方程}的解，我们先把$Q(x)$换成零而写出方程
+\begin{equation}
+  \label{一阶齐次线性微分方程}
+  \frac{dy}{dx} + P(x)y = 0.
+\end{equation}
+方程\eqref{一阶齐次线性微分方程}叫做对应于非齐次线性方程\eqref{一阶线性微分方程}的\uwave{齐次线性方程}。方程\eqref{一阶齐次线性微分方程}是可分离变量的。分离变量后得
+\begin{equation*}
+  \frac{dy}{y} = -P(x)dx,
+\end{equation*}
+两端积分，得
+\begin{equation*}
+  \ln|y|=-\int P(x)dx+C_1,
+\end{equation*}
+或
+\begin{equation*}
+  y = Ce^{-\int P(x)dx} \; (C=\pm e^{C_1}),
+\end{equation*}
+这是对应的齐次线性方程\eqref{一阶齐次线性微分方程}的通解。
+
+\paragraph{}
+现在我们使用\href{https://www.cnblogs.com/lookof/archive/2009/01/06/1370065.html}{\color{blue}\uwave{常数变易法}}来求非齐次线性方程\eqref{一阶线性微分方程}的通解。这方法是把\eqref{一阶齐次线性微分方程}的通解中的$C$换成$x$的未知函数$u(x)$，即作变换
+
+\begin{equation}
+  \label{常数变易法变换1}
+  y = ue^{-\int P(x)dx},
+\end{equation}
+于是
+\begin{equation}
+  \label{常数变易法变换2}
+  \frac{dy}{dx} = u'e^{-\int P(x)dx} - uP(x)e^{-\int P(x)dx}.
+\end{equation}
+将\eqref{常数变易法变换1}和\eqref{常数变易法变换2}代入方程\eqref{一阶线性微分方程}得
+\begin{equation*}
+  u'e^{-\int P(x)dx} - uP(x)e^{-\int P(x)dx} + P(x)ue^{-\int P(x)dx} = Q(x),
+\end{equation*}
+即
+\begin{equation*}
+  u'e^{-\int P(x)dx} = Q(x), \;\; u' = Q(x)e^{\int P(x)dx}.
+\end{equation*}
+两端积分，得
+\begin{equation*}
+  u=\int Q(x)e^{\int P(x)dx}dx + C.
+\end{equation*}
+把上式代入\eqref{常数变易法变换1}，便得非齐次线性方程\eqref{一阶线性微分方程}的通解
+\begin{equation}
+  \label{常数变易法变换3}
+  y = e^{-\int P(x)dx}\big( \int Q(x)e^{P(x)dx}dx + C \big),
+\end{equation}
+
+\paragraph{}
+将\eqref{常数变易法变换3}式改写成两项之和
+\begin{equation*}
+  y = Ce^{-\int P(x)dx} + e^{-\int P(x)dx}\int Q(x)e^{\int P(x)dx}dx,
+\end{equation*}
+上式右端第一项是对应的齐次线性方程\eqref{一阶齐次线性微分方程}的通解，第二项是非齐次线性方程\eqref{一阶线性微分方程}的一个特解（在\eqref{一阶线性微分方程}的通解\eqref{常数变易法变换3}中取$C=0$便得到这个特解）。由此可见，一阶非齐次线性方程的通解等于对应的齐次方程的通解与非齐次方程的一个特解之和。
