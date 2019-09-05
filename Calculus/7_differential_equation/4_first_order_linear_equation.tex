@@ -63,3 +63,30 @@
   y = Ce^{-\int P(x)dx} + e^{-\int P(x)dx}\int Q(x)e^{\int P(x)dx}dx,
 \end{equation*}
 上式右端第一项是对应的齐次线性方程\eqref{一阶齐次线性微分方程}的通解，第二项是非齐次线性方程\eqref{一阶线性微分方程}的一个特解（在\eqref{一阶线性微分方程}的通解\eqref{常数变易法变换3}中取$C=0$便得到这个特解）。由此可见，一阶非齐次线性方程的通解等于对应的齐次方程的通解与非齐次方程的一个特解之和。
+
+\subsection{伯努利方程}
+\paragraph{}
+方程
+\begin{equation}
+  \label{伯努利方程}
+  \frac{dy}{dx} + P(x)y = Q(x)y^n \;\; (n \neq 0,1)
+\end{equation}
+叫做\uwave{伯努利（Bernoulli）方程}。当$n=0$或$n=1$时，这是线性微分方程。当$n\neq 0, n\neq 1$时，这方程不是线性的，但是通过变量的代换，便可把它化为线性的。事实上，以$y^n$除方程\eqref{伯努利方程}的两端，得
+
+\begin{equation}
+  \label{伯努利方程转换1}
+  y^{-n}\frac{dy}{dx} + P(x)y^{1-n}=Q(x).
+\end{equation}
+容易看出，上式左端第一项与$\displaystyle\frac{d}{dx}(y^{1-n})$只差一个常数因子$1-n$，因此我们引入新的因变量
+\begin{equation*}
+  z=y^{1-n},
+\end{equation*}
+那么
+\begin{equation*}
+  \frac{dz}{dx} = (1-n)y^{-n}\frac{dy}{dx}.
+\end{equation*}
+用$(1-n)$乘方程\eqref{伯努利方程转换1}的两端，再通过上述代换便得线性方程
+\begin{equation*}
+  \frac{dz}{dx} + (1-n)P(x)z = (1-n)Q(x).
+\end{equation*}
+求出这方程的通解后，以$y^{1-n}$代$z$便得到伯努利方程的通解。
