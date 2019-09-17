@@ -1,0 +1,65 @@
+% \subsection{二阶线性微分方程举例}
+\subsection{线性微分方程的解的结构}
+\paragraph{}
+二阶齐次线性方程
+\begin{equation}
+  \label{二阶齐次线性方程}
+  y'' + P(x)y' + Q(x)y = 0.
+\end{equation}
+
+\paragraph{}
+\textbf{定理1~~} 如果函数$y_1(x)$与$y_2(x)$是方程\eqref{二阶齐次线性方程}的两个解，那么
+\begin{equation}
+  y = C_1y_1(x) + C_2y_2(x)
+\end{equation}
+也是\eqref{二阶齐次线性方程}的解，其中$C_1, C_2$是任意常数。
+
+\paragraph{}
+\textbf{定理2~~}如果$y_1(x)$与$y_2(x)$是方程\eqref{二阶齐次线性方程}的两个线性无关的特解，那么
+\begin{equation*}
+  y = C_1y_1(x) + C_2y_2(x) ~~ (C_1, C_2\text{是任意常数})
+\end{equation*}
+就是方程\eqref{二阶齐次线性方程}的通解。
+
+\paragraph{}
+\textbf{推论~~}如果$y_1(x), y_2(x), \cdots, y_n(x)$是$n$阶齐次线性方程
+\begin{equation*}
+  y^{(n)}+a_1(x)y^{(n-1)}+\cdots+a_{n-1}(x)y' + a_n(x)y = 0
+\end{equation*}
+的$n$个线性无关的解，那么，此方程的通解为
+\begin{equation*}
+  y=C_1y_1(x) + C_2y_2(x) + \cdots + C_ny_n(x),
+\end{equation*}
+其中$C_1,C_2,\cdots,C_n$为任意常数。
+
+\paragraph{}
+\textbf{定理3~~}设$y^*(x)$是二阶非齐次线性方程
+\begin{equation}
+  \label{定理3，二阶非齐次线性方程}
+  y''+P(x)y'+Q(x)y = f(x)
+\end{equation}
+的一个特解。$Y(x)$是与\eqref{定理3，二阶非齐次线性方程}对应的齐次方程\eqref{二阶齐次线性方程}的通解，那么
+\begin{equation}
+  y = Y(x) + y^*(x)
+\end{equation}
+是二阶非齐次线性微分方程\eqref{定理3，二阶非齐次线性方程}的通解。
+
+\paragraph{}
+\textbf{定理4~~}设非齐次线性方程\eqref{定理3，二阶非齐次线性方程}的右端$f(x)$是两个函数之和，即
+\begin{equation}
+  y'' + P(x)y' + Q(x)y = f_1(x) + f_2(x),
+\end{equation}
+而$y_1^*(x)$与$y_2^*(x)$分别是方程
+\begin{equation*}
+  y'' + P(x)y' + Q(x)y = f_1(x)
+\end{equation*}
+与
+\begin{equation*}
+  y'' + P(x)y' + Q(x)y = f_2(x)
+\end{equation*}
+的特解，那么$y_1^*(x)+y_2^*(x)$就是原方程的特解。
+\paragraph{}
+这一定理通常称为线性微分方程的解的\uwave{叠加原理}。
+
+\subsection{常数变易法}
+\paragraph{}
