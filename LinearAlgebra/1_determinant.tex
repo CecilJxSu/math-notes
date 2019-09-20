@@ -34,14 +34,14 @@
 其中分母$a_{11}a_{22} - a_{12}a_{21}$ 是由方程组\eqref{消元法解二元线性方程组}的四个系数确定的，把这四个数按它们在方程组\eqref{消元法解二元线性方程组}中的位置，排成二行二列的数表
 \begin{equation}
 \label{二阶数表}
-\begin{array}{ll}
+\begin{array}{cc}
 a_{11} & a_{12} \\ a_{21} & a_{22},
 \end{array}
 \end{equation}
 表达式$a_{11}a_{22} - a_{12}a_{21}$称为数表\eqref{二阶数表}所确定的\textbf{二阶行列式}，并记作
 \begin{equation}
   \left|
-  \begin{array}{ll}
+  \begin{array}{cc}
   a_{11} & a_{12} \\ a_{21} & a_{22}
   \end{array} \right|.
 \end{equation}
@@ -60,21 +60,21 @@ a_{11} & a_{12} \\ a_{21} & a_{22},
 \paragraph{}
 利用二阶行列式的概念和对角线法则，\eqref{二元线性方程组的解}式中$x_1,x_2$的分子也可写成二阶行列式，即
 \begin{equation*}
-  b_1a_{22} - a_{12}b_2 = \left|\begin{array}{ll} b_1 & a_{12} \\ b_2 & a_{22}\end{array}\right|, \;
-  a_{11}b_2 - b_1a_{21} = \left|\begin{array}{ll} a_{11} & b_1 \\ a_{21} & b_2\end{array}\right|,
+  b_1a_{22} - a_{12}b_2 = \left|\begin{array}{cc} b_1 & a_{12} \\ b_2 & a_{22}\end{array}\right|, \;
+  a_{11}b_2 - b_1a_{21} = \left|\begin{array}{cc} a_{11} & b_1 \\ a_{21} & b_2\end{array}\right|,
 \end{equation*}
 
 \paragraph{}
 若记
 \begin{equation*}
-  D = \left|\begin{array}{ll} a_{11} & a_{12} \\ a_{21} & a_{22} \end{array}\right|, \;
-  D_1 = \left|\begin{array}{ll} b_1 & a_{12} \\ b_2 & a_{22} \end{array}\right|, \;
-  D_2 = \left|\begin{array}{ll} a_{11} & b_1 \\ a_{21} & b_2 \end{array}\right|, \;
+  D = \left|\begin{array}{cc} a_{11} & a_{12} \\ a_{21} & a_{22} \end{array}\right|, \;
+  D_1 = \left|\begin{array}{cc} b_1 & a_{12} \\ b_2 & a_{22} \end{array}\right|, \;
+  D_2 = \left|\begin{array}{cc} a_{11} & b_1 \\ a_{21} & b_2 \end{array}\right|, \;
 \end{equation*}
 那么\eqref{二元线性方程组的解}式可写成
 \begin{equation*}
-  x_1 = \frac{D_1}{D} = \frac{\left|\begin{array}{ll} b_1 & a_{12} \\ b_2 & a_{22} \end{array}\right|}{\left|\begin{array}{ll} a_{11} & a_{12} \\ a_{21} & a_{22} \end{array}\right|}, \;
-  x_2 = \frac{D_2}{D} = \frac{\left|\begin{array}{ll} a_{11} & b_1 \\ a_{21} & b_2 \end{array}\right|}{\left|\begin{array}{ll} a_{11} & a_{12} \\ a_{21} & a_{22} \end{array}\right|}.
+  x_1 = \frac{D_1}{D} = \frac{\left|\begin{array}{cc} b_1 & a_{12} \\ b_2 & a_{22} \end{array}\right|}{\left|\begin{array}{cc} a_{11} & a_{12} \\ a_{21} & a_{22} \end{array}\right|}, \;
+  x_2 = \frac{D_2}{D} = \frac{\left|\begin{array}{cc} a_{11} & b_1 \\ a_{21} & b_2 \end{array}\right|}{\left|\begin{array}{cc} a_{11} & a_{12} \\ a_{21} & a_{22} \end{array}\right|}.
 \end{equation*}
 
 \paragraph{}
@@ -86,7 +86,7 @@ a_{11} & a_{12} \\ a_{21} & a_{22},
 \textbf{定义~~}设有$9$个数排成$3$行$3$列的数表
 \begin{equation}
   \label{三阶数表}
-  \begin{array}{lll}
+  \begin{array}{ccc}
     a_{11} & a_{12} & a_{13} \\
     a_{21} & a_{22} & a_{23} \\
     a_{31} & a_{32} & a_{33},
@@ -97,7 +97,7 @@ a_{11} & a_{12} \\ a_{21} & a_{22},
 \centering
   \begin{split}
     \label{三阶行列式}
-    &\;\left|\begin{array}{lll}
+    &\;\left|\begin{array}{ccc}
       a_{11} & a_{12} & a_{13} \\
       a_{21} & a_{22} & a_{23} \\
       a_{31} & a_{32} & a_{33}
@@ -155,6 +155,107 @@ a_{11} & a_{12} \\ a_{21} & a_{22},
 即是这个排列的逆序数。
 
 \subsection{$n$阶行列式的定义}
+\subsubsection{三阶行列式的结构}
+\paragraph{}
+先研究三阶行列式的结构，然后推广到$n$阶行列式的定义。
+\begin{align}
+\centering
+  \begin{split}
+    \label{三阶行列式的结构}
+    &\;\left|\begin{array}{ccc}
+      a_{11} & a_{12} & a_{13} \\
+      a_{21} & a_{22} & a_{23} \\
+      a_{31} & a_{32} & a_{33}
+    \end{array}\right| \\
+    =&\; a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32} - \\
+    &\; a_{11}a_{23}a_{32} - a_{12}a_{21}a_{33} - a_{13}a_{22}a_{31},
+  \end{split}
+\end{align}
+
+\begin{enumerate}[label=\alph*)]
+  \item 第\eqref{三阶行列式的结构}式右边的每一项都恰是三个元素的乘积，这三个元素位于不同的行、不同的列。因此，第\eqref{三阶行列式的结构}式右边的任一项除符号外，可以写成$a_{1p_1}a_{2p_2}a_{3p_3}$，这里第一个下标（行标）排成标准次序$123$，而第二个下标（列标）排成$p_1p_2p_3$，它是$1,2,3$的某个排列。这样的排列共有$6$种。
+  \item 各项的正负号与列标的奇偶排列对照。
+  \\带正号的三项列标排列是：$123, \; 231, \; 312$；
+  \\带负号的三项列标排列是：$132, \; 213, \; 321$。
+  \\经计算可知前三个排列都是偶排列，而后三个排列都是奇排列。因此各项所带的正负号可以表示为$(-1)^t$，其中t为列标排列的逆序数。
+\end{enumerate}
+
+\paragraph{}
+总之，三阶行列式可以写成
+\begin{equation*}
+  \left|\begin{array}{ccc}
+    a_{11} & a_{12} & a_{13} \\
+    a_{21} & a_{22} & a_{23} \\
+    a_{31} & a_{32} & a_{33}
+  \end{array}\right| = \sum(-1)^ta_{1p_1}a_{2p_2}a_{3p_3},
+\end{equation*}
+其中$t$为排列$p_1p_2p_3$的逆序数，$\sum$表示对$1,2,3$个数的所有排列$p_1p_2p_3$取和。
+
+\subsubsection{$n$阶行列式的定义}
+\paragraph{}
+从上面的三阶行列式的研究，可以把行列式推广到一般情形。
+
+\paragraph{}
+\textbf{定义~~}设有$n^2$个数，排成$n$行$n$列的数表
+\begin{equation*}
+\begin{array}{cccc}
+  a_{11} & a_{12} & \cdots & a_{1n} \\
+  a_{21} & a_{22} & \cdots & a_{2n} \\
+  \vdots & \vdots & \vdots & \vdots \\
+  a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{array}
+\end{equation*}
+作出表中位于不同行不同列的$n$个数的乘积，并冠以符号$(-1)^t$，得到形如
+\begin{equation}
+  \label{n阶行列式的通项}
+  (-1)^ta_{1p_1}a_{2p_2}\cdots a_{np_n}
+\end{equation}
+的项，其中$p_1p_2\cdots p_n$为自然数$1,2,\cdots,n$的一个排列，$t$为这个排列的逆序数。由于这样的排列共有$n!$个，因而形如\eqref{n阶行列式的通项}式的项共有$n!$项。所有这$n!$项的代数和
+\begin{equation*}
+  \sum(-1)^ta_{1p_1}a_{2p_2}\cdots a_{np_n}
+\end{equation*}
+称为\textbf{$n$阶行列式}，记作
+\begin{equation*}
+  D = \left|\begin{array}{cccc}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    a_{21} & a_{22} & \cdots & a_{2n} \\
+    \vdots & \vdots & \vdots & \vdots \\
+    a_{n1} & a_{n2} & \cdots & a_{nn}
+  \end{array}\right|,
+\end{equation*}
+简记作$det(a_{ij})$，其中数$a_{ij}$为行列式$D$的$(i,j)$元。
+
+\subsubsection{特殊的$n$阶行列式}
+\paragraph{}
+\textbf{对角行列式}
+\begin{equation*}
+  \left|\begin{array}{cccc}
+    \lambda_1 & & & \\
+    & \lambda_2 & & \\
+    & & \ddots & \\
+    & & & \lambda_n
+  \end{array}\right| = \lambda_1\lambda_2\cdots \lambda_n,
+\end{equation*}
+
+\begin{equation*}
+  \left|\begin{array}{cccc}
+    & & & \lambda_1 \\
+    & & \lambda_2 & \\
+    & \iddots & & \\
+    \lambda_n & & &
+  \end{array}\right| = (-1)^{\frac{n(n-1)}{2}}\lambda_1\lambda_2\cdots \lambda_n,
+\end{equation*}
+
+\paragraph{}
+主对角线以下(上)的元素都为$0$的行列式叫做\textbf{上（下）三角形行列式}，它的值与对角行列式一样。例如，下三角形行列式：
+\begin{equation*}
+  \left|\begin{array}{cccc}
+    a_{11} & & & 0 \\
+    a_{21} & a_{22} & & \\
+    \vdots & \vdots & \ddots & \\
+    a_{n1} & a_{n2} & \cdots & a_{nn}
+  \end{array}\right| = a_{11}a_{22}\cdots a_{nn}.
+\end{equation*}
 
 \subsection{对换}
 
