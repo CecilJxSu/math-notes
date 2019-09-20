@@ -120,6 +120,39 @@ a_{11} & a_{12} \\ a_{21} & a_{22},
 对角线法则只适用于二阶与三阶行列式，下面先介绍全排列及其逆序数，然后由此引出$n$阶行列式的概念。
 
 \subsection{全排列及其逆序数}
+\subsubsection{全排列}
+\paragraph{}
+把$n$个不同的元素排成一列，叫做这$n$个元素的\textbf{全排列}（简称\textbf{排列}）。
+
+\paragraph{}
+从$n$个元素中任取一个放在第一个位置上，有$n$种取法；又从剩下的$n-1$个元素中任取一个放在第二个位置上，有$n-1$种取法；依此类推，于是：
+\begin{equation*}
+  P_n = n \bigcdot (n-1) \bigcdot \cdots \bigcdot 3 \bigcdot 2 \bigcdot 1 = n!.
+\end{equation*}
+
+\subsubsection{逆序数}
+\paragraph{}
+概念：
+\begin{enumerate}
+  \item \textbf{标准次序}：$n$个不同的自然数，按由小到大的顺序排序
+  \item \textbf{逆序}：当某两个元素的先后次序与标准次序不同时，就说有$1$个\uwave{逆序}
+  \item \textbf{排列的逆序数}：一个排列中所有逆序的总数
+  \item \textbf{奇／偶排列}：逆序数为奇／偶数
+\end{enumerate}
+
+\paragraph{}
+下面讨论计算排列的逆序数的方法：
+
+\paragraph{}
+一般性，设$n$个元素为$1$至$n$这$n$个自然数，并规定由小到大为标准次序，设：
+\begin{equation*}
+  p_1p_2\cdots p_n
+\end{equation*}
+为这$n$个自然数的一个排列，考虑元素$p_i(i=1,2,\cdots,n)$，如果比$p_i$大的且排在$p_i$前面的元素有$t_i$个，就说$p_i$这个元素的逆序数是$t_i$。全体元素的逆序数之总和
+\begin{equation*}
+  t = t_1 + t_2 + \cdots + t_n = \sum_{t=1}^n t_i,
+\end{equation*}
+即是这个排列的逆序数。
 
 \subsection{$n$阶行列式的定义}
 
