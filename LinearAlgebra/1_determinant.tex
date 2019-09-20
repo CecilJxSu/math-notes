@@ -277,10 +277,96 @@ a_{11} & a_{12} \\ a_{21} & a_{22},
 \end{equation*}
 其中$t$为行标排列$p_1p_2\cdots p_n$的逆序数。
 
-\paragraph{}
-
-
 \subsection{行列式的性质}
+\paragraph{}
+记
+\begin{equation*}
+  D = \left|\begin{array}{cccc}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    a_{21} & a_{22} & \cdots & a_{2n} \\
+    \vdots & \vdots & \vdots & \vdots \\
+    a_{n1} & a_{n2} & \cdots & a_{nn}
+  \end{array} \right|, \;
+  D^T = \left|\begin{array}{cccc}
+    a_{11} & a_{21} & \cdots & a_{n1} \\
+    a_{12} & a_{22} & \cdots & a_{n2} \\
+    \vdots & \vdots & \vdots & \vdots \\
+    a_{1n} & a_{2n} & \cdots & a_{nn}
+  \end{array} \right|,
+\end{equation*}
+行列式$D^T$称为行列式$D$的\textbf{转置行列式}。
+
+\paragraph{}
+\textbf{性质1~~}行列式与它的转置行列式相等。
+
+\paragraph{}
+\textbf{性质2~~}互换行列式的两行（列），行列式变号。
+
+\paragraph{}
+\textbf{推论~~}如果行列式有两行（列）完全相同，则此行列式等于零。
+
+\paragraph{}
+\textbf{性质3~~}行列式的某一行（列）中所有的元素都乘以同一数$k$，等于用数$k$乘此行列式。
+
+\paragraph{}
+第$i$行（列）乘以$k$，记作$r_i \times k$（$c_i \times k$）。
+
+\paragraph{}
+\textbf{推论~~}行列式中某一行（列）的所有元素的公因子可以提到行列式记号的外面。
+
+\paragraph{}
+第$i$行（列）提出公因子$k$，记作$r_i \div k$（$c_i \div k$）。
+
+\paragraph{}
+\textbf{性质4~~}行列式中如果有两行（列）元素成比例，则此行列式等于零。
+
+\paragraph{}
+\textbf{性质5~~}若行列式的某一列（行）的元素都是两数之和，例如第$i$列的元素都是两数之和：
+\begin{equation*}
+\left|\begin{array}{cccccc}
+  a_{11} & a_{12} & \cdots & (a_{1i}+a'_{1i}) & \cdots & a_{1n} \\
+  a_{21} & a_{22} & \cdots & (a_{2i}+a'_{2i}) & \cdots & a_{2n} \\
+  \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+  a_{n1} & a_{n2} & \cdots & (a_{ni}+a'_{ni}) & \cdots & a_{n n}
+\end{array}\right|
+\end{equation*}
+则$D$等于下列两个行列式之和：
+\begin{align*}
+  D =&\; \left|\begin{array}{cccccc}
+    a_{11} & a_{12} & \cdots & a_{1i} & \cdots & a_{1n} \\
+    a_{21} & a_{22} & \cdots & a_{2i} & \cdots & a_{2n} \\
+    \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+    a_{n1} & a_{n2} & \cdots & a_{ni} & \cdots & a_{n n}
+  \end{array}\right| \\
+  &\; + \left|\begin{array}{cccccc}
+    a_{11} & a_{12} & \cdots & a'_{1i} & \cdots & a_{1n} \\
+    a_{21} & a_{22} & \cdots & a'_{2i} & \cdots & a_{2n} \\
+    \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+    a_{n1} & a_{n2} & \cdots & a'_{ni} & \cdots & a_{n n}
+  \end{array}\right|
+\end{align*}
+
+\paragraph{}
+\textbf{性质6~~}把行列式的某一列（行）的各元素乘以同一数然后加到另一列（行）对应的元素上去，行列式不变。
+\paragraph{}
+例如以数$k$乘第$j$列加到第$j$列上（记作$c_i+kc_j$），有
+\begin{align*}
+  &\;\left|\begin{array}{ccccccc}
+    a_{11} & \cdots & a_{1i} & \cdots & a_{1j} & \cdots & a_{1n} \\
+    a_{21} & \cdots & a_{2i} & \cdots & a_{2j} & \cdots & a_{2n} \\
+    \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+    a_{n1} & \cdots & a_{ni} & \cdots & a_{nj} & \cdots & a_{nn}
+  \end{array}\right| \\
+  \stackrel{c_i+kc_j}{=\joinrel=\joinrel=\joinrel=\joinrel=} &\;\left|\begin{array}{ccccccc}
+    a_{11} & \cdots & (a_{1i} + ka_{1j}) & \cdots & a_{1j} & \cdots & a_{1n} \\
+    a_{21} & \cdots & (a_{2i} + ka_{2j}) & \cdots & a_{2j} & \cdots & a_{2n} \\
+    \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+    a_{n1} & \cdots & (a_{ni} + ka_{nj}) & \cdots & a_{nj} & \cdots & a_{nn}
+  \end{array}\right| \; (i \neq j).
+\end{align*}
+
+\paragraph{}
+此外还要注意运算$r_i + r_j$与$r_j + r_i$的区别，记号$r_i + kr_j$不能写作$kr_j + r_i$（这里不能套用加法的交换率）。
 
 \subsection{行列式按行（列）展开}
 
