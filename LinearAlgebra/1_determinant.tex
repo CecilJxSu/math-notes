@@ -278,6 +278,7 @@ a_{11} & a_{12} \\ a_{21} & a_{22},
 其中$t$为行标排列$p_1p_2\cdots p_n$的逆序数。
 
 \subsection{行列式的性质}
+\subsubsection{性质}
 \paragraph{}
 记
 \begin{equation*}
@@ -300,9 +301,11 @@ a_{11} & a_{12} \\ a_{21} & a_{22},
 \textbf{性质1~~}行列式与它的转置行列式相等。
 
 \paragraph{}
+\hypertarget{行列式性质2}{}
 \textbf{性质2~~}互换行列式的两行（列），行列式变号。
 
 \paragraph{}
+\hypertarget{行列式性质2的推论}{}
 \textbf{推论~~}如果行列式有两行（列）完全相同，则此行列式等于零。
 
 \paragraph{}
@@ -368,6 +371,275 @@ a_{11} & a_{12} \\ a_{21} & a_{22},
 \paragraph{}
 此外还要注意运算$r_i + r_j$与$r_j + r_i$的区别，记号$r_i + kr_j$不能写作$kr_j + r_i$（这里不能套用加法的交换率）。
 
+\paragraph{}
+\hypertarget{行列式性质6的结论}
+任何$n$阶行列式总能利用运算$r_i+kr_j$化为上三角形行列式，或化为下三角形行列式。类似地，利用列运算$c_i+kc_j$，也可以把行列式化为上三角形行列式或下三角形行列式。
+
+\subsubsection{例子}\label{行列式性质的例子}
+\paragraph{}
+设
+\begin{align*}
+  D =&\; \left|\begin{array}{cccccc}
+    a_{11} & \cdots & a_{1k} & & & \\
+    \vdots & & \vdots & & 0 & \\
+    a_{k1} & \cdots & a_{kk} & & & \\
+    c_{11} & \cdots & c_{1k} & b_{11} & \cdots & b_{1n} \\
+    \vdots & & \vdots & \vdots & & \vdots \\
+    c_{n1} & \cdots & c_{nk} & b_{n1} & \cdots & b_{nn}
+  \end{array} \right|, \\
+  D_1 =&\; det(a_{ij}) = \left|\begin{array}{ccc}
+    a_{11} & \cdots & a_{1k} \\
+    \vdots &  & \vdots \\
+    a_{k1} & \cdots & a_{kk}
+  \end{array} \right|, \\
+  D_2 =&\; det(b_{ij}) = \left|\begin{array}{ccc}
+    b_{11} & \cdots & b_{1n} \\
+    \vdots &  & \vdots \\
+    b_{n1} & \cdots & b_{nn}
+  \end{array} \right|,
+\end{align*}
+证明$D=D_1D_2$。
+
+\paragraph{}
+\textbf{证~~}对$D_1$作运算$r_i+\lambda r_j$，把$D_1$化为下三角形行列式，设为
+\begin{equation*}
+  D_1 = \left|\begin{array}{ccc}
+    p_{11} & & 0 \\
+    \vdots & \ddots & \\
+    p_{k1} & \cdots & p_{kk}
+  \end{array} \right| = p_{11} \bigcdot \cdots \bigcdot p_{kk},
+\end{equation*}
+对$D_2$作运算$c_i + \lambda c_j$，把$D_2$化为下三角形行列式，设为
+\begin{equation*}
+  D_2 = \left|\begin{array}{ccc}
+    q_{11} & & 0 \\
+    \vdots & \ddots & \\
+    q_{n1} & \cdots & q_{nn}
+  \end{array} \right| = q_{11} \bigcdot \cdots \bigcdot q_{nn},
+\end{equation*}
+于是，对$D$的前$k$行作运算$r_i + \lambda r_j$，再对后$n$列作运算$c_i + \lambda c_j$，把$D$化为下三角形行列式
+\begin{equation*}
+  D = \left|\begin{array}{cccccc}
+    p_{11} & & & & & \\
+    \vdots & \ddots & & & 0 & \\
+    p_{k1} & \cdots & p_{kk} & & & \\
+    c_{11} & \cdots & c_{1k} & q_{11} & & \\
+    \vdots & & \vdots & \vdots & \ddots & \\
+    c_{n1} & \cdots & c_{nk} & q_{n1} & \cdots & q_{nn}
+  \end{array} \right|
+\end{equation*}
+故 $D = p_{11} \bigcdot \cdots \bigcdot p_{kk} \bigcdot q_{11} \bigcdot \cdots \bigcdot q_{nn} = D_1D_2$。
+
 \subsection{行列式按行（列）展开}
+\subsubsection{余子式和代数余子式}
+\paragraph{}
+在$n$阶行列式中，把$(i,j)$元$a_{ij}$所在的第$i$行和第$j$列划去后，留下来的$n-1$阶行列式叫做$(i,j)$元$a_{ij}$的\textbf{余子式}，记作$M_{ij}$；
+
+\paragraph{}
+记
+\begin{equation*}
+  A_{ij} = (-1)^{i+j}M_{ij},
+\end{equation*}
+$A_{ij}$叫做$(i,j)$元$a_{ij}$的\textbf{代数余子式}。
+
+\paragraph{}
+例如四阶行列式
+\begin{equation*}
+  D = \left|\begin{array}{cccc}
+    a_{11} & \text{\color{gray!50}$a_{12}$} & a_{13} & a_{14} \\
+    a_{21} & \text{\color{gray!50}$a_{22}$} & a_{23} & a_{24} \\
+    \text{\color{gray!50}$a_{31}$} & \text{\color{gray!50}$a_{32}$} & \text{\color{gray!50}$a_{33}$} & \text{\color{gray!50}$a_{34}$} \\
+    a_{41} & \text{\color{gray!50}$a_{42}$} & a_{43} & a_{44}
+  \end{array} \right|
+\end{equation*}
+中$(3,2)$元$a_{32}$的余子式和代数余子式分别为
+
+\begin{align*}
+  M_{32} =&\; \left|\begin{array}{ccc}
+    a_{11} & a_{13} & a_{14} \\
+    a_{21} & a_{23} & a_{24} \\
+    a_{41} & a_{43} & a_{44}
+  \end{array} \right| \\
+  A_{32} =&\; (-1)^{3+2}M_{32} = -M_{32}.
+\end{align*}
+
+\subsubsection{引理}
+\paragraph{}
+\textbf{引理~~}一个$n$阶行列式，如果其中第$i$行所有元素除$(i,j)$元$a_{ij}$外都为零，那么这行列式等于$a_{ij}$与它的代数余子式的乘积，即
+\begin{equation*}
+  D = a_{ij}A_{ij}.
+\end{equation*}
+
+\paragraph{}
+\textbf{证~~}先证$(i,j)=(1,1)$的情形，此时
+\begin{equation*}
+  D = \left|\begin{array}{cccc}
+    a_{11} & 0 & \cdots & 0 \\
+    a_{21} & a_{22} & \cdots & a_{2n} \\
+    \vdots & \vdots &  & \vdots \\
+    a_{n1} & a_{n2} & \cdots  & a_{nn}
+  \end{array} \right|,
+\end{equation*}
+这时，根据\hyperlink{行列式性质6的结论}{\color{blue}性质6的结论}和\secref{行列式性质的例子}的例子，即有
+\begin{equation*}
+  D = a_{11}M_{11},
+\end{equation*}
+又
+\begin{equation*}
+  A_{11} = (-1)^{1+1}M_{11} = M_{11},
+\end{equation*}
+从而
+\begin{equation*}
+  D = a_{11}A_{11}.
+\end{equation*}
+
+\paragraph{}
+再证一般情形$a_{ij}$，此时
+\begin{equation*}
+  D = \left|\begin{array}{ccccc}
+    a_{11} & \cdots & a_{1j} & \cdots & a_{1n} \\
+    \vdots &  & \vdots &  & \vdots \\
+    0 & \cdots & a_{ij} & \cdots & 0 \\
+    \vdots &  & \vdots &  & \vdots \\
+    a_{n1} & \cdots & a_{nj} & \cdots & a_{nn}
+  \end{array} \right|.
+\end{equation*}
+
+\paragraph{}
+一般情形可以利用\hyperlink{行列式性质2}{\color{blue}性质2}，通过互换$i-1$次行和$j-1$次列，化为前面$a_{11}$的情形，得到$D_{ij}=a_{ij}M_{ij}$，互换的总次数为$i+j-2$次。因此通过互换和符号的变化，得到
+\begin{align*}
+  D =&\; (-1)^{i+j-2}D_{ij} = (-1)^{i+j}D_{ij} \\
+  =&\; (-1)^{i+j}a_{ij}M_{ij} \\
+  =&\; a_{ij}A_{ij},
+\end{align*}
+因此引理成立。
+
+\subsubsection{定理}
+\paragraph{}
+\textbf{定理~~}行列式等于它的任一行（列）的各元素与其对应的代数余子式乘积之和，即
+\begin{equation*}
+  D = a_{i1}A_{i1} + a_{i2}A_{i2} + \cdots + a_{in}A_{in} \; (i = 1,2,\cdots,n),
+\end{equation*}
+或
+\begin{equation*}
+  D = a_{1j}A_{1j} + a_{2j}A_{2j} + \cdots + a_{nj}A_{nj} \; (j = 1,2,\cdots,n).
+\end{equation*}
+
+\paragraph{}
+\textbf{证}
+\begin{align*}
+  D =&\; \left|\begin{array}{cccc}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    \vdots & \vdots & & \vdots \\
+    a_{i1}+0+\cdots+0 & 0 + a_{i2}+\cdots+0 & \cdots & 0+\cdots+0+a_{in} \\
+    \vdots & \vdots & & \vdots \\
+    a_{n1} & a_{n2} & \cdots & a_{nn}
+  \end{array} \right| \\
+  =&\; \left|\begin{array}{cccc}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    \vdots & \vdots & & \vdots \\
+    a_{i1} & 0 & \cdots & 0 \\
+    \vdots & \vdots & & \vdots \\
+    a_{n1} & a_{n2} & \cdots & a_{nn}
+  \end{array} \right| +
+  \left|\begin{array}{cccc}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    \vdots & \vdots & & \vdots \\
+    0 & a_{i2} & \cdots & 0 \\
+    \vdots & \vdots & & \vdots \\
+    a_{n1} & a_{n2} & \cdots & a_{nn}
+  \end{array} \right| \\
+  &\; + \cdots + \left|\begin{array}{cccc}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    \vdots & \vdots & & \vdots \\
+    0 & 0 & \cdots & a_{in} \\
+    \vdots & \vdots & & \vdots \\
+    a_{n1} & a_{n2} & \cdots & a_{nn}
+  \end{array} \right|,
+\end{align*}
+根据引理，即得
+\begin{equation*}
+  D = a_{i1}A_{i1} + a_{i2}A_{i2} + \cdots + a_{in}A_{in} \; (i = 1,2,\cdots,n),
+\end{equation*}
+类似可证
+\begin{equation*}
+  D = a_{1j}A_{1j} + a_{2j}A_{2j} + \cdots + a_{nj}A_{nj} \; (j = 1,2,\cdots,n).
+\end{equation*}
+
+\paragraph{}
+这个定理叫做\textbf{行列式按行（列）展开法则}。
+
+\subsubsection{推论}
+\paragraph{}
+\textbf{推论~~}行列式某一行（列）的元素与另一行（列）的对应元素的代数余子式乘积之和等于零。即
+\begin{equation*}
+  a_{i1}A_{j1} + a_{i2}A_{j2} + \cdots + a_{in}A_{jn} = 0, \; i \neq j,
+\end{equation*}
+或
+\begin{equation*}
+  a_{1i}A_{1j} + a_{2i}A_{2j} + \cdots + a_{ni}A_{nj} = 0, \; i \neq j,
+\end{equation*}
+
+\paragraph{}
+\textbf{证~~}把行列式$D=det(a_{ij})$按第$j$行展开，有
+\begin{equation*}
+  a_{j1}A_{j1} + a_{j2}A_{j2} + \cdots + a_{jn}A_{jn} = \left|\begin{array}{ccc}
+    a_{11} & \cdots & a_{1n} \\
+    \cdots &  & \cdots \\
+    a_{i1} & \cdots & a_{in} \\
+    \cdots &  & \cdots \\
+    a_{j1} & \cdots & a_{jn} \\
+    \cdots &  & \cdots \\
+    a_{n1} & \cdots & a_{nn}
+  \end{array} \right|,
+\end{equation*}
+在上式中把第$j$行替换成第$i$行，可得
+\begin{equation*}
+  a_{i1}A_{j1} + a_{i2}A_{j2} + \cdots + a_{in}A_{jn} = \left|\begin{array}{ccc}
+    a_{11} & \cdots & a_{1n} \\
+    \cdots &  & \cdots \\
+    a_{i1} & \cdots & a_{in} \\
+    \cdots &  & \cdots \\
+    a_{i1} & \cdots & a_{in} \\
+    \cdots &  & \cdots \\
+    a_{n1} & \cdots & a_{nn}
+  \end{array} \right|\begin{array}{c}
+    \\
+    \\
+    \text{←第$i$行} \\
+    \\
+    \text{←第$j$行} \\
+    \\
+    \\
+  \end{array},
+\end{equation*}
+当$i\neq j$时，根据\hyperlink{行列式性质2的推论}{\color{blue}性质2的推论}，上式等于零，即得
+\begin{equation*}
+  a_{i1}A_{j1} + a_{i2}A_{j2} + \cdots + a_{in}A_{jn} = 0, \; (i \neq j),
+\end{equation*}
+
+\paragraph{}
+上述证法按列进行，可得
+\begin{equation*}
+  a_{1i}A_{1j} + a_{2i}A_{2j} + \cdots + a_{ni}A_{nj} = 0, \; (i \neq j).
+\end{equation*}
+
+\subsubsection{性质}
+\paragraph{}
+综合定理和推论，得到代数余子式的性质：
+\begin{equation*}
+  \sum_{k=1}^na_{ki}A_{kj} = D\delta_{ij}
+\end{equation*}
+或
+\begin{equation*}
+  \sum_{k=1}^na_{ik}A_{jk} = D\delta_{ij}
+\end{equation*}
+其中
+\begin{equation*}
+  \delta_{ij} = \left\{\begin{array}{cc}
+    1, & \text{当$i=j$}, \\
+    0, & \text{当$i\neq j$}.
+  \end{array}\right.
+\end{equation*}
 
 \subsection{克拉默法则}
