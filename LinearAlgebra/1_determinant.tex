@@ -643,3 +643,73 @@ $A_{ij}$叫做$(i,j)$元$a_{ij}$的\textbf{代数余子式}。
 \end{equation*}
 
 \subsection{克拉默法则}
+\subsubsection{克拉默法则}
+\paragraph{}
+含有$n$个未知数$x_1,x_2,\cdots,x_n$的$n$个线性方程的方程组
+\begin{equation}
+  \label{n个线性方程的方程组}
+  \left\{\begin{array}{l}
+    a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = b_1, \\
+    a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n = b_2, \\
+    \cdots\cdots\cdots\cdots \\
+    a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n = b_n,
+  \end{array} \right.
+\end{equation}
+即有
+
+\paragraph{}
+\textbf{克拉默法则~~}如果线性方程组\eqref{n个线性方程的方程组}的系数行列式不等于零，即
+\begin{equation*}
+  D = \left|\begin{array}{ccc}
+    a_{11} & \cdots & a_{1n} \\
+    \vdots & & \vdots \\
+    a_{n1} & \cdots & a_{nn}
+  \end{array} \right| \neq 0,
+\end{equation*}
+那么，方程组\eqref{n个线性方程的方程组}有\textbf{唯一解}
+\begin{equation}
+x_1 = \frac{D_1}{D}, \; x_2 = \frac{D_2}{D}, \; \cdots, \; x_n = \frac{D_n}{D},
+\end{equation}
+其中$D_j(j=1,2,\cdots,n)$是把系数行列式$D$中第$j$列的元素用方程组右端的常数项代替后所得到的$n$阶行列式，即
+\begin{equation*}
+  D_j = \left|\begin{array}{ccccccc}
+    a_{11} & \cdots & a_{1,j-1} & b_1 & a_{1,j+1} & \cdots & a_{1n} \\
+    \vdots &  & \vdots & \vdots & \vdots & & \vdots \\
+    a_{n1} & \cdots & a_{n,j-1} & b_n & a_{n,j+1} & \cdots & a_{nn}
+  \end{array} \right|.
+\end{equation*}
+
+\paragraph{}
+这个法则的证明在第二章给出。这里的$D_j$有展开式
+\begin{equation*}
+  D_j = b_1A_{1j} + b_2A_{2j} + \cdots + b_nA_{nj}.
+\end{equation*}
+
+\paragraph{}
+\textbf{定理~~}如果线性方程组\eqref{n个线性方程的方程组}的系数行列式$D\neq 0$，则\eqref{n个线性方程的方程组}一定有解，且解是唯一的。
+
+\paragraph{}
+\textbf{逆否定理~~}如果线性方程组\eqref{n个线性方程的方程组}无解或有两个不同的解（{\color{gray!50}即两个以上的解}），则它的系数行列式必为零。
+
+\subsubsection{齐次与非齐次线性方程组}
+\paragraph{}
+线性方程组\eqref{n个线性方程的方程组}右端的常数项$b_1,b_2,\cdots,b_n$不全为零时，线性方程组\eqref{n个线性方程的方程组}叫做\textbf{非齐次线性方程组}；当$b_1,b_2,\cdots,b_n$全为零时，线性方程组\eqref{n个线性方程的方程组}叫做\textbf{齐次线性方程组}。
+
+\paragraph{}
+对于齐次线性方程组
+\begin{equation}
+  \label{齐次线性方程组}
+  \left\{\begin{array}{l}
+    a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = 0, \\
+    a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n = 0, \\
+    \cdots\cdots\cdots\cdots \\
+    a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n = 0,
+  \end{array} \right.
+\end{equation}
+$x_1=x_2=\cdots=x_n=0$一定是它的解，这个解叫做齐次线性方程组\eqref{齐次线性方程组}的\textbf{零解}。如果一组不全为零的数是\eqref{齐次线性方程组}的解，则它叫做\textbf{非零解}。
+
+\paragraph{}
+\textbf{定理~~}如果齐次线性方程组\eqref{齐次线性方程组}的系数行列式$D\neq 0$，则齐次线性方程组\eqref{齐次线性方程组}没有非零解。
+
+\paragraph{}
+\textbf{逆否定理~~}如果齐次线性方程组\eqref{齐次线性方程组}有非零解，则它的系数行列式必为零。
