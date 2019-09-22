@@ -1,0 +1,95 @@
+\subsection{矩阵的概念}
+\subsubsection{概念}
+\paragraph{}
+\textbf{定义~~}由$m\times n$个数$a_{ij} (i=1,2,\cdots,m; \; j =1,2,\cdots,n)$排成的$m$行$n$列的数表
+\begin{equation*}
+  \left|\begin{array}{cccc}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    a_{21} & a_{22} & \cdots & a_{2n} \\
+    \vdots & \vdots &  & \vdots \\
+    a_{m1} & a_{m2} & \cdots & a_{mn}
+  \end{array} \right|
+\end{equation*}
+称为\textbf{$m$行$n$列矩阵}，简称\textbf{$m \times n$ 矩阵}，记作
+\begin{equation}
+  A = \left[\begin{array}{cccc}
+  a_{11} & a_{12} & \cdots & a_{1n} \\
+  a_{21} & a_{22} & \cdots & a_{2n} \\
+  \vdots & \vdots &  & \vdots \\
+  a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{array} \right]
+\end{equation}
+也记作$A_{m\times n}$
+
+\paragraph{}
+行数和列数都等于$n$的矩阵称为\textbf{$n$阶矩阵}或\textbf{$n$阶方阵}。$n$阶矩阵$A$也记作$A_n$。
+
+\paragraph{}
+只有一行的矩阵
+\begin{equation*}
+  A = (a_1a_2\cdots a_n)
+\end{equation*}
+称为\textbf{行矩阵}，又称\textbf{行向量}。为了避免元素间的混淆，也记作
+\begin{equation*}
+  A = (a_1,a_2,\cdots,a_n).
+\end{equation*}
+
+\paragraph{}
+只有一列的矩阵
+\begin{equation*}
+  B = \left[\begin{array}{c}
+    b_1 \\
+    b_2 \\
+    \cdots \\
+    b_m
+  \end{array}\right]
+\end{equation*}
+称为\textbf{列矩阵}，又称\textbf{列向量}。
+
+\paragraph{}
+两个矩阵的行数相等、列数也相等时，就称它们是\textbf{同型矩阵}。如果$A=(a_{ij})$与$B=(b_{ij})$是同型矩阵，并且它们的对应元素相等，即
+\begin{equation*}
+  a_{ij}=b_{ij} \;(i=1,2,\cdots,m; \; j=1,2,\cdots,n),
+\end{equation*}
+那么就称矩阵$A$与矩阵$B$\textbf{相等}，记作
+\begin{equation*}
+  A=B.
+\end{equation*}
+
+\subsubsection{类型}
+\paragraph{}
+元素都是零的矩阵称为\textbf{零矩阵}，记作$O$。注意不同型的零矩阵是不同的。
+
+\paragraph{}
+主对角线上的元素都是$1$，其余都为$0$的$n$阶矩阵，叫做$n$阶\textbf{单位矩阵}，记作$E$
+\begin{equation*}
+  E = \left[\begin{array}{cccc}
+    1 & 0 & \cdots & 0 \\
+    0 & 1 & \cdots & 0 \\
+    \vdots & \vdots & & \vdots \\
+    0 & 0 & \cdots & 1
+  \end{array}\right]
+\end{equation*}
+
+\paragraph{}
+不在主对角线上的元素都是$0$，称为\textbf{对角矩阵}，记作$A = diag(\lambda_1,\lambda_2,\cdots,\lambda_n)$
+\begin{equation*}
+  A = \left[\begin{array}{cccc}
+    \lambda_1 & 0 & \cdots & 0 \\
+    0 & \lambda_2 & \cdots & 0 \\
+    \vdots & \vdots & & \vdots \\
+    0 & 0 & \cdots & \lambda_n
+  \end{array}\right]
+\end{equation*}
+
+\paragraph{}
+\textbf{由于矩阵和线性变换之间存在一一对应的关系，因此可以利用矩阵来研究线性变换，也可以利用线性变换来解析矩阵的含义。}
+
+\subsection{矩阵的运算}
+\paragraph{}
+
+\subsection{逆矩阵}
+\paragraph{}
+
+\subsection{矩阵的分块法}
+\paragraph{}
