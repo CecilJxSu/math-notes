@@ -283,7 +283,7 @@ $-A$称为矩阵$A$的\textbf{负矩阵}，显然有
 \end{equation*}
 那么$A$称为\textbf{对称矩阵}，简称\textbf{对称阵}。对称阵的特点是：它的运算以对角线为对称轴对应相等。
 
-\subsubsection{方阵的行列式}
+\subsubsection{方阵的行列式}\label{方阵的行列式}
 \paragraph{}
 \textbf{定义~~}由$n$阶方阵$A$的元素所构成的行列式（各元素的位置不变），称为\textbf{方阵$A$的行列式}，记作$|A|$或$detA$。
 
@@ -344,7 +344,118 @@ $\overline{A}$称为$A$的\textbf{共轭矩阵}。
 \end{enumerate}
 
 \subsection{逆矩阵}
+\subsubsection{线性变换的逆变换}
 \paragraph{}
+设给定一个线性变换
+\begin{equation}
+  \left\{\begin{array}{l}
+    y_1 = a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n, \\
+    y_2 = a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n, \\
+    \cdots\cdots\cdots\cdots \\
+    y_n = a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n,
+  \end{array} \right.
+\end{equation}
+它的系数矩阵是一个$n$阶矩阵$A$，若记
+\begin{equation*}
+  X = \left[\begin{array}{c}
+    x_1 \\
+    x_2 \\
+    \vdots \\
+    x_n
+  \end{array}\right],\;
+  Y = \left[\begin{array}{c}
+    y_1 \\
+    y_2 \\
+    \vdots \\
+    y_n
+  \end{array}\right],
+\end{equation*}
+则线性变换可记作
+\begin{equation}
+  \label{Y=AX}
+  Y=AX.
+\end{equation}
+
+\paragraph{}
+以$A$的伴随阵$A^*$左乘上式两端，并利用\secref{方阵的行列式}的结果，可得
+\begin{equation*}
+  A^*Y = A^*AX, \;\text{即}\; A^*Y = |A|X,
+\end{equation*}
+当$|A|\neq 0$时，可解出
+\begin{equation*}
+  X = \frac{1}{|A|}A^*Y,
+\end{equation*}
+记$B=\frac{1}{|A|}A^*$，上式可记作
+\begin{equation}
+  \label{X=BY}
+  X = BY.
+\end{equation}
+
+\paragraph{}
+\eqref{X=BY}式表示一个从$Y$到$X$的线性变换，称为线性变换\eqref{Y=AX}的\textbf{逆变换}。
+
+\paragraph{}
+研究方阵$A$与逆变换所对应的方阵$B$之间的关系。用\eqref{X=BY}代入\eqref{Y=AX}，可得
+\begin{equation*}
+  Y = A(BY) = (AB)Y,
+\end{equation*}
+可见$AB$为恒等变换所对应的矩阵，故$AB=E$。用\eqref{Y=AX}代入\eqref{X=BY}得
+\begin{equation*}
+  X=B(AX)=(BA)X,
+\end{equation*}
+知有$BA=E$。于是有
+\begin{equation*}
+  AB=BA=E.
+\end{equation*}
+
+\subsubsection{定义}
+\paragraph{}
+\textbf{定义~~}对于$n$阶矩阵$A$，如果有一个$n$阶矩阵$B$，使
+\begin{equation*}
+  AB=BA=E,
+\end{equation*}
+则说矩阵$A$是\textbf{可逆的}，并把矩阵$B$称为$A$的\textbf{逆矩阵}，简称\textbf{逆阵}。
+
+\paragraph{}
+如果矩阵$A$是可逆的，那么$A$的逆阵是唯一的。
+
+\subsubsection{定理}
+\paragraph{}
+\textbf{定理1~~}若矩阵$A$可逆，则$|A|\neq 0$。
+
+\paragraph{}
+\textbf{定理2~~}若$|A|\neq 0$，则矩阵$A$可逆，且
+\begin{equation}
+  A^{-1} = \frac{1}{|A|}A^*,
+\end{equation}
+其中$A^*$为矩阵$A$的伴随阵。
+
+\paragraph{}
+当$|A|=0$时，$A$称为\textbf{奇异矩阵}，否则称\textbf{非奇异矩阵}。由上面两定理可知：\textbf{$A$是可逆矩阵的充分必要条件是$|A|\neq 0$，即可逆矩阵就是非奇异矩阵}。
+
+\subsubsection{推论}
+\paragraph{}
+\textbf{推论~~}若$AB=E$（或$BA=E$），则$B=A^{-1}$。
+
+\paragraph{}
+方阵的逆阵满足下述运算规律：
+\begin{enumerate}
+  \item 若$A$可逆，则$A^{-1}$亦可逆，且$(A^{-1})^{-1} = A$。
+  \item 若$A$可逆，数$\lambda\neq 0$,则$\lambda A$可逆，且$(\lambda A)^{-1} = \frac{1}{\lambda}A^{-1}$。
+  \item 若$A,B$为同阶矩阵且均可逆，则$AB$亦可逆，且
+  \begin{equation*}
+    (AB)^{-1} = B^{-1}A^{-1}。
+  \end{equation*}
+  \item 若$A$可逆，则$A^T$亦可逆，且$(A^T)^{-1}=(A^{-1})^T$。
+  \item 若$A$可逆，
+  \begin{equation*}
+    A^0 = E, \; A^{-k} = (A^{-1})^k,
+  \end{equation*}
+  其中$k$为正整数。这样，当$A$可逆，$\lambda, \mu$为整数时，有
+  \begin{equation*}
+    A^\lambda A^\mu = A^{\lambda + \mu}, \; (A^\lambda)^\mu = A^{\lambda\mu}.
+  \end{equation*}
+\end{enumerate}
 
 \subsection{矩阵的分块法}
 \paragraph{}
