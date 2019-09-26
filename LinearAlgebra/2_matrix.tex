@@ -458,4 +458,406 @@ $\overline{A}$称为$A$的\textbf{共轭矩阵}。
 \end{enumerate}
 
 \subsection{矩阵的分块法}
+\subsubsection{分块法}
 \paragraph{}
+使用\textbf{分块法}，使大矩阵的运算化成小矩阵的运算。
+
+例如将$3\times 4$矩阵
+\begin{equation*}
+  A = \left[\begin{array}{cccc}
+    a_{11} & a_{12} & a_{13} & a_{14} \\
+    a_{21} & a_{22} & a_{23} & a_{24} \\
+    a_{31} & a_{32} & a_{33} & a_{34} \\
+  \end{array}\right]
+\end{equation*}
+分成子块的分法很多，例如：
+\begin{align*}
+  & (1)\; \left[\begin{array}{cc;{2pt/2pt}cc}
+    a_{11} & a_{12} & a_{13} & a_{14} \\
+    a_{21} & a_{22} & a_{23} & a_{24} \\ \hdashline[2pt/2pt]
+    a_{31} & a_{32} & a_{33} & a_{34} \\
+  \end{array}\right], \;\;
+  (2)\; \left[\begin{array}{c;{2pt/2pt}cc;{2pt/2pt}c}
+    a_{11} & a_{12} & a_{13} & a_{14} \\
+    a_{21} & a_{22} & a_{23} & a_{24} \\ \hdashline[2pt/2pt]
+    a_{31} & a_{32} & a_{33} & a_{34} \\
+  \end{array}\right], \\[0.5em]
+  & (3)\; \left[\begin{array}{c;{2pt/2pt}c;{2pt/2pt}c;{2pt/2pt}c}
+    a_{11} & a_{12} & a_{13} & a_{14} \\
+    a_{21} & a_{22} & a_{23} & a_{24} \\
+    a_{31} & a_{32} & a_{33} & a_{34} \\
+  \end{array}\right].
+\end{align*}
+分法$(1)$可记为
+\begin{equation*}
+  A = \left[\begin{array}{cc}
+    A_{11} & A_{12} \\
+    A_{21} & A_{22}
+  \end{array}\right],
+\end{equation*}
+其中
+\begin{align*}
+  A_{11} =& \left[\begin{array}{cc}
+    a_{11} & a_{12} \\
+    a_{21} & a_{22}
+  \end{array}\right], \;
+  A_{12} = \left[\begin{array}{cc}
+    a_{13} & a_{14} \\
+    a_{23} & a_{24}
+  \end{array}\right], \\[0.5em]
+  A_{21} =& \left[\begin{array}{cc}
+    a_{31} & a_{32}
+  \end{array}\right], \;
+  A_{22} = \left[\begin{array}{cc}
+    a_{33} & a_{34}
+  \end{array}\right]
+\end{align*}
+
+\subsubsection{分块矩阵的运算法则}
+\paragraph{}
+分块矩阵的运算规则与普通矩阵的运算规则类型：
+\begin{enumerate}
+  \item 设矩阵$A$与$B$的行数相同、列数相同，采用相同的分块法，有
+  \begin{equation*}
+    A = \left[\begin{array}{ccc}
+      A_{11} & \cdots & A_{1r} \\
+      \vdots &  & \vdots \\
+      A_{s1} & \cdots & A_{sr}
+    \end{array}\right], \;
+    B = \left[\begin{array}{ccc}
+      B_{11} & \cdots & B_{1r} \\
+      \vdots &  & \vdots \\
+      B_{s1} & \cdots & B_{sr}
+    \end{array}\right],
+  \end{equation*}
+  其中$A_{ij}$与$B_{ij}$的行数相同、列数相同，那么
+  \begin{equation*}
+    A + B = \left[\begin{array}{ccc}
+      A_{11} + B_{11} & \cdots & A_{1r} + B_{1r} \\
+      \vdots &  & \vdots \\
+      A_{s1} + B_{s1} & \cdots & A_{sr} + B_{sr}
+    \end{array}\right]
+  \end{equation*}
+  \item 设$\displaystyle A=\left[\begin{array}{ccc}
+    A_{11} & \cdots & A_{1r} \\
+    \vdots &  & \vdots \\
+    A_{s1} & \cdots & A_{sr}
+  \end{array}\right]$，$\lambda$为数，那么
+  \begin{equation*}
+    \lambda A = \left[\begin{array}{ccc}
+      \lambda A_{11} & \cdots & \lambda A_{1r} \\
+      \vdots &  & \vdots \\
+      \lambda A_{s1} & \cdots & \lambda A_{sr}
+    \end{array}\right].
+  \end{equation*}
+  \item 设$A$为$m \times l$矩阵，$B$为$l\times n$矩阵，分块成
+  \begin{equation*}
+    A = \left[\begin{array}{ccc}
+      A_{11} & \cdots & A_{1t} \\
+      \vdots & & \vdots \\
+      A_{s1} & \cdots & A_{st}
+    \end{array}\right], \;
+    B = \left[\begin{array}{ccc}
+      B_{11} & \cdots & B_{1r} \\
+      \vdots &  & \vdots \\
+      B_{t1} &  & B_{tr} \\
+    \end{array}\right]
+  \end{equation*}
+  其中$A_{i1}, A_{i2}, \cdots, A_{it}$的列数分别等于$B_{1j}, B_{2j}, \cdots, B_{tj}$的行数，那么
+  \begin{equation*}
+    AB = \left[\begin{array}{ccc}
+      C_{11} & \cdots & C_{1r} \\
+      \vdots &  & \vdots \\
+      C_{s1} & \cdots & C_{sr}
+    \end{array}\right]
+  \end{equation*}
+  其中
+  \begin{equation*}
+    C_{ij} = \sum_{k=1}^t A_{ik}B_{kj} \; (i = 1, \cdots, s; \; j = 1,\cdots,r).
+  \end{equation*}
+  \item 设$\displaystyle A = \left[\begin{array}{ccc}
+    A_{11} & \cdots & A_{1r} \\
+    \vdots & & \vdots \\
+    A_{s1} & \cdots & A_{sr}
+  \end{array}\right]$，则$A^T = \left[\begin{array}{ccc}
+    A_{11}^T & \cdots & A_{s1}^T \\
+    \vdots &  & \vdots \\
+    A_{1r}^T & \cdots  & A_{sr}^T
+  \end{array}\right]$。
+  \item 设$A$为$n$阶矩阵，若$A$的分块矩阵只有在对角线上有非零子块，其余子块都为零矩阵，且在对角线上的子块都是方阵，即
+  \begin{equation*}
+    A = \left[\begin{array}{cccc}
+      A_1 & & & O \\
+      & A_2 & & \\
+      & & \ddots & \\
+      O & & & A_s
+    \end{array}\right],
+  \end{equation*}
+  其中$A_i\;(i = 1,2,\cdots,s)$都是方阵，那么称$A$为\textbf{分块对角矩阵}。
+\end{enumerate}
+
+\paragraph{}
+分块对角矩阵的行列式具有下述性质
+\begin{equation*}
+  |A| = |A_1||A_2|\cdots|A_s|.
+\end{equation*}
+由此性质可知，若$|A_i|\neq 0 \;(i=1,2,\cdots,s)$，则$|A|\neq 0$，并有
+\begin{equation*}
+  A^{-1} = \left[\begin{array}{cccc}
+    A_1^{-1} & & & O \\
+    & A_2^{-1} & & \\
+    & & \ddots & \\
+    O & & & A_s^{-1}
+  \end{array}\right]
+\end{equation*}
+
+\subsubsection{按行／列分块}
+\paragraph{}
+\textbf{按行分块~~}$m\times n$矩阵$\bm{A}$有$m$行，称为矩阵$\bm{A}$的$m$个行向量。若第$i$行记作
+\begin{equation*}
+  \bm{\alpha_i} = (a_{i1}, a_{i2}, \cdots, a_{in}),
+\end{equation*}
+则矩阵$\bm{A}$便记为
+\begin{equation*}
+  \bm{A} = \left[\begin{array}{c}
+    \bm{\alpha_1} \\
+    \bm{\alpha_2} \\
+    \vdots \\
+    \bm{\alpha_m}
+  \end{array}\right]
+\end{equation*}
+
+\paragraph{}
+\textbf{按列分块~~}$m\times n$矩阵$\bm{A}$有$n$列，称为矩阵$\bm{A}$的$n$个列向量，若第$j$列记作
+\begin{equation*}
+  \bm{a_j} = \left[\begin{array}{c}
+    a_{1j} \\
+    a_{2j} \\
+    \vdots \\
+    a_{mj}
+  \end{array}\right]
+\end{equation*}
+则矩阵$\bm{A}$便记作
+\begin{equation*}
+  \bm{A} = (\bm{a_1}, \bm{a_2}, \cdots, \bm{a_n}).
+\end{equation*}
+
+\paragraph{}
+对于矩阵$\bm{A}=(a_{ij})_{m\times s}$与矩阵$\bm{B}=(b_{ij})_{s\times n}$的乘积矩阵$\bm{AB}=\bm{C}=(c_{ij})_{m\times n}$，若把$\bm{A}$按行分成$m$块，把$\bm{B}$按列分成$n$块，便有
+\begin{equation*}
+  \bm{AB} = \left[\begin{array}{c}
+    \bm{\alpha_1} \\
+    \bm{\alpha_2} \\
+    \vdots \\
+    \bm{\alpha_m}
+  \end{array}\right](\bm{b_1},\bm{b_2},\cdots,\bm{b_n}) = \left[\begin{array}{cccc}
+    \bm{\alpha_1b_1} & \bm{\alpha_1b_2} & \cdots & \bm{\alpha_1b_n} \\
+    \bm{\alpha_2b_1} & \bm{\alpha_2b_2} & \cdots & \bm{\alpha_2b_n} \\
+    \vdots & \vdots & & \vdots \\
+    \bm{\alpha_mb_1} & \bm{\alpha_mb_2} & \cdots & \bm{\alpha_mb_n} \\
+  \end{array}\right] = (c_{ij})_{m\times n},
+\end{equation*}
+其中
+\begin{equation*}
+  c_{ij} = \bm{\alpha_ib_j} = (a_{i1}, a_{i2} , \cdots , a_{is})\left[\begin{array}{c}
+    b_{1j} \\
+    b_{2j} \\
+    \vdots \\
+    b_{sj}
+  \end{array}\right] = \sum_{k=1}^sa_{ik}b_{kj},
+\end{equation*}
+
+\subsubsection{对角阵左乘／右乘}
+\paragraph{}
+以对角阵$\bm{\Lambda}_m$左乘矩阵$\bm{A}_{m\times n}$时，把$\bm{A}$按行分块，有
+\begin{equation*}
+  \bm{\Lambda}_m\bm{A}_{m\times n} = \left[\begin{array}{cccc}
+    \lambda_1 & & & \\
+    & \lambda_1 & & \\
+    & & \ddots & \\
+    & & & \lambda_m
+  \end{array}\right]\left[\begin{array}{c}
+    \bm{\alpha_1} \\
+    \bm{\alpha_2} \\
+    \vdots \\
+    \bm{\alpha_m}
+  \end{array}\right] = \left[\begin{array}{c}
+    \lambda_1\bm{\alpha_1} \\
+    \lambda_2\bm{\alpha_2} \\
+    \vdots \\
+    \lambda_m\bm{\alpha_m}
+  \end{array}\right],
+\end{equation*}
+可见以对角阵$\bm{\Lambda}$左乘$\bm{A}$的结果是$\bm{A}$的每一行乘以$\bm{\Lambda}$中与该行对应的对角元。
+
+\paragraph{}
+以对角阵$\bm{\Lambda}_n$右乘矩阵$\bm{A}_{m\times n}$时，把$\bm{A}$按列分块，有
+\begin{equation*}
+  \bm{A}_{m\times n}\bm{\Lambda}_n = (\bm{a_1},\bm{a_2},\cdots,\bm{a_n})\left[\begin{array}{cccc}
+    \lambda_1 & & & \\
+    & \lambda_1 & & \\
+    & & \ddots & \\
+    & & & \lambda_n
+  \end{array}\right] = (\lambda_1\bm{a_1},\lambda_2\bm{a_2},\cdots,\lambda_n\bm{a_n}),
+\end{equation*}
+可见以对角阵$\bm{\Lambda}$右乘$\bm{A}$的结果是$\bm{A}$的每一列乘以$\bm{\Lambda}$中与该列对应的对角元。
+
+\paragraph{}
+矩阵$\bm{A}=\bm{O}$的充分必要条件是方阵$\bm{A^TA} = \bm{O}$。
+
+\subsubsection{线性方程组的分块}
+\paragraph{}
+对于线性方程组
+\begin{equation}
+  \label{线性方程组的分块:线性方程组}
+  \left\{\begin{array}{l}
+    a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = b_1, \\
+    a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n = b_2, \\
+    \cdots\cdots\cdots\cdots \\
+    a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n = b_m,
+  \end{array} \right.
+\end{equation}
+记
+\begin{equation*}
+  \bm{A} = (a_{ij}), \; \bm{x} = \left[\begin{array}{c}
+    x_1 \\
+    x_2 \\
+    \vdots \\
+    x_n
+  \end{array}\right], \;
+  \bm{b} = \left[\begin{array}{c}
+    b_1 \\
+    b_2 \\
+    \vdots \\
+    b_m
+  \end{array}\right], \;
+  \bm{B} = \left[\begin{array}{cccc|c}
+    a_{11} & a_{12} & \cdots & a_{1n} & b_1 \\
+    a_{21} & a_{22} & \cdots & a_{2n} & b_2 \\
+    \vdots & \vdots & & \vdots & \vdots \\
+    a_{m1} & a_{m2} & \cdots & a_{mn} & b_m
+  \end{array}\right],
+\end{equation*}
+其中$\bm{A}$称为系数矩阵，$\bm{x}$称为未知数向量，$\bm{b}$称为常数项向量，$\bm{B}$称为增广矩阵。按分块矩阵的记法，可记
+\begin{equation*}
+  \bm{B} = (\bm{A}|\bm{b}), \text{或} \bm{B} = (\bm{A},\bm{b}) = (\bm{a_1},\bm{a_2},\cdots,\bm{a_n}, \bm{b}).
+\end{equation*}
+
+\paragraph{}
+利用矩阵的乘法，此方程组可记作
+\begin{equation}
+  \label{线性方程组的分块:Ax=b}
+  \bm{Ax} = \bm{b},
+\end{equation}
+方程\eqref{线性方程组的分块:Ax=b}以向量$\bm{x}$为未知元，它的解称为方程组\eqref{线性方程组的分块:线性方程组}的\textbf{解向量}。
+
+\paragraph{}
+如果把系数矩阵$\bm{A}$按行分成$m$块，则线性方程组$\bm{Ax}=\bm{b}$可记作
+\begin{equation}
+  \left[\begin{array}{c}
+    \bm{\alpha_1} \\
+    \bm{\alpha_2} \\
+    \vdots \\
+    \bm{\alpha_m}
+  \end{array}\right]\bm{x} = \left[\begin{array}{c}
+    b_1 \\
+    b_2 \\
+    \vdots \\
+    b_m
+  \end{array}\right], \; \text{或}
+  \left\{\begin{array}{c}
+    \bm{\alpha_1x} = b_1, \\
+    \bm{\alpha_2x}= b_2, \\
+    \vdots \\
+    \bm{\alpha_mx} = b_m,
+  \end{array}\right.
+\end{equation}
+这就相当于把每个方程
+\begin{equation*}
+  a_{i1}x_1 + a_{i2}x_2 + \cdots + a_{in}x_n = b_i
+\end{equation*}
+记作
+\begin{equation*}
+  \bm{\alpha_i}\bm{x}=b_i \;(i=1,2,\cdots,m).
+\end{equation*}
+
+\paragraph{}
+如果把系数矩阵$\bm{A}$按列分成$n$块，则与$\bm{A}$相乘的$\bm{x}$应对应地按行分成$n$块，从而记作
+\begin{equation*}
+  (\bm{a_1},\bm{a_2},\cdots,\bm{a_n})\left[\begin{array}{c}
+    x_1 \\
+    x_2 \\
+    \vdots \\
+    x_n
+  \end{array}\right] = \bm{b}
+\end{equation*}
+即
+\begin{equation*}
+  x_1\bm{a_1} + x_2\bm{a_2} + \cdots + x_n\bm{a_n} = \bm{b}.
+\end{equation*}
+
+\subsubsection{克拉默法则证明}
+\paragraph{}
+\textbf{克拉默法则~~}对于$n$个变量、$n$个方程的线性方程组
+\begin{equation}
+  \label{克拉默法则证明:线性方程组}
+  \left\{\begin{array}{l}
+    a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = b_1, \\
+    a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n = b_2, \\
+    \cdots\cdots\cdots\cdots \\
+    a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n = b_n,
+  \end{array} \right.
+\end{equation}
+如果它的系数行列式$D\neq 0$，则它有唯一解
+\begin{equation*}
+  x_j = \frac{1}{D}D_j = \frac{1}{D}(b_1A_{1j} + b_2A_{2j} + \cdots + b_nA_{nj}) \quad (j=1,2,\cdots,n).
+\end{equation*}
+
+\paragraph{}
+\textbf{证~~}把方程组\eqref{克拉默法则证明:线性方程组}写成矩阵方程
+\begin{equation*}
+  \bm{Ax} = \bm{b},
+\end{equation*}
+这里$\bm{A}=(a_{ij})_{n\times n}$为$n$阶矩阵，因$|\bm{A}|=D\neq 0$，故$\bm{A}^{-1}$存在。
+\paragraph{}
+令$\bm{x}=\bm{A}^{-1}\bm{b}$，有
+\begin{equation*}
+  \bm{Ax} = \bm{AA}^{-1}\bm{b} = \bm{b},
+\end{equation*}
+表明$\bm{x}=\bm{A}^{-1}\bm{b}$是方程\eqref{克拉默法则证明:线性方程组}的解向量。
+
+\paragraph{}
+由$\bm{Ax}=\bm{b}$，有$\bm{A}^{-1}\bm{Ax}=\bm{A}^{-1}\bm{b}$，即$\bm{x}=\bm{A}^{-1}\bm{b}$，根据逆阵的唯一性，知$\bm{x}=\bm{A}^{-1}\bm{b}$是方程组\eqref{克拉默法则证明:线性方程组}的唯一的解向量。
+
+\paragraph{}
+由逆阵公式$\bm{A}^{-1}=\frac{1}{|\bm{A}|}\bm{A}^*$，有$\bm{x}=\bm{A}^{-1}\bm{b}=\frac{1}{D}\bm{A}^*\bm{b}$，即
+\begin{equation*}
+  \left[\begin{array}{c}
+    x_1 \\
+    x_2 \\
+    \vdots \\
+    x_n
+  \end{array}\right] = \frac{1}{D}
+  \left[\begin{array}{cccc}
+    A_{11} & A_{21} & \cdots & A_{n1} \\
+    A_{12} & A_{22} & \cdots & A_{n2} \\
+    \vdots & \vdots & & \vdots \\
+    A_{1n} & A_{2n} & \cdots & A_{nn}
+  \end{array}\right]
+  \left[\begin{array}{c}
+    b_1 \\
+    b_2 \\
+    \vdots \\
+    b_n
+  \end{array}\right] = \frac{1}{D}
+  \left[\begin{array}{c}
+    b_1A_{11} + b_2A_{21} + \cdots + b_nA_{n1} \\
+    b_1A_{12} + b_2A_{22} + \cdots + b_nA_{n2} \\
+    \cdots\cdots\cdots\cdots \\
+    b_1A_{1n} + b_2A_{2n} + \cdots + b_nA_{nn}
+  \end{array}\right]
+\end{equation*}
+亦即
+\begin{equation*}
+  x_j = \frac{1}{D}(b_1A_{1j}+b_2A_{2j}+\cdots+b_nA_{nj}) = \frac{1}{D}D_j \quad (j=1,2,\cdots,n).
+\end{equation*}
