@@ -36,6 +36,11 @@
 \renewcommand{\figurename}{图}
 % 自定义表格的标题：Table -> 表
 \renewcommand{\tablename}{表}
+% 字符外添加圆圈
+\newcommand*\circled[1]{
+\tikz[baseline=(char.base)]{
+   \node[shape=circle,draw,inner sep=1pt] (char) {#1};
+}}
 
 % 设置页大小和页边距，或者scale=0.8
 \geometry{a4paper,left=3.18cm,right=3.18cm,top=2.54cm,bottom=2.54cm}
@@ -43,10 +48,6 @@
 \pgfplotsset{compat=1.16}
 % 中文默认没有斜体和粗体格式，开启伪斜体和指定黑体；
 \setCJKmainfont[AutoFakeSlant, BoldFont=SimHei]{SimSun}
-% area of hatch，面积阴影部分, 箭头类型
-\usetikzlibrary{patterns, arrows.meta, positioning}
-% 极坐标系
-\usepgfplotslibrary{polar}
 
 \hypersetup{
     colorlinks,
@@ -55,10 +56,6 @@
     linkcolor=black,
     urlcolor=black
 }
-% 定义amsmath arccot, ch, sh
-\DeclareMathOperator{\arccot}{arccot}
-\DeclareMathOperator{\ch}{ch}
-\DeclareMathOperator{\sh}{sh}
 % 每个章节后，重置公式编号
 \counterwithin*{equation}{section}
 

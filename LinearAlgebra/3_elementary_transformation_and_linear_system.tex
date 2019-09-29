@@ -1,0 +1,247 @@
+\paragraph{}
+\begin{enumerate}
+  \item 引入矩阵的初等变换，建立矩阵的秩的概念，以及秩的性质。
+  \item 利用矩阵的秩，讨论线性方程组无解、有唯一解或有无穷多解的充分必要条件。
+  \item 介绍用初等变换解线性方程组的方法。
+\end{enumerate}
+
+\subsection{矩阵的初等变换}
+\subsubsection{初等变换的引例}
+\paragraph{}
+消元法解线性方程组例子
+
+\paragraph{}
+\textbf{引例~~}求解线性方程组
+\begin{equation*}
+  \left\{\begin{array}{c}
+            2x_1 - \enspace x_2 - \enspace x_3 + \enspace x_4 = 2, \; \circled{1} \\
+    \enspace x_1 + \enspace x_2 -         2x_3 + \enspace x_4 = 4, \; \circled{2} \\
+            4x_1 -         6x_2 +         2x_3 -         2x_4 = 4, \; \circled{3} \\
+            3x_1 +         6x_2 -         9x_3 +         7x_4 = 9, \; \circled{4}
+  \end{array} \right. \tag{$A$}
+\end{equation*}
+
+\paragraph{}
+\textbf{解~~}
+\begin{alignat*}{3}
+  (A)\, & \xrightarrow[\circled{\tiny 3} \,\div\, 2]{\circled{\tiny 1} \,\leftrightarrow\, \circled{\tiny 2}} & \;
+  \left\{\begin{array}{ll}
+    \enspace x_1 + \enspace x_2 -         2x_3 + \enspace x_4 = 4, & \circled{1} \\
+            2x_1 - \enspace x_2 - \enspace x_3 + \enspace x_4 = 2, & \circled{2} \\
+            2x_1 -         3x_2 + \enspace x_3 - \enspace x_4 = 2, & \circled{3} \\
+            3x_1 +         6x_2 -         9x_3 +         7x_4 = 9, & \circled{4}
+  \end{array} \right. \tag{$A_1$} \\
+  % ----------------------------------------------------------------------------
+  & \xrightarrow[\circled{\tiny 4} \,-\, 3\circled{\tiny 1}]{\substack{\circled{\tiny 2} \,-\, \circled{\tiny 3} \\ \circled{\tiny 3} \,-\, 2\circled{\tiny 1}}} & \;
+  \left\{\begin{array}{rl}
+     x_1 + x_2 - 2x_3 + \enspace x_4 = \hspace{0.8em} 4, & \circled{1} \\
+          2x_2 - 2x_3 +         2x_4 = \hspace{0.8em} 0, & \circled{2} \\
+         -5x_2 + 5x_3 -         3x_4 =               -6, & \circled{3} \\
+          3x_2 - 3x_3 +         4x_4 =               -3, & \circled{4}
+  \end{array} \right. \tag{$A_2$} \\
+  % ----------------------------------------------------------------------------
+  & \xrightarrow[\substack{\circled{\tiny 3} \,+\, 5\circled{\tiny 2} \\ \circled{\tiny 4} \,-\, 3\circled{\tiny 2}}]{\circled{\tiny 2} \,\times\, \frac{1}{2}} & \;
+  \left\{\begin{array}{rl}
+     x_1 + x_2 -         2x_3 + \enspace x_4 = \hspace{0.8em} 4, & \circled{1} \\
+           x_2 - \enspace x_3 + \enspace x_4 = \hspace{0.8em} 0, & \circled{2} \\
+                                        2x_4 = -6, & \circled{3} \\
+                                         x_4 = -3, & \circled{4}
+  \end{array} \right. \tag{$A_3$} \\
+  % ----------------------------------------------------------------------------
+  & \xrightarrow[\circled{\tiny 4} \,-\, 2\circled{\tiny 3}]{\circled{\tiny 3} \,\leftrightarrow\, \circled{\tiny 4}} & \;
+  \left\{\begin{array}{rrrl}
+     x_1 + & x_2 - 2x_3 + & x_4 = \hspace{0.8em} 4, & \circled{1} \\\cdashline{1-1}[1pt/1pt]
+     \multicolumn{1}{l;{1pt/1pt}}{} & x_2 - \enspace x_3 + & x_4 = \hspace{0.8em} 0, & \circled{2} \\\cdashline{2-2}[1pt/1pt]
+     \multicolumn{2}{l;{1pt/1pt}}{} & x_4 = -3, & \circled{3} \\\cdashline{3-4}[1pt/1pt]
+     & & 0 = \hspace{0.8em} 0, & \circled{4}
+  \end{array} \right. \tag{$A_4$}
+\end{alignat*}
+
+\subsubsection{初等变换的定义}
+\paragraph{}
+\textbf{定义~~}下面三种变换称为矩阵的\textbf{初等行变换}：
+\begin{enumerate}
+  \item 对调两行（对调$i,j$两行，记作$r_i \leftrightarrow r_j$）；
+  \item 以数$k \neq 0$乘某一行中的所有元素（第$i$行乘$k$，记作$r_i \times k$）；
+  \item 把某一行所有元素的$k$倍加到另一行对应的元素上去（第$j$行的$k$倍，加到第$i$行上，记作$r_i + kr_j$）。
+\end{enumerate}
+相同地，可得到\textbf{初等列变换}的定义。
+
+\paragraph{}
+矩阵$A$经过有限次初等变换变成矩阵$B$，就称\textbf{矩阵$A$与$B$等价}，记作$A\sim B$。仅有行／列变换，可记作$A\overset{r}{\sim}B$或$A\overset{c}{\sim}B$
+
+\paragraph{}
+矩阵之间的等价关系具有下列性质：
+\begin{enumerate}
+  \item \textbf{反身性~~$A\sim A$}；
+  \item \textbf{对称性~~若$A\sim B$，则$B\sim A$}；
+  \item \textbf{传递性~~若$A\sim B, B\sim C$，则$A\sim C$}。
+\end{enumerate}
+
+\subsubsection{行阶梯形矩阵}
+\paragraph{}
+\textbf{行阶梯形矩阵~~}可画出一条阶梯线，线的下方全为$0$，每个台阶只有一行，台阶数即是非零行的行数。阶梯线的竖线后面的第一个元素为非零元。例如，
+\begin{equation*}
+\left[\begin{array}{rrrrr}
+  {\color{red!50}1} & 1 & -2 & 1 & 4 \\\cdashline{1-1}[1pt/1pt]
+  \multicolumn{1}{r;{1pt/1pt}}{{\color{gray!50}0}} & {\color{red!50}1} & -1 & 1 & 0 \\\cdashline{2-3}[1pt/1pt]
+  {\color{gray!50}0} & {\color{gray!50}0} & \multicolumn{1}{r;{1pt/1pt}}{{\color{gray!50}0}} & {\color{red!50}1} & -3 \\\cdashline{4-5}[1pt/1pt]
+  {\color{gray!50}0} & {\color{gray!50}0} & {\color{gray!50}0} & 0 & {\color{gray!50}0}
+\end{array}\right]
+\end{equation*}
+
+\paragraph{}
+\textbf{行最简形矩阵~~}非零行的第一个非零元为$1$，且这些非零元所在的列的其它元素都为$0$。例如，
+\begin{equation*}
+  \left[\begin{array}{rrrrr}
+    {\color{red!50}1} & {\color{blue!50}0} & -1 & {\color{blue!50}0} & 4 \\\cdashline{1-1}[1pt/1pt]
+    \multicolumn{1}{r;{1pt/1pt}}{{\color{gray!50}0}} & {\color{red!50}1} & -1 & {\color{blue!50}0} & 3 \\\cdashline{2-3}[1pt/1pt]
+    {\color{gray!50}0} & {\color{gray!50}0} & \multicolumn{1}{r;{1pt/1pt}}{{\color{gray!50}0}} & {\color{red!50}1} & -3 \\\cdashline{4-5}[1pt/1pt]
+    {\color{gray!50}0} & {\color{gray!50}0} & {\color{gray!50}0} & {\color{gray!50}0} & {\color{gray!50}0}
+  \end{array}\right]
+\end{equation*}
+
+\paragraph{}
+对于任何矩阵$A_{m\times n}$，总可经过有限次初等行变换把它变为行阶梯形矩阵和行最简形矩阵（归纳法可证）。
+
+\paragraph{}
+\textbf{标准形~~}矩阵的左上角是一个单位矩阵，其余元素全为$0$。例如，
+\begin{equation*}
+  \left[{\color{gray!50} \begin{array}{ccccc}
+    {\color{red!50}1} & 0 & 0 & 0 & 0 \\
+    0 & {\color{red!50}1} & 0 & 0 & 0 \\
+    0 & 0 & {\color{red!50}1} & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0
+  \end{array}}\right]
+\end{equation*}
+
+\paragraph{}
+对于$m\times n$矩阵$A$，总可经过初等变换把它化为标准形
+\begin{equation*}
+  F = \left[\begin{array}{cc}
+    E_r & O \\
+    O & O
+  \end{array}\right]_{m\times n}
+\end{equation*}
+
+\subsubsection{初等变换的性质}\label{sec:初等变换的性质}
+\paragraph{}
+\textbf{定理1~~}设$A$与$B$为$m\times n$矩阵，那么：
+\begin{enumerate}
+  \item $A \overset{r}{\sim} B$的充分必要条件是存在$m$阶可逆矩阵$P$，使$PA = B$；
+  \item $A \overset{c}{\sim} B$的充分必要条件是存在$n$阶可逆矩阵$Q$，使$AQ = B$；
+  \item $A \sim B$的充分必要条件是存在$m$阶可逆矩阵$P$，以及$n$阶可逆矩阵$Q$，使$PAQ = B$。
+\end{enumerate}
+
+\paragraph{}
+证明参考\secref{sec:定理1的证明}
+
+\subsubsection{初等矩阵的定义}
+\paragraph{}
+由单位阵$E$经过一次初等变换得到的矩阵称为\textbf{初等矩阵}。
+\begin{enumerate}
+  \item 单位阵中第$i,j$两行对调（或第$i,j$两列对调），得初等矩阵
+  \begin{equation*}
+    E(i,j) = \left[\begin{array}{ccccccccccc}
+      1 & & & & & & & & & & \\
+        & \ddots & & & & & & & & & \\
+        &        & 1 & & & & & & & & \\
+        &        &   & 0 & & \cdots & &  1 & & & \\
+        &        &   &   & 1 & & & & & & \\
+        &        &   & \vdots  &   & \ddots & & \vdots & & & \\
+        &        &   &   &   &        & 1 & & & & \\
+        &        &   & 1 &   &    \cdots    &  & 0 &  & & \\
+        &        &   &   &   &        &   &   & 1 &  & \\
+        &        &   &   &   &        &   &   &   & \ddots & \\
+        &        &   &   &   &        &   &   &   &        & 1
+    \end{array}\right]\begin{array}{c}
+      \\
+      \\
+      \\
+      \leftarrow\text{第$i$行} \\
+      \\
+      \\
+      \\
+      \leftarrow\text{第$j$行} \\
+      \\
+      \\
+      \\
+    \end{array}
+  \end{equation*}
+  矩阵$A$的第$i,j$行交换，相当于用$m$阶初等矩阵$E_m(i,j)$左乘矩阵$A_{m\times n}$。\\
+  矩阵$A$的第$i,j$列交换，相当于用$n$阶初等矩阵$E_n(i,j)$右乘矩阵$A_{m\times n}$。
+  \item 以数$k\neq 0$乘单位阵的第$i$行（或第$i$）列，得初等矩阵
+  \begin{equation*}
+    E(i(k)) = \left[\begin{array}{ccccccc}
+      1 & & & & & & \\
+        & \ddots & & & & & \\
+        &        & 1 & & & & \\
+        &        &   & k & & & \\
+        &        &   &   & 1 & & \\
+        &        &   &   &   & \ddots & \\
+        &        &   &   &   &        & 1 \\
+    \end{array}\right]\begin{array}{c}
+        \\
+        \\
+        \\
+        \leftarrow\text{第$i$行}\\
+        \\
+        \\
+        \\
+    \end{array}
+  \end{equation*}
+  矩阵$A$的第$i$行乘以$k$倍，相当于用$m$阶初等矩阵$E_m(i(k))$左乘矩阵$A_{m\times n}$。\\
+  矩阵$A$的第$i$列乘以$k$倍，相当于用$n$阶初等矩阵$E_n(i(k))$右乘矩阵$A_{m\times n}$。
+  \item 以$k$乘$E$的第$j$行加到第$i$行上，或者对列进行类似操作，得初等矩阵
+  \begin{equation*}
+    E(i+j(k)) = \left[\begin{array}{ccccccc}
+      1 & & & & & & \\
+        & \ddots & & & & & \\
+        &        & 1 & \cdots & k & & \\
+        &        &   & \ddots & \vdots  & & \\
+        &        &   &        & 1 & & \\
+        &        &   &        &   & \ddots & \\
+        &        &   &        &   &        & 1 \\
+    \end{array}\right]\begin{array}{c}
+      \\
+      \\
+      \leftarrow\text{第$i$行}\\
+      \\
+      \leftarrow\text{第$j$行}\\
+      \\
+      \\
+    \end{array}
+  \end{equation*}
+  以$E_m(i+j(k))$左乘矩阵$A$，相当于把$A$的第$j$行乘$k$加到第$i$行上。相同地，列也具有类似性质。
+\end{enumerate}
+
+\paragraph{}
+归纳以上的讨论，可得
+
+\paragraph{}
+\textbf{性质1~~}设$A$是一个$m\times n$矩阵，对$A$施行一次初等行变换，相当于在$A$的左边乘以相应的$m$阶初等矩阵；对$A$施行一次初等列变换，相当于在$A$的右边乘以相应的$n$阶初等矩阵。
+
+\paragraph{}
+\textbf{性质2~~}方阵$A$可逆的充分必要条件是存在有限个初等矩阵$P_1,P_2,\cdots,P_l$，使$A = P_1P_2\cdots P_l$。
+
+\subsubsection{定理$1$的证明}\label{sec:定理1的证明}
+\paragraph{}
+\secref{sec:初等变换的性质}的证明：
+
+\paragraph{}
+$(1.)$依据$A\overset{r}{\sim}B$的定义和初等矩阵的性质，有
+\begin{align*}
+  A \overset{r}{\sim}B \Leftrightarrow &\; A\text{经有限次初等行变换变成}B \\
+  \Leftrightarrow &\;\text{存在有限个$m$阶初等矩阵}P_1,P_2,\cdots,P_l\text{，使}P_l\cdots P_2P_1A = B \\
+  \Leftrightarrow &\;\text{存在$m$阶可逆矩阵$P$，使}PA=B.
+\end{align*}
+类似可证明$(2.)$和$(3.)$。
+
+\paragraph{}
+\textbf{推论~~}方阵$A$可逆的充分必要条件是$A\overset{r}{\sim}E$。
+
+\subsection{矩阵的秩}
+\paragraph{}
+
+\subsection{线性方程组的解}
+\paragraph{}
