@@ -146,6 +146,25 @@ $n$维向量可写成一行，或一列，分别称为行向量或列向量。�
 
 \subsection{向量组的线性相关性}
 \paragraph{}
+\textbf{定义~~}给定向量组$A:a_1,a_2,\cdots,a_m$，如果存在不全为零的数$k_1,k_2,\cdots,k_m$，使
+\begin{equation*}
+  k_1a_1 + k_2a_2 + \cdots + k_ma_m = 0,
+\end{equation*}
+则称向量组$A$是\textbf{线性相关的}，否则称它\textbf{线性无关}。
+
+\paragraph{}
+2个向量的几何意义是共线，3个向量的几何意义是共面。
+
+\paragraph{}
+\textbf{定理~~}向量组$a_1,a_2,\cdots,a_m$线性相关的充分必要条件是它所构成的矩阵\\$A=(a_1,a_2,\cdots,a_m)$的秩小于向量个数$m$；向量组线性无关的充分必要条件是$R(A)=m$。
+
+\paragraph{}
+\textbf{定理~~}
+\begin{enumerate}
+  \item 若向量组$A: a_1,\cdots,a_m$线性相关，则向量组$B: a_1, \cdots,a_m,a_{m+1}$也线性相关。反言之，若向量组$B$线性无关，则向量组$A$也线性无关。
+  \item $m$个$n$维向量组成的向量组，当维数$n$小于向量个数$m$时一定线性相关，特别地，$n+1$个$n$维向量一定线性相关。
+  \item 设向量组$A: a_1,a_2,\cdots,a_m$线性无关，而向量组$B: a_1,\cdots,a_m,b$线性相关，则向量$b$必能由向量组$A$线性表示，且表示式是唯一的。
+\end{enumerate}
 
 \subsection{向量组的秩}
 \paragraph{}
