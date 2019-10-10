@@ -1,5 +1,148 @@
 \subsection{向量组及其线性组合}
+\subsubsection{向量}
 \paragraph{}
+\textbf{定义~~}$n$个有次序的数$a_1, a_2, \cdots, a_n$所组成的数组称为\textbf{$n$维向量}，这$n$个数称为该向量的$n$个分量，第$i$个数$a_i$称为第$i$个分量。
+
+\paragraph{}
+$n$维向量可写成一行，或一列，分别称为行向量或列向量。或者称为行矩阵或列矩阵。
+
+\paragraph{}
+当$n \leq 3$时，$n$维向量可以把有向线段作为几何形象，并对应着坐标系。
+
+\subsubsection{几何向量空间}
+\paragraph{}
+几何中，“空间”通常是作为点的几何，即作为“空间”的元素是点，这样的空间叫做点空间。我们把$3$维向量的全体所组成的集合
+\begin{equation*}
+\mathbb{R}^3 = \{r=(x,y,z)^T \;|\; x,y,z\in\mathbb{R}\}
+\end{equation*}
+叫做三维向量空间。在点空间取定坐标系以后，空间中的点$P(x,y,z)$与$3$维向量$r=(x,y,z)^T$之间有一一对应的关系。因此，向量空间可以类比为取定了坐标系的点空间。
+
+\paragraph{}
+在讨论向量的运算时，可以把向量看作有向线段；在讨论向量集时，则把向量$r$看作以$r$为向径的点$P$，从而把点$P$的轨迹作为向量集的图形。
+
+\paragraph{}
+例如点集
+\begin{equation*}
+ \Pi = \{P(x,y,z) \;|\; ax+by+cz=d\}
+\end{equation*}
+是一个平面（$a,b,c$不全为$0$），于是向量集
+\begin{equation*}
+  \{r=(x,y,z)^T \;|\; ax+by+cz=d\}
+\end{equation*}
+也叫做向量空间$\mathbb{R}^3$中的平面，并把$\Pi$作为它的图形。
+
+\paragraph{}
+类似地，$n$维向量的全体所组成的集合
+\begin{equation*}
+  \mathbb{R}^n = \{x=(x_1,x_2,\cdots,x_n)^T \;|\; x_1,x_2,\cdots,x_n\in\mathbb{R}\}
+\end{equation*}
+叫做$n$维向量空间。$n$维向量的集合
+\begin{equation*}
+  \{x=(x_1,x_2,\cdots,x_n)^T \;|\; a_1x_1+a_2x_2+\cdots+a_nx_n=b\}
+\end{equation*}
+叫做$n$维空间$\mathbb{R}^n$中的$n-1$维超平面。
+
+\subsubsection{向量组和线性组合}
+\paragraph{}
+若干个同维数的列向量（或同维数的行向量）所组成的集合叫做\textbf{向量组}。
+
+\paragraph{}
+含有有限个向量的有序向量组可以与矩阵一一对应。
+
+\paragraph{}
+\textbf{定义~~}给定向量组$A: a_1, a_2, \cdots, a_m$，对于任何一组实数$k_1,k_2,\cdots,k_m$，表达式
+\begin{equation*}
+  k_1a_1+k_2a_2+\cdots+k_ma_m
+\end{equation*}
+称为向量组$A$的一个\textbf{线性组合}，$k_1,k_2,\cdots,k_m$称为这个线性组合的系数。
+
+\paragraph{}
+给定向量组$A: a_1,a_2,\cdots,a_m$和向量$b$，如果存在一组数$\lambda_1,\lambda_2,\cdots,\lambda_m$，使
+\begin{equation*}
+  b=\lambda_1a_1 + \lambda_2a_2 + \cdots + \lambda_ma_m,
+\end{equation*}
+则向量$b$是向量组$A$的线性组合，这时称\textbf{向量$b$能由向量组$A$线性表示}。
+
+\paragraph{}
+向量$b$能由向量组$A$线性表示，也就是方程组
+\begin{equation*}
+  x_1a_1+x_2a_2+\cdots+x_ma_m=b
+\end{equation*}
+有解。
+
+\paragraph{}
+\textbf{定理~~}向量$b$能由向量组$A: a_1,a_2,\cdots,a_m$线性表示的充分必要条件是矩阵$A=(a_1,a_2,\cdots,a_m)$的秩等于矩阵$B=(a_1,a_2,\cdots,a_m,b)$的秩。
+
+\subsubsection{等价向量组}
+\paragraph{}
+\textbf{定义~~}设有两个向量组$A: a_1,a_2,\cdots,a_m$及$B: b_1,b_2,\cdots,b_m$，若$B$组中的每个向量都能由向量组$A$线性表示，则称\textbf{向量组$B$能由向量组$A$线性表示}。若向量组$A$与向量组$B$能相互线性表示，则称这两个\textbf{向量组等价}。
+
+\paragraph{}
+把向量组$A$和$B$所构成的矩阵依次记作$A=(a_1,a_2,\cdots,a_m)$和$B=(b_1,b_2,\cdots,b_l)$，$B$组能由$A$组线性表示，即对每个向量$b_j(j=1,2,\cdots,l)$存在数$k_{1j},k_{2j},\cdots,k_{mj}$，使
+\begin{equation*}
+  b_j = k_{1j}a_1 + k_{2j}a_2 + \cdots + k_{mj}a_m = (a_1,a_2,\cdots,a_m)\left[\begin{array}{c}
+    k_{1j} \\
+    k_{2j} \\
+    \vdots \\
+    k_{mj}
+  \end{array}\right],
+\end{equation*}
+从而
+\begin{equation*}
+  (b_1,b_2,\cdots,b_l) = (a_1,a_2,\cdots,a_m)\left[\begin{array}{cccc}
+    k_{11} & k_{12} & \cdots & k_{1l} \\
+    k_{21} & k_{22} & \cdots & k_{2l} \\
+    \vdots & \vdots &  & \vdots \\
+    k_{m1} & k_{m2} & \cdots & k_{ml}
+  \end{array}\right].
+\end{equation*}
+
+\paragraph{}
+这里，矩阵$K_{m\times l} = (k_{ij})$称为这一线性表示的系数矩阵。
+
+\paragraph{}
+由此可知，若$C_{m\times n}=A_{m\times l}B_{l\times n}$，则矩阵$C$的列向量组能由矩阵$A$的列向量组线性表示，$B$为这一表示的系数矩阵：
+\begin{equation*}
+  (c_1,c_2,\cdots,c_n) = (a_1,a_2,\cdots,a_l)\left[\begin{array}{cccc}
+    b_{11} & b_{12} & \cdots & b_{1n} \\
+    b_{21} & b_{22} & \cdots & b_{2n} \\
+    \vdots & \vdots &  & \vdots \\
+    b_{l1} & b_{l2} & \cdots & b_{ln}
+  \end{array}\right];
+\end{equation*}
+\paragraph{}
+同时，$C$的行向量组能由$B$的行向量组线性表示，$A$为这一表示的系数矩阵：
+\begin{equation*}
+  \left[\begin{array}{c}
+    \gamma_1 \\
+    \gamma_2 \\
+    \vdots \\
+    \gamma_m
+  \end{array}\right] = \left[\begin{array}{cccc}
+    a_{11} & a_{12} & \cdots & a_{1l} \\
+    a_{21} & a_{22} & \cdots & a_{2l} \\
+    \vdots & \vdots &  & \vdots \\
+    a_{m1} & a_{m2} & \cdots & a_{ml}
+  \end{array}\right]\left[\begin{array}{c}
+    \beta_1 \\
+    \beta_2 \\
+    \vdots \\
+    \beta_l
+  \end{array}\right].
+\end{equation*}
+
+\paragraph{}
+\textbf{定理~~}向量组$B:b_1,b_2,\cdots,b_l$能由向量组$A: a_1, a_2,\cdots,a_m$线性表示的充分必要条件是矩阵$A=(a_1,a_2,\cdots,a_m)$的秩等于矩阵$(A,B)=(a_1,\cdots,a_m,b_1,\cdots,b_l)$的秩，即$R(A)=R(A,B)$。
+
+\paragraph{}
+\textbf{推论~~}向量组$A:a_1,a_2,\cdots,a_m$与向量组$B:b_1,b_2,\cdots,b_l$等价的充分必要条件是
+\begin{equation*}
+  R(A)=R(B)=R(A,B),
+\end{equation*}
+其中$A$和$B$是向量组$A$和$B$所构成的矩阵。
+
+\paragraph{}
+\textbf{定理~~}设向量组$B: b_1,b_2,\cdots,b_l$能由向量组$A:a_1,a_2,\cdots,a_m$线性表示，则\\$R(b_1,b_2,\cdots,b_l)\leq R(a_1,a_2,\cdots,a_m)$。
 
 \subsection{向量组的线性相关性}
 \paragraph{}
